@@ -31,5 +31,32 @@ namespace ConsultiBETA
         {
 
         }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPessoa form = new FormPessoa();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormFuncionario form = new FormFuncionario();
+            form.MdiParent = this;
+            form.Show();
+
+
+           
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
