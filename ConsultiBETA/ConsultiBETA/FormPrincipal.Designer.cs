@@ -36,8 +36,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chamadosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.estoqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,24 +107,9 @@
             // 
             // relatóriosToolStripMenuItem
             // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chamadosToolStripMenuItem2,
-            this.estoqueToolStripMenuItem1});
             this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
             this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // chamadosToolStripMenuItem2
-            // 
-            this.chamadosToolStripMenuItem2.Name = "chamadosToolStripMenuItem2";
-            this.chamadosToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
-            this.chamadosToolStripMenuItem2.Text = "Chamados";
-            // 
-            // estoqueToolStripMenuItem1
-            // 
-            this.estoqueToolStripMenuItem1.Name = "estoqueToolStripMenuItem1";
-            this.estoqueToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
-            this.estoqueToolStripMenuItem1.Text = "Estoque";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -195,8 +178,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chamadosToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;

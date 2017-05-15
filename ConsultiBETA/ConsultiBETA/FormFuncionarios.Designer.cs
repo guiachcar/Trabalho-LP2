@@ -40,6 +40,7 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.gbFuncionarios = new System.Windows.Forms.GroupBox();
             this.dgFuncioanarios = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,6 +177,7 @@
             // 
             this.dgFuncioanarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuncioanarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Nome,
             this.CPF,
             this.Telefone,
@@ -191,6 +193,11 @@
             this.dgFuncioanarios.Name = "dgFuncioanarios";
             this.dgFuncioanarios.Size = new System.Drawing.Size(625, 326);
             this.dgFuncioanarios.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
             // 
             // Nome
             // 
@@ -268,6 +275,7 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.GroupBox gbFuncionarios;
         private System.Windows.Forms.DataGridView dgFuncioanarios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;

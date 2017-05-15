@@ -120,11 +120,11 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(237, 9);
+            this.lbID.Location = new System.Drawing.Point(178, 9);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(27, 24);
+            this.lbID.Size = new System.Drawing.Size(98, 24);
             this.lbID.TabIndex = 15;
-            this.lbID.Text = "ID";
+            this.lbID.Text = "Produto ID";
             // 
             // btnSalver
             // 

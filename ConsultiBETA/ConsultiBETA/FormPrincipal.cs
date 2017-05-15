@@ -56,7 +56,9 @@ namespace ConsultiBETA
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FormChamados form = new FormChamados();
+            form.MdiParent = this;
+            form.Show();
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)

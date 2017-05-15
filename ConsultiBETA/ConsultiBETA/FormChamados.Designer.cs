@@ -1,6 +1,6 @@
 ﻿namespace ConsultiBETA
 {
-    partial class FormClientes
+    partial class FormChamados
     {
         /// <summary>
         /// Required designer variable.
@@ -38,22 +38,18 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgClientes = new System.Windows.Forms.DataGridView();
+            this.gbFuncionarios = new System.Windows.Forms.GroupBox();
+            this.dgFuncioanarios = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClienteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VendaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.list_acao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            this.gbFuncionarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,12 +58,13 @@
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnNovo);
-            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.gbFuncionarios);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 481);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(665, 472);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // gbFiltrar
             // 
@@ -78,7 +75,7 @@
             this.gbFiltrar.Controls.Add(this.btnBuscar);
             this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
             this.gbFiltrar.Name = "gbFiltrar";
-            this.gbFiltrar.Size = new System.Drawing.Size(622, 65);
+            this.gbFiltrar.Size = new System.Drawing.Size(638, 65);
             this.gbFiltrar.TabIndex = 15;
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar";
@@ -94,12 +91,10 @@
             // 
             this.cbFiltrar.FormattingEnabled = true;
             this.cbFiltrar.Items.AddRange(new object[] {
-            "Nome",
-            "CPF",
-            "Telefone",
-            "Rua",
-            "Numero",
-            "CEP"});
+            "ID Chamado",
+            "ID Cliente",
+            "ID Funcinario",
+            "STATUS"});
             this.cbFiltrar.Location = new System.Drawing.Point(69, 22);
             this.cbFiltrar.Name = "cbFiltrar";
             this.cbFiltrar.Size = new System.Drawing.Size(121, 21);
@@ -149,7 +144,6 @@
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNovo
             // 
@@ -159,102 +153,78 @@
             this.btnNovo.TabIndex = 13;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // groupBox2
+            // gbFuncionarios
             // 
-            this.groupBox2.Controls.Add(this.dgClientes);
-            this.groupBox2.Location = new System.Drawing.Point(9, 83);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(631, 345);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Clientes";
+            this.gbFuncionarios.Controls.Add(this.dgFuncioanarios);
+            this.gbFuncionarios.Location = new System.Drawing.Point(9, 83);
+            this.gbFuncionarios.Name = "gbFuncionarios";
+            this.gbFuncionarios.Size = new System.Drawing.Size(648, 345);
+            this.gbFuncionarios.TabIndex = 10;
+            this.gbFuncionarios.TabStop = false;
+            this.gbFuncionarios.Text = "Funcionarios";
             // 
-            // dgClientes
+            // dgFuncioanarios
             // 
-            this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgFuncioanarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFuncioanarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Nome,
-            this.CPF,
-            this.Telefone,
-            this.Rua,
-            this.Numero,
-            this.CEP,
-            this.Bairro,
-            this.Cidade,
-            this.Estado});
-            this.dgClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgClientes.Enabled = false;
-            this.dgClientes.Location = new System.Drawing.Point(3, 16);
-            this.dgClientes.Name = "dgClientes";
-            this.dgClientes.Size = new System.Drawing.Size(625, 326);
-            this.dgClientes.TabIndex = 0;
+            this.ClienteID,
+            this.FuncionarioID,
+            this.VendaID,
+            this.list_acao,
+            this.status});
+            this.dgFuncioanarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgFuncioanarios.Enabled = false;
+            this.dgFuncioanarios.Location = new System.Drawing.Point(3, 16);
+            this.dgFuncioanarios.Name = "dgFuncioanarios";
+            this.dgFuncioanarios.Size = new System.Drawing.Size(642, 326);
+            this.dgFuncioanarios.TabIndex = 0;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             // 
-            // Nome
+            // ClienteID
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
+            this.ClienteID.HeaderText = "Cliente ID";
+            this.ClienteID.Name = "ClienteID";
             // 
-            // CPF
+            // FuncionarioID
             // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
+            this.FuncionarioID.HeaderText = "Funcionario ID";
+            this.FuncionarioID.Name = "FuncionarioID";
             // 
-            // Telefone
+            // VendaID
             // 
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
+            this.VendaID.HeaderText = "Venda ID";
+            this.VendaID.Name = "VendaID";
             // 
-            // Rua
+            // list_acao
             // 
-            this.Rua.HeaderText = "Rua";
-            this.Rua.Name = "Rua";
+            this.list_acao.HeaderText = "Ação";
+            this.list_acao.Name = "list_acao";
             // 
-            // Numero
+            // status
             // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
             // 
-            // CEP
-            // 
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            // 
-            // Bairro
-            // 
-            this.Bairro.HeaderText = "Bairro";
-            this.Bairro.Name = "Bairro";
-            // 
-            // Cidade
-            // 
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // FormClientes
+            // FormChamados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 481);
+            this.ClientSize = new System.Drawing.Size(665, 472);
             this.Controls.Add(this.panel1);
-            this.Name = "FormClientes";
-            this.Text = "Clientes";
+            this.Name = "FormChamados";
+            this.RightToLeftLayout = true;
+            this.Text = "Chamados";
             this.panel1.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            this.gbFuncionarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,17 +241,13 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgClientes;
+        private System.Windows.Forms.GroupBox gbFuncionarios;
+        private System.Windows.Forms.DataGridView dgFuncioanarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuncionarioID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VendaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn list_acao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }

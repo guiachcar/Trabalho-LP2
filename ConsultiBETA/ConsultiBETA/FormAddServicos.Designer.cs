@@ -90,11 +90,11 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(282, 9);
+            this.lbID.Location = new System.Drawing.Point(230, 9);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(27, 24);
+            this.lbID.Size = new System.Drawing.Size(95, 24);
             this.lbID.TabIndex = 15;
-            this.lbID.Text = "ID";
+            this.lbID.Text = "Serviço ID";
             // 
             // lbNumero
             // 
