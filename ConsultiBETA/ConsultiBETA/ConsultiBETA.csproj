@@ -88,17 +88,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFuncionariocs.cs">
+    <Compile Include="FormAddClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFuncionariocs.Designer.cs">
-      <DependentUpon>FormFuncionariocs.cs</DependentUpon>
+    <Compile Include="FormAddClientes.Designer.cs">
+      <DependentUpon>FormAddClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPessoa.cs">
+    <Compile Include="FormAddFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPessoa.Designer.cs">
-      <DependentUpon>FormPessoa.cs</DependentUpon>
+    <Compile Include="FormAddFuncionarios.Designer.cs">
+      <DependentUpon>FormAddFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFuncionariocs01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFuncionariocs01.Designer.cs">
+      <DependentUpon>FormFuncionariocs01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFuncionarios.Designer.cs">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPessoa01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPessoa01.Designer.cs">
+      <DependentUpon>FormPessoa01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSobre.Designer.cs">
+      <DependentUpon>FormSobre.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Chamado.cs" />
     <Compile Include="Model\Cliente.cs" />
@@ -113,11 +143,26 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFuncionariocs.resx">
-      <DependentUpon>FormFuncionariocs.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddClientes.resx">
+      <DependentUpon>FormAddClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPessoa.resx">
-      <DependentUpon>FormPessoa.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddFuncionarios.resx">
+      <DependentUpon>FormAddFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFuncionariocs01.resx">
+      <DependentUpon>FormFuncionariocs01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFuncionarios.resx">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPessoa01.resx">
+      <DependentUpon>FormPessoa01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSobre.resx">
+      <DependentUpon>FormSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

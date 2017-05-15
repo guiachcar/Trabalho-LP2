@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ConsultiBETA
 {
-    public partial class FormPessoa : Form
+    public partial class FormPessoa01 : Form
     {
-        public FormPessoa()
+        public FormPessoa01()
         {
             InitializeComponent();
         }
@@ -33,6 +33,11 @@ namespace ConsultiBETA
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

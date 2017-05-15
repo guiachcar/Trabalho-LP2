@@ -39,14 +39,14 @@ namespace ConsultiBETA
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPessoa form = new FormPessoa();
+            FormClientes form = new FormClientes();
             form.MdiParent = this;
             form.Show();
         }
 
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFuncionario form = new FormFuncionario();
+            FormFuncionarios form = new FormFuncionarios();
             form.MdiParent = this;
             form.Show();
 
@@ -56,6 +56,21 @@ namespace ConsultiBETA
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormSobre form = new FormSobre();
+            form.MdiParent = this;
+            form.Show();
+
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }
