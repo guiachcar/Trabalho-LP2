@@ -21,5 +21,18 @@ namespace ConsultiBETA
         {
 
         }
+
+        private void btnAbrirChamado_Click(object sender, EventArgs e)
+        {
+            FormAddChamados form = new FormAddChamados();
+            form.Show();
+        }
+
+        private void btnFercharChamdo_Click(object sender, EventArgs e)
+        {
+            FormAddChamados form = new FormAddChamados();
+            form.Show();
+        }
+    
     }
 }

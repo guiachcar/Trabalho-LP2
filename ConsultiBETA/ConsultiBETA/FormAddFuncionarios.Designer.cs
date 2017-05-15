@@ -54,12 +54,16 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
@@ -76,19 +80,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 325);
+            this.panel1.Size = new System.Drawing.Size(752, 351);
             this.panel1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(442, 119);
+            this.textBox2.Location = new System.Drawing.Point(412, 149);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(153, 20);
             this.textBox2.TabIndex = 25;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 119);
+            this.textBox1.Location = new System.Drawing.Point(84, 149);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 20);
             this.textBox1.TabIndex = 26;
@@ -96,7 +100,7 @@
             // lbSalario
             // 
             this.lbSalario.AutoSize = true;
-            this.lbSalario.Location = new System.Drawing.Point(387, 126);
+            this.lbSalario.Location = new System.Drawing.Point(365, 156);
             this.lbSalario.Name = "lbSalario";
             this.lbSalario.Size = new System.Drawing.Size(39, 13);
             this.lbSalario.TabIndex = 23;
@@ -105,7 +109,7 @@
             // lbCargo
             // 
             this.lbCargo.AutoSize = true;
-            this.lbCargo.Location = new System.Drawing.Point(45, 119);
+            this.lbCargo.Location = new System.Drawing.Point(23, 149);
             this.lbCargo.Name = "lbCargo";
             this.lbCargo.Size = new System.Drawing.Size(35, 13);
             this.lbCargo.TabIndex = 24;
@@ -113,7 +117,7 @@
             // 
             // btnSalver
             // 
-            this.btnSalver.Location = new System.Drawing.Point(177, 292);
+            this.btnSalver.Location = new System.Drawing.Point(161, 316);
             this.btnSalver.Name = "btnSalver";
             this.btnSalver.Size = new System.Drawing.Size(188, 23);
             this.btnSalver.TabIndex = 22;
@@ -123,7 +127,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(106, 73);
+            this.txtTelefone.Location = new System.Drawing.Point(84, 103);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(258, 20);
             this.txtTelefone.TabIndex = 21;
@@ -131,7 +135,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(45, 73);
+            this.lbTelefone.Location = new System.Drawing.Point(23, 103);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(49, 13);
             this.lbTelefone.TabIndex = 20;
@@ -151,7 +155,7 @@
             this.gbEndereco.Controls.Add(this.lbBairro);
             this.gbEndereco.Controls.Add(this.lbNumero);
             this.gbEndereco.Controls.Add(this.lbRua);
-            this.gbEndereco.Location = new System.Drawing.Point(27, 166);
+            this.gbEndereco.Location = new System.Drawing.Point(12, 196);
             this.gbEndereco.Name = "gbEndereco";
             this.gbEndereco.Size = new System.Drawing.Size(716, 106);
             this.gbEndereco.TabIndex = 19;
@@ -272,7 +276,7 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(442, 32);
+            this.txtCPF.Location = new System.Drawing.Point(412, 59);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(153, 20);
             this.txtCPF.TabIndex = 18;
@@ -280,7 +284,7 @@
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(399, 32);
+            this.lbCPF.Location = new System.Drawing.Point(365, 62);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(27, 13);
             this.lbCPF.TabIndex = 17;
@@ -288,7 +292,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(100, 32);
+            this.txtNome.Location = new System.Drawing.Point(78, 62);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 20);
             this.txtNome.TabIndex = 16;
@@ -296,7 +300,7 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(44, 32);
+            this.lbNome.Location = new System.Drawing.Point(22, 62);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 15;
@@ -304,7 +308,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(371, 292);
+            this.btnCancelar.Location = new System.Drawing.Point(355, 316);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
             this.btnCancelar.TabIndex = 27;
@@ -312,11 +316,31 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(417, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 24);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "0";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(278, 9);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(133, 24);
+            this.lbID.TabIndex = 29;
+            this.lbID.Text = "Funcionario ID";
+            // 
             // FormAddFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 325);
+            this.ClientSize = new System.Drawing.Size(752, 351);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddFuncionarios";
             this.Text = "Adiconar/Alterar Funcionarios";
@@ -356,5 +380,7 @@
         private System.Windows.Forms.Label lbSalario;
         private System.Windows.Forms.Label lbCargo;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbID;
     }
 }

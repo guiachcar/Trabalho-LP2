@@ -144,6 +144,7 @@
             this.btnFercharChamdo.TabIndex = 12;
             this.btnFercharChamdo.Text = "Fechar Chamado";
             this.btnFercharChamdo.UseVisualStyleBackColor = true;
+            this.btnFercharChamdo.Click += new System.EventHandler(this.btnFercharChamdo_Click);
             // 
             // btnAbrirChamado
             // 
@@ -153,6 +154,7 @@
             this.btnAbrirChamado.TabIndex = 13;
             this.btnAbrirChamado.Text = "Abrir Chamado";
             this.btnAbrirChamado.UseVisualStyleBackColor = true;
+            this.btnAbrirChamado.Click += new System.EventHandler(this.btnAbrirChamado_Click);
             // 
             // gbFuncionarios
             // 

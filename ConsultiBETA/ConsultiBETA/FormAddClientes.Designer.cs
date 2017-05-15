@@ -50,12 +50,16 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalver);
             this.panel1.Controls.Add(this.txtTelefone);
@@ -68,12 +72,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 260);
+            this.panel1.Size = new System.Drawing.Size(768, 280);
             this.panel1.TabIndex = 0;
             // 
             // btnSalver
             // 
-            this.btnSalver.Location = new System.Drawing.Point(179, 225);
+            this.btnSalver.Location = new System.Drawing.Point(160, 247);
             this.btnSalver.Name = "btnSalver";
             this.btnSalver.Size = new System.Drawing.Size(188, 23);
             this.btnSalver.TabIndex = 14;
@@ -83,7 +87,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(113, 67);
+            this.txtTelefone.Location = new System.Drawing.Point(77, 89);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(265, 20);
             this.txtTelefone.TabIndex = 13;
@@ -91,7 +95,7 @@
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
-            this.lbTelefone.Location = new System.Drawing.Point(52, 67);
+            this.lbTelefone.Location = new System.Drawing.Point(18, 89);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(49, 13);
             this.lbTelefone.TabIndex = 12;
@@ -111,7 +115,7 @@
             this.gbEndereco.Controls.Add(this.lbBairro);
             this.gbEndereco.Controls.Add(this.lbNumero);
             this.gbEndereco.Controls.Add(this.lbRua);
-            this.gbEndereco.Location = new System.Drawing.Point(34, 106);
+            this.gbEndereco.Location = new System.Drawing.Point(15, 128);
             this.gbEndereco.Name = "gbEndereco";
             this.gbEndereco.Size = new System.Drawing.Size(716, 106);
             this.gbEndereco.TabIndex = 11;
@@ -189,9 +193,9 @@
             // 
             // txtRua
             // 
-            this.txtRua.Location = new System.Drawing.Point(59, 21);
+            this.txtRua.Location = new System.Drawing.Point(62, 21);
             this.txtRua.Name = "txtRua";
-            this.txtRua.Size = new System.Drawing.Size(221, 20);
+            this.txtRua.Size = new System.Drawing.Size(218, 20);
             this.txtRua.TabIndex = 4;
             // 
             // lbCidade
@@ -232,7 +236,7 @@
             // 
             // txtCPF
             // 
-            this.txtCPF.Location = new System.Drawing.Point(449, 26);
+            this.txtCPF.Location = new System.Drawing.Point(430, 48);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(153, 20);
             this.txtCPF.TabIndex = 10;
@@ -240,7 +244,7 @@
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
-            this.lbCPF.Location = new System.Drawing.Point(399, 26);
+            this.lbCPF.Location = new System.Drawing.Point(380, 48);
             this.lbCPF.Name = "lbCPF";
             this.lbCPF.Size = new System.Drawing.Size(27, 13);
             this.lbCPF.TabIndex = 9;
@@ -248,7 +252,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(107, 26);
+            this.txtNome.Location = new System.Drawing.Point(77, 48);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 20);
             this.txtNome.TabIndex = 8;
@@ -256,7 +260,7 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(51, 26);
+            this.lbNome.Location = new System.Drawing.Point(18, 48);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 7;
@@ -264,7 +268,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(377, 225);
+            this.btnCancelar.Location = new System.Drawing.Point(358, 247);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
             this.btnCancelar.TabIndex = 15;
@@ -272,11 +276,31 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(411, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 24);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "0";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(298, 9);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(90, 24);
+            this.lbID.TabIndex = 17;
+            this.lbID.Text = "Cliente ID";
+            // 
             // FormAddClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 260);
+            this.ClientSize = new System.Drawing.Size(768, 280);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddClientes";
             this.Text = "Adicionar/Alterar Clientes";
@@ -312,5 +336,7 @@
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Button btnSalver;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbID;
     }
 }

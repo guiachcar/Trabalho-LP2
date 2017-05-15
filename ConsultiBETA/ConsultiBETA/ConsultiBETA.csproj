@@ -82,6 +82,12 @@
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\PessoaController.cs" />
+    <Compile Include="FormAddChamados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddChamados.Designer.cs">
+      <DependentUpon>FormAddChamados.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="FormAddProduto.Designer.cs">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddVendas.Designer.cs">
+      <DependentUpon>FormAddVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChamados.cs">
       <SubType>Form</SubType>
@@ -188,11 +200,17 @@
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddChamados.resx">
+      <DependentUpon>FormAddChamados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddEstoque.resx">
       <DependentUpon>FormAddEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddProduto.resx">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddVendas.resx">
+      <DependentUpon>FormAddVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChamados.resx">
       <DependentUpon>FormChamados.cs</DependentUpon>
