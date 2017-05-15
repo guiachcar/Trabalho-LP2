@@ -89,5 +89,12 @@ namespace ConsultiBETA
             form.Show();
 
         }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormEstoque form = new FormEstoque();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

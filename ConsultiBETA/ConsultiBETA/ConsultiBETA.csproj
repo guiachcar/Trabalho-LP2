@@ -82,11 +82,23 @@
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\PessoaController.cs" />
+    <Compile Include="FormAddEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEstoque.Designer.cs">
+      <DependentUpon>FormAddEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddProduto.Designer.cs">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEstoque.Designer.cs">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -164,8 +176,14 @@
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAddEstoque.resx">
+      <DependentUpon>FormAddEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddProduto.resx">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEstoque.resx">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

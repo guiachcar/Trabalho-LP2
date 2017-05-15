@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gbConsulta = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.gbFiltrar = new System.Windows.Forms.GroupBox();
+            this.txtDigiteAqui = new System.Windows.Forms.TextBox();
+            this.cbFiltrar = new System.Windows.Forms.ComboBox();
             this.lbConsulta = new System.Windows.Forms.Label();
             this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -50,14 +50,14 @@
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.gbConsulta.SuspendLayout();
+            this.gbFiltrar.SuspendLayout();
             this.gbFuncionarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbConsulta);
+            this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnNovo);
@@ -68,31 +68,31 @@
             this.panel1.Size = new System.Drawing.Size(650, 479);
             this.panel1.TabIndex = 1;
             // 
-            // gbConsulta
+            // gbFiltrar
             // 
-            this.gbConsulta.Controls.Add(this.textBox1);
-            this.gbConsulta.Controls.Add(this.comboBox1);
-            this.gbConsulta.Controls.Add(this.lbConsulta);
-            this.gbConsulta.Controls.Add(this.lbPor);
-            this.gbConsulta.Controls.Add(this.btnBuscar);
-            this.gbConsulta.Location = new System.Drawing.Point(9, 12);
-            this.gbConsulta.Name = "gbConsulta";
-            this.gbConsulta.Size = new System.Drawing.Size(638, 65);
-            this.gbConsulta.TabIndex = 15;
-            this.gbConsulta.TabStop = false;
-            this.gbConsulta.Text = "Consulta";
+            this.gbFiltrar.Controls.Add(this.txtDigiteAqui);
+            this.gbFiltrar.Controls.Add(this.cbFiltrar);
+            this.gbFiltrar.Controls.Add(this.lbConsulta);
+            this.gbFiltrar.Controls.Add(this.lbPor);
+            this.gbFiltrar.Controls.Add(this.btnBuscar);
+            this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
+            this.gbFiltrar.Name = "gbFiltrar";
+            this.gbFiltrar.Size = new System.Drawing.Size(638, 65);
+            this.gbFiltrar.TabIndex = 15;
+            this.gbFiltrar.TabStop = false;
+            this.gbFiltrar.Text = "Filtrar";
             // 
-            // textBox1
+            // txtDigiteAqui
             // 
-            this.textBox1.Location = new System.Drawing.Point(282, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtDigiteAqui.Location = new System.Drawing.Point(282, 23);
+            this.txtDigiteAqui.Name = "txtDigiteAqui";
+            this.txtDigiteAqui.Size = new System.Drawing.Size(201, 20);
+            this.txtDigiteAqui.TabIndex = 14;
             // 
-            // comboBox1
+            // cbFiltrar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbFiltrar.FormattingEnabled = true;
+            this.cbFiltrar.Items.AddRange(new object[] {
             "Nome",
             "CPF",
             "Telefone",
@@ -101,10 +101,10 @@
             "CEP",
             "Cargo",
             "Salario"});
-            this.comboBox1.Location = new System.Drawing.Point(69, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cbFiltrar.Location = new System.Drawing.Point(69, 22);
+            this.cbFiltrar.Name = "cbFiltrar";
+            this.cbFiltrar.Size = new System.Drawing.Size(121, 21);
+            this.cbFiltrar.TabIndex = 13;
             // 
             // lbConsulta
             // 
@@ -186,6 +186,7 @@
             this.Cidade,
             this.Estado});
             this.dgFuncioanarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgFuncioanarios.Enabled = false;
             this.dgFuncioanarios.Location = new System.Drawing.Point(3, 16);
             this.dgFuncioanarios.Name = "dgFuncioanarios";
             this.dgFuncioanarios.Size = new System.Drawing.Size(625, 326);
@@ -245,8 +246,8 @@
             this.Name = "FormFuncionarios";
             this.Text = "Funcionarios";
             this.panel1.ResumeLayout(false);
-            this.gbConsulta.ResumeLayout(false);
-            this.gbConsulta.PerformLayout();
+            this.gbFiltrar.ResumeLayout(false);
+            this.gbFiltrar.PerformLayout();
             this.gbFuncionarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).EndInit();
             this.ResumeLayout(false);
@@ -256,9 +257,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox gbConsulta;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox gbFiltrar;
+        private System.Windows.Forms.TextBox txtDigiteAqui;
+        private System.Windows.Forms.ComboBox cbFiltrar;
         private System.Windows.Forms.Label lbConsulta;
         private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;

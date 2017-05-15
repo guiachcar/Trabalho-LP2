@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.gbFiltrar = new System.Windows.Forms.GroupBox();
+            this.txtDigiteAqui = new System.Windows.Forms.TextBox();
+            this.cbFiltrar = new System.Windows.Forms.ComboBox();
+            this.lbConsulta = new System.Windows.Forms.Label();
+            this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,20 +49,15 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbConsulta = new System.Windows.Forms.GroupBox();
-            this.lbPor = new System.Windows.Forms.Label();
-            this.lbConsulta = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.gbFiltrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
-            this.gbConsulta.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbConsulta);
+            this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnNovo);
@@ -68,14 +68,59 @@
             this.panel1.Size = new System.Drawing.Size(643, 481);
             this.panel1.TabIndex = 0;
             // 
-            // btnExcluir
+            // gbFiltrar
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.gbFiltrar.Controls.Add(this.txtDigiteAqui);
+            this.gbFiltrar.Controls.Add(this.cbFiltrar);
+            this.gbFiltrar.Controls.Add(this.lbConsulta);
+            this.gbFiltrar.Controls.Add(this.lbPor);
+            this.gbFiltrar.Controls.Add(this.btnBuscar);
+            this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
+            this.gbFiltrar.Name = "gbFiltrar";
+            this.gbFiltrar.Size = new System.Drawing.Size(622, 65);
+            this.gbFiltrar.TabIndex = 15;
+            this.gbFiltrar.TabStop = false;
+            this.gbFiltrar.Text = "Filtrar";
+            // 
+            // txtDigiteAqui
+            // 
+            this.txtDigiteAqui.Location = new System.Drawing.Point(282, 23);
+            this.txtDigiteAqui.Name = "txtDigiteAqui";
+            this.txtDigiteAqui.Size = new System.Drawing.Size(201, 20);
+            this.txtDigiteAqui.TabIndex = 14;
+            // 
+            // cbFiltrar
+            // 
+            this.cbFiltrar.FormattingEnabled = true;
+            this.cbFiltrar.Items.AddRange(new object[] {
+            "Nome",
+            "CPF",
+            "Telefone",
+            "Rua",
+            "Numero",
+            "CEP"});
+            this.cbFiltrar.Location = new System.Drawing.Point(69, 22);
+            this.cbFiltrar.Name = "cbFiltrar";
+            this.cbFiltrar.Size = new System.Drawing.Size(121, 21);
+            this.cbFiltrar.TabIndex = 13;
+            // 
+            // lbConsulta
+            // 
+            this.lbConsulta.AutoSize = true;
+            this.lbConsulta.Location = new System.Drawing.Point(208, 29);
+            this.lbConsulta.Name = "lbConsulta";
+            this.lbConsulta.Size = new System.Drawing.Size(58, 13);
+            this.lbConsulta.TabIndex = 12;
+            this.lbConsulta.Text = "Digite Aqui";
+            // 
+            // lbPor
+            // 
+            this.lbPor.AutoSize = true;
+            this.lbPor.Location = new System.Drawing.Point(15, 30);
+            this.lbPor.Name = "lbPor";
+            this.lbPor.Size = new System.Drawing.Size(23, 13);
+            this.lbPor.TabIndex = 12;
+            this.lbPor.Text = "Por";
             // 
             // btnBuscar
             // 
@@ -85,6 +130,15 @@
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
+            this.btnExcluir.TabIndex = 14;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
@@ -130,6 +184,7 @@
             this.Cidade,
             this.Estado});
             this.dgClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgClientes.Enabled = false;
             this.dgClientes.Location = new System.Drawing.Point(3, 16);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.Size = new System.Drawing.Size(625, 326);
@@ -180,60 +235,6 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
-            // gbConsulta
-            // 
-            this.gbConsulta.Controls.Add(this.textBox1);
-            this.gbConsulta.Controls.Add(this.comboBox1);
-            this.gbConsulta.Controls.Add(this.lbConsulta);
-            this.gbConsulta.Controls.Add(this.lbPor);
-            this.gbConsulta.Controls.Add(this.btnBuscar);
-            this.gbConsulta.Location = new System.Drawing.Point(9, 12);
-            this.gbConsulta.Name = "gbConsulta";
-            this.gbConsulta.Size = new System.Drawing.Size(622, 65);
-            this.gbConsulta.TabIndex = 15;
-            this.gbConsulta.TabStop = false;
-            this.gbConsulta.Text = "Consulta";
-            // 
-            // lbPor
-            // 
-            this.lbPor.AutoSize = true;
-            this.lbPor.Location = new System.Drawing.Point(15, 30);
-            this.lbPor.Name = "lbPor";
-            this.lbPor.Size = new System.Drawing.Size(23, 13);
-            this.lbPor.TabIndex = 12;
-            this.lbPor.Text = "Por";
-            // 
-            // lbConsulta
-            // 
-            this.lbConsulta.AutoSize = true;
-            this.lbConsulta.Location = new System.Drawing.Point(208, 29);
-            this.lbConsulta.Name = "lbConsulta";
-            this.lbConsulta.Size = new System.Drawing.Size(58, 13);
-            this.lbConsulta.TabIndex = 12;
-            this.lbConsulta.Text = "Digite Aqui";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nome",
-            "CPF",
-            "Telefone",
-            "Rua",
-            "Numero",
-            "CEP"});
-            this.comboBox1.Location = new System.Drawing.Point(69, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(282, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 14;
-            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,10 +244,10 @@
             this.Name = "FormClientes";
             this.Text = "Clientes";
             this.panel1.ResumeLayout(false);
+            this.gbFiltrar.ResumeLayout(false);
+            this.gbFiltrar.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
-            this.gbConsulta.ResumeLayout(false);
-            this.gbConsulta.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -254,9 +255,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox gbConsulta;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox gbFiltrar;
+        private System.Windows.Forms.TextBox txtDigiteAqui;
+        private System.Windows.Forms.ComboBox cbFiltrar;
         private System.Windows.Forms.Label lbConsulta;
         private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;

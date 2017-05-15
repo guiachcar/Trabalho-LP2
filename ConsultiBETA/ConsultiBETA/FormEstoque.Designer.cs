@@ -1,6 +1,6 @@
 ﻿namespace ConsultiBETA
 {
-    partial class FormProdutos
+    partial class FormEstoque
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnNovo;
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.txtDigiteAqui = new System.Windows.Forms.TextBox();
@@ -35,9 +36,7 @@
             this.lbConsulta = new System.Windows.Forms.Label();
             this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.gbProdutos = new System.Windows.Forms.GroupBox();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,10 @@
             this.valor_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            btnNovo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbProdutos.SuspendLayout();
@@ -55,16 +58,18 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gbFiltrar);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.btnNovo);
+            this.panel1.Controls.Add(btnNovo);
             this.panel1.Controls.Add(this.gbProdutos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 480);
-            this.panel1.TabIndex = 2;
+            this.panel1.Size = new System.Drawing.Size(842, 482);
+            this.panel1.TabIndex = 3;
             // 
             // gbFiltrar
             // 
@@ -126,34 +131,24 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(136, 446);
+            this.btnEditar.Location = new System.Drawing.Point(504, 446);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(118, 23);
+            this.btnEditar.Size = new System.Drawing.Size(130, 23);
             this.btnEditar.TabIndex = 12;
-            this.btnEditar.Text = "Editar";
+            this.btnEditar.Text = "Venda";
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 446);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(118, 23);
-            this.btnNovo.TabIndex = 13;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            btnNovo.Location = new System.Drawing.Point(380, 446);
+            btnNovo.Name = "btnNovo";
+            btnNovo.Size = new System.Drawing.Size(118, 23);
+            btnNovo.TabIndex = 13;
+            btnNovo.Text = "Entrada de Item";
+            btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // gbProdutos
             // 
@@ -219,14 +214,43 @@
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             // 
-            // FormProdutos
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(257, 447);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
+            this.btnExcluir.TabIndex = 17;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(133, 447);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Editar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 447);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Novo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 480);
+            this.ClientSize = new System.Drawing.Size(842, 482);
             this.Controls.Add(this.panel1);
-            this.Name = "FormProdutos";
-            this.Text = "Produtos";
+            this.Name = "FormEstoque";
+            this.Text = "Estoque";
             this.panel1.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
@@ -245,9 +269,7 @@
         private System.Windows.Forms.Label lbConsulta;
         private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.GroupBox gbProdutos;
         private System.Windows.Forms.DataGridView dgProdutos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
@@ -257,5 +279,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor_venda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
