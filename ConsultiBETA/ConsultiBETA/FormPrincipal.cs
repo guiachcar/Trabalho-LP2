@@ -73,5 +73,21 @@ namespace ConsultiBETA
             this.Close();
 
         }
+
+        private void serviçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormServicos form = new FormServicos();
+            form.MdiParent = this;
+            form.Show();
+
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProdutos form = new FormProdutos();
+            form.MdiParent = this;
+            form.Show();
+
+        }
     }
 }

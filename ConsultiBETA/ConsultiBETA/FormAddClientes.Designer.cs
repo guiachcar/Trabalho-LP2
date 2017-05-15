@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalver = new System.Windows.Forms.Button();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.gbEndereco = new System.Windows.Forms.GroupBox();
@@ -48,13 +49,14 @@
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.btnSalver = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalver);
             this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lbTelefone);
@@ -68,6 +70,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(768, 260);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSalver
+            // 
+            this.btnSalver.Location = new System.Drawing.Point(179, 225);
+            this.btnSalver.Name = "btnSalver";
+            this.btnSalver.Size = new System.Drawing.Size(188, 23);
+            this.btnSalver.TabIndex = 14;
+            this.btnSalver.Text = "Salvar";
+            this.btnSalver.UseVisualStyleBackColor = true;
+            this.btnSalver.Click += new System.EventHandler(this.btnSalver_Click);
             // 
             // txtTelefone
             // 
@@ -250,15 +262,15 @@
             this.lbNome.TabIndex = 7;
             this.lbNome.Text = "Nome";
             // 
-            // btnSalver
+            // btnCancelar
             // 
-            this.btnSalver.Location = new System.Drawing.Point(179, 225);
-            this.btnSalver.Name = "btnSalver";
-            this.btnSalver.Size = new System.Drawing.Size(367, 23);
-            this.btnSalver.TabIndex = 14;
-            this.btnSalver.Text = "Salvar";
-            this.btnSalver.UseVisualStyleBackColor = true;
-            this.btnSalver.Click += new System.EventHandler(this.btnSalver_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(377, 225);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 23);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormAddClientes
             // 
@@ -299,5 +311,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.Button btnSalver;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

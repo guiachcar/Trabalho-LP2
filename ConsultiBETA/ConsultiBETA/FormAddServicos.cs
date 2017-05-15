@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace ConsultiBETA
 {
-    public partial class FormAddClientes : Form
+    public partial class FormAddServicos : Form
     {
-        public FormAddClientes()
+        public FormAddServicos()
         {
             InitializeComponent();
         }
 
         private void btnSalver_Click(object sender, EventArgs e)
         {
-           this.Close();
-
-
-
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

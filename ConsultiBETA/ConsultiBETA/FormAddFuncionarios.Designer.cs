@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbSalario = new System.Windows.Forms.Label();
+            this.lbCargo = new System.Windows.Forms.Label();
             this.btnSalver = new System.Windows.Forms.Button();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
@@ -49,16 +53,14 @@
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbSalario = new System.Windows.Forms.Label();
-            this.lbCargo = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.lbSalario);
@@ -77,11 +79,43 @@
             this.panel1.Size = new System.Drawing.Size(752, 325);
             this.panel1.TabIndex = 0;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(442, 119);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(153, 20);
+            this.textBox2.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(259, 20);
+            this.textBox1.TabIndex = 26;
+            // 
+            // lbSalario
+            // 
+            this.lbSalario.AutoSize = true;
+            this.lbSalario.Location = new System.Drawing.Point(387, 126);
+            this.lbSalario.Name = "lbSalario";
+            this.lbSalario.Size = new System.Drawing.Size(39, 13);
+            this.lbSalario.TabIndex = 23;
+            this.lbSalario.Text = "Salario";
+            // 
+            // lbCargo
+            // 
+            this.lbCargo.AutoSize = true;
+            this.lbCargo.Location = new System.Drawing.Point(45, 119);
+            this.lbCargo.Name = "lbCargo";
+            this.lbCargo.Size = new System.Drawing.Size(35, 13);
+            this.lbCargo.TabIndex = 24;
+            this.lbCargo.Text = "Cargo";
+            // 
             // btnSalver
             // 
             this.btnSalver.Location = new System.Drawing.Point(177, 292);
             this.btnSalver.Name = "btnSalver";
-            this.btnSalver.Size = new System.Drawing.Size(367, 23);
+            this.btnSalver.Size = new System.Drawing.Size(188, 23);
             this.btnSalver.TabIndex = 22;
             this.btnSalver.Text = "Salvar";
             this.btnSalver.UseVisualStyleBackColor = true;
@@ -268,37 +302,15 @@
             this.lbNome.TabIndex = 15;
             this.lbNome.Text = "Nome";
             // 
-            // textBox2
+            // btnCancelar
             // 
-            this.textBox2.Location = new System.Drawing.Point(442, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(106, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 20);
-            this.textBox1.TabIndex = 26;
-            // 
-            // lbSalario
-            // 
-            this.lbSalario.AutoSize = true;
-            this.lbSalario.Location = new System.Drawing.Point(387, 126);
-            this.lbSalario.Name = "lbSalario";
-            this.lbSalario.Size = new System.Drawing.Size(39, 13);
-            this.lbSalario.TabIndex = 23;
-            this.lbSalario.Text = "Salario";
-            // 
-            // lbCargo
-            // 
-            this.lbCargo.AutoSize = true;
-            this.lbCargo.Location = new System.Drawing.Point(45, 119);
-            this.lbCargo.Name = "lbCargo";
-            this.lbCargo.Size = new System.Drawing.Size(35, 13);
-            this.lbCargo.TabIndex = 24;
-            this.lbCargo.Text = "Cargo";
+            this.btnCancelar.Location = new System.Drawing.Point(371, 292);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 23);
+            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormAddFuncionarios
             // 
@@ -343,5 +355,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbSalario;
         private System.Windows.Forms.Label lbCargo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
