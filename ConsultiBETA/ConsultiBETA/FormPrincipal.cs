@@ -98,5 +98,16 @@ namespace ConsultiBETA
             form.MdiParent = this;
             form.Show();
         }
+
+        private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorio form = new FormRelatorio();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        
+
+        
     }
 }

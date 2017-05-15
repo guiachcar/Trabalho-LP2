@@ -36,8 +36,8 @@
             this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNovo = new System.Windows.Forms.Button();
+            this.btnFercharChamdo = new System.Windows.Forms.Button();
+            this.btnAbrirChamado = new System.Windows.Forms.Button();
             this.gbFuncionarios = new System.Windows.Forms.GroupBox();
             this.dgFuncioanarios = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +56,13 @@
             // 
             this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.btnNovo);
+            this.panel1.Controls.Add(this.btnFercharChamdo);
+            this.panel1.Controls.Add(this.btnAbrirChamado);
             this.panel1.Controls.Add(this.gbFuncionarios);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 472);
+            this.panel1.Size = new System.Drawing.Size(669, 478);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -136,23 +136,23 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // btnEditar
+            // btnFercharChamdo
             // 
-            this.btnEditar.Location = new System.Drawing.Point(136, 446);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(118, 23);
-            this.btnEditar.TabIndex = 12;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnFercharChamdo.Location = new System.Drawing.Point(136, 446);
+            this.btnFercharChamdo.Name = "btnFercharChamdo";
+            this.btnFercharChamdo.Size = new System.Drawing.Size(118, 23);
+            this.btnFercharChamdo.TabIndex = 12;
+            this.btnFercharChamdo.Text = "Fechar Chamado";
+            this.btnFercharChamdo.UseVisualStyleBackColor = true;
             // 
-            // btnNovo
+            // btnAbrirChamado
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 446);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(118, 23);
-            this.btnNovo.TabIndex = 13;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnAbrirChamado.Location = new System.Drawing.Point(12, 446);
+            this.btnAbrirChamado.Name = "btnAbrirChamado";
+            this.btnAbrirChamado.Size = new System.Drawing.Size(118, 23);
+            this.btnAbrirChamado.TabIndex = 13;
+            this.btnAbrirChamado.Text = "Abrir Chamado";
+            this.btnAbrirChamado.UseVisualStyleBackColor = true;
             // 
             // gbFuncionarios
             // 
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 472);
+            this.ClientSize = new System.Drawing.Size(669, 478);
             this.Controls.Add(this.panel1);
             this.Name = "FormChamados";
             this.RightToLeftLayout = true;
@@ -239,8 +239,8 @@
         private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Button btnFercharChamdo;
+        private System.Windows.Forms.Button btnAbrirChamado;
         private System.Windows.Forms.GroupBox gbFuncionarios;
         private System.Windows.Forms.DataGridView dgFuncioanarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
