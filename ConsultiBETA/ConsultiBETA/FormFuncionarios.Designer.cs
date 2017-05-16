@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(729, 487);
+            this.panel1.Size = new System.Drawing.Size(650, 487);
             this.panel1.TabIndex = 1;
             // 
             // gbFiltrar
@@ -81,7 +81,7 @@
             this.gbFiltrar.Controls.Add(this.btnBuscar);
             this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
             this.gbFiltrar.Name = "gbFiltrar";
-            this.gbFiltrar.Size = new System.Drawing.Size(638, 65);
+            this.gbFiltrar.Size = new System.Drawing.Size(622, 65);
             this.gbFiltrar.TabIndex = 15;
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar";
@@ -270,7 +270,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(729, 487);
+            this.ClientSize = new System.Drawing.Size(650, 487);
             this.Controls.Add(this.panel1);
             this.Name = "FormFuncionarios";
             this.Text = "Funcionarios";

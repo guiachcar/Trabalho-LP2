@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ConsultiBETA.Model;
 using ConsultiBETA.Controller;
+using ConsultiBETA.Model;
+
 
 namespace ConsultiBETA
 {
@@ -25,7 +26,7 @@ namespace ConsultiBETA
             dgClientes.Rows.Clear();
             foreach (Cliente c in Listas.clientes)
             {
-                dgClientes.Rows.Add(ID, Nome, CPF, Telefone, Rua, Numero, CEP, Bairro, Cidade, Estado);
+                dgClientes.Rows.Add(c.Id, c.Nome, c.Cpf, c.Telefone, c.Endereco, c.Nro, c.Cep, c.Bairro, c.Cidade, c.Uf);
             }
         }
 

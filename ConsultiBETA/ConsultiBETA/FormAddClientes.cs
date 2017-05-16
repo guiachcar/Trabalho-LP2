@@ -36,7 +36,7 @@ namespace ConsultiBETA
             cliente.Uf = cbEstado.Text;
 
             clientes.Cadastrar(cliente);
-            MessageBox.Show("Cliente cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK);
+            MessageBox.Show("Cliente cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             this.Close();
             FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;
 

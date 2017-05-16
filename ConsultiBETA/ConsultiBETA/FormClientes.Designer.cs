@@ -174,6 +174,10 @@
             // 
             // dgClientes
             // 
+            this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AllowUserToDeleteRows = false;
+            this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -190,6 +194,8 @@
             this.dgClientes.Enabled = false;
             this.dgClientes.Location = new System.Drawing.Point(3, 16);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
+            this.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgClientes.Size = new System.Drawing.Size(625, 326);
             this.dgClientes.TabIndex = 0;
             // 
@@ -197,51 +203,61 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
             // CPF
             // 
             this.CPF.HeaderText = "CPF";
             this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
             // 
             // Telefone
             // 
             this.Telefone.HeaderText = "Telefone";
             this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
             // 
             // Rua
             // 
             this.Rua.HeaderText = "Rua";
             this.Rua.Name = "Rua";
+            this.Rua.ReadOnly = true;
             // 
             // Numero
             // 
             this.Numero.HeaderText = "Numero";
             this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
             // 
             // CEP
             // 
             this.CEP.HeaderText = "CEP";
             this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
             // 
             // Bairro
             // 
             this.Bairro.HeaderText = "Bairro";
             this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
             // 
             // Cidade
             // 
             this.Cidade.HeaderText = "Cidade";
             this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // FormClientes
             // 
