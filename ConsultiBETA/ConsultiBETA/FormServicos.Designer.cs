@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 480);
+            this.panel1.Size = new System.Drawing.Size(661, 480);
             this.panel1.TabIndex = 1;
             // 
             // gbFiltrar
@@ -130,6 +130,7 @@
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
@@ -201,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 480);
+            this.ClientSize = new System.Drawing.Size(661, 480);
             this.Controls.Add(this.panel1);
             this.Name = "FormServicos";
             this.Text = "Serviços";

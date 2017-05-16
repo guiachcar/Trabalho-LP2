@@ -85,6 +85,8 @@
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\Listas.cs" />
     <Compile Include="Controller\PessoaController.cs" />
+    <Compile Include="Controller\ProdutoController.cs" />
+    <Compile Include="Controller\ServicoController.cs" />
     <Compile Include="FormAddChamados.cs">
       <SubType>Form</SubType>
     </Compile>
