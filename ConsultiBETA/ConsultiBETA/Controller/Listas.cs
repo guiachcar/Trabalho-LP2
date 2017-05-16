@@ -17,6 +17,7 @@ namespace ConsultiBETA.Controller
         public static List<Produto> produtos = new List<Produto>();
         public static List<Servico> servicos = new List<Servico>();
         public static List<Venda> vendas = new List<Venda>();
-        
+ 
+
     }
 }

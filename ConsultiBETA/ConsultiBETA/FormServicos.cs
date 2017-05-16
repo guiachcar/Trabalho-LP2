@@ -19,6 +19,7 @@ namespace ConsultiBETA
             InitializeComponent();
             Exibir();
         }
+        
 
         public void Exibir()
         {
@@ -39,7 +40,7 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FormAddServicos form = new FormAddServicos();
+            FormAddServicos form = new FormAddServicos(dgServicos);
             form.Show();
         }
 

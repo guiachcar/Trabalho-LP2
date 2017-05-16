@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.lbQuantidade = new System.Windows.Forms.Label();
             this.txtValorCompra = new System.Windows.Forms.TextBox();
             this.txtTipo = new System.Windows.Forms.TextBox();
             this.lbValorCompra = new System.Windows.Forms.Label();
@@ -49,8 +47,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtQuantidade);
-            this.panel1.Controls.Add(this.lbQuantidade);
             this.panel1.Controls.Add(this.txtValorCompra);
             this.panel1.Controls.Add(this.txtTipo);
             this.panel1.Controls.Add(this.lbValorCompra);
@@ -70,32 +66,16 @@
             this.panel1.Size = new System.Drawing.Size(571, 239);
             this.panel1.TabIndex = 2;
             // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(488, 161);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(77, 20);
-            this.txtQuantidade.TabIndex = 23;
-            // 
-            // lbQuantidade
-            // 
-            this.lbQuantidade.AutoSize = true;
-            this.lbQuantidade.Location = new System.Drawing.Point(420, 164);
-            this.lbQuantidade.Name = "lbQuantidade";
-            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
-            this.lbQuantidade.TabIndex = 22;
-            this.lbQuantidade.Text = "Quantidade";
-            // 
             // txtValorCompra
             // 
-            this.txtValorCompra.Location = new System.Drawing.Point(314, 161);
+            this.txtValorCompra.Location = new System.Drawing.Point(312, 161);
             this.txtValorCompra.Name = "txtValorCompra";
             this.txtValorCompra.Size = new System.Drawing.Size(100, 20);
             this.txtValorCompra.TabIndex = 21;
             // 
             // txtTipo
             // 
-            this.txtTipo.Location = new System.Drawing.Point(123, 97);
+            this.txtTipo.Location = new System.Drawing.Point(122, 94);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(100, 20);
             this.txtTipo.TabIndex = 21;
@@ -103,7 +83,7 @@
             // lbValorCompra
             // 
             this.lbValorCompra.AutoSize = true;
-            this.lbValorCompra.Location = new System.Drawing.Point(238, 164);
+            this.lbValorCompra.Location = new System.Drawing.Point(235, 164);
             this.lbValorCompra.Name = "lbValorCompra";
             this.lbValorCompra.Size = new System.Drawing.Size(70, 13);
             this.lbValorCompra.TabIndex = 20;
@@ -112,7 +92,7 @@
             // lbTipo
             // 
             this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(57, 100);
+            this.lbTipo.Location = new System.Drawing.Point(87, 98);
             this.lbTipo.Name = "lbTipo";
             this.lbTipo.Size = new System.Drawing.Size(28, 13);
             this.lbTipo.TabIndex = 20;
@@ -120,7 +100,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(127, 127);
+            this.txtDescricao.Location = new System.Drawing.Point(124, 127);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(438, 20);
             this.txtDescricao.TabIndex = 19;
@@ -128,7 +108,7 @@
             // lbDescricao
             // 
             this.lbDescricao.AutoSize = true;
-            this.lbDescricao.Location = new System.Drawing.Point(57, 134);
+            this.lbDescricao.Location = new System.Drawing.Point(62, 131);
             this.lbDescricao.Name = "lbDescricao";
             this.lbDescricao.Size = new System.Drawing.Size(55, 13);
             this.lbDescricao.TabIndex = 18;
@@ -136,8 +116,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(123, 161);
+            this.txtValor.Location = new System.Drawing.Point(125, 161);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 17;
@@ -184,7 +163,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(123, 61);
+            this.txtNome.Location = new System.Drawing.Point(122, 61);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 20);
             this.txtNome.TabIndex = 8;
@@ -192,7 +171,7 @@
             // lbNome
             // 
             this.lbNome.AutoSize = true;
-            this.lbNome.Location = new System.Drawing.Point(57, 61);
+            this.lbNome.Location = new System.Drawing.Point(81, 65);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 7;
@@ -228,7 +207,5 @@
         private System.Windows.Forms.TextBox txtValorCompra;
         private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtQuantidade;
-        private System.Windows.Forms.Label lbQuantidade;
     }
 }

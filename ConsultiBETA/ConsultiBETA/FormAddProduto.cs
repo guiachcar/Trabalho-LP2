@@ -15,6 +15,8 @@ namespace ConsultiBETA
     public partial class FormAddProdutos : Form
     {
         ProdutoController produtos = new ProdutoController();
+        
+
         public FormAddProdutos()
         {
             InitializeComponent();
@@ -29,15 +31,14 @@ namespace ConsultiBETA
             txtDescricao.Text = produto.Descricao;
             txtValorCompra.Text = produto.Valor_compra.ToString();
             txtValor.Text = produto.Valor_venda.ToString();
-            txtQuantidade.Text = produto.Quantidade.ToString();
         }
 
         private void btnSalver_Click(object sender, EventArgs e)
         {
 
-            if(lbID.Text is "Produto ID")
+            if(lbID.Text == "Produto ID")
             {
-                Produto produto = new Produto();
+                             Produto produto = new Produto();
 
                 produto.Id = Listas.produtos.Count + 1;
                 produto.Nome = txtNome.Text;
@@ -45,7 +46,6 @@ namespace ConsultiBETA
                 produto.Descricao = txtDescricao.Text;
                 produto.Valor_compra = float.Parse(txtValorCompra.Text);
                 produto.Valor_venda = float.Parse(txtValor.Text);
-                produto.Quantidade = int.Parse(txtQuantidade.Text);
 
                 produtos.Cadastrar(produto);
                 MessageBox.Show("Produto cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -59,13 +59,12 @@ namespace ConsultiBETA
             }
             else
             {
-                int id = int.Parse(lbID.Text) - 1;
+                int id = int.Parse(lbID.Text);
                 Listas.produtos[id].Nome = txtNome.Text;
                 Listas.produtos[id].Tipo = txtTipo.Text;
                 Listas.produtos[id].Descricao = txtDescricao.Text;
                 Listas.produtos[id].Valor_compra = float.Parse(txtValorCompra.Text);
                 Listas.produtos[id].Valor_venda = float.Parse(txtValor.Text);
-                Listas.produtos[id].Quantidade = int.Parse(txtQuantidade.Text);
 
             }
 

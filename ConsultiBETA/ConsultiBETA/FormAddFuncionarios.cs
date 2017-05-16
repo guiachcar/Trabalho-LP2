@@ -14,6 +14,7 @@ namespace ConsultiBETA
 {
     public partial class FormAddFuncionarios : Form
     {
+        int index = 1;
         FuncionarioController funcionarios = new FuncionarioController();
         public FormAddFuncionarios()
         {
@@ -48,7 +49,7 @@ namespace ConsultiBETA
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             
-            if(lbID.Text is "Funcionario ID")
+            if(lbID.Text == "Funcionario ID")
             {
                 Funcionario funcionario = new Funcionario();
 
@@ -77,7 +78,7 @@ namespace ConsultiBETA
             }
             else
             {
-                int id = int.Parse(lbID.Text) - 1;
+                int id = int.Parse(lbID.Text);
                 Listas.funcionarios[id].Cpf = txtCPF.Text;
                 Listas.funcionarios[id].Nome = txtNome.Text;
                 Listas.funcionarios[id].Endereco = txtRua.Text;

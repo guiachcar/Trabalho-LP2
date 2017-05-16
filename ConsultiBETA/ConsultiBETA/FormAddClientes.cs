@@ -16,6 +16,7 @@ namespace ConsultiBETA
     {
 
         ClienteController clientes = new ClienteController();
+        
         public FormAddClientes()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace ConsultiBETA
         private void btnSalver_Click(object sender, EventArgs e)
         {
 
-            if (lbID.Text is "Cliente ID")
+            if (lbID.Text == "Cliente ID")
             {
                 Cliente cliente = new Cliente();
 

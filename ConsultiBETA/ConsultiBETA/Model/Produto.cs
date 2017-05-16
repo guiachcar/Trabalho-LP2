@@ -14,7 +14,7 @@ namespace ConsultiBETA.Model
         private String descricao;
         private float valor_venda;
         private float valor_compra;
-        private int quantidade;
+        
 
         public Produto()
         {
@@ -98,18 +98,6 @@ namespace ConsultiBETA.Model
                 valor_compra = value;
             }
         }
-
-        public int Quantidade
-        {
-            get
-            {
-                return quantidade;
-            }
-
-            set
-            {
-                quantidade = value;
-            }
-        }
+        
     }
 }
