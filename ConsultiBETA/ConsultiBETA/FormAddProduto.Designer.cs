@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lbQuantidade = new System.Windows.Forms.Label();
+            this.txtValorCompra = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lbValorCompra = new System.Windows.Forms.Label();
+            this.lbTipo = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lbDescricao = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lbValorVenda = new System.Windows.Forms.Label();
             this.lbNumero = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalver = new System.Windows.Forms.Button();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.lbValorCompra = new System.Windows.Forms.Label();
-            this.txtTipo = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lbQuantidade = new System.Windows.Forms.Label();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // 
             this.panel1.Controls.Add(this.txtQuantidade);
             this.panel1.Controls.Add(this.lbQuantidade);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtValorCompra);
             this.panel1.Controls.Add(this.txtTipo);
             this.panel1.Controls.Add(this.lbValorCompra);
             this.panel1.Controls.Add(this.lbTipo);
@@ -71,6 +71,54 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 239);
             this.panel1.TabIndex = 2;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(488, 161);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(77, 20);
+            this.txtQuantidade.TabIndex = 23;
+            // 
+            // lbQuantidade
+            // 
+            this.lbQuantidade.AutoSize = true;
+            this.lbQuantidade.Location = new System.Drawing.Point(420, 164);
+            this.lbQuantidade.Name = "lbQuantidade";
+            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbQuantidade.TabIndex = 22;
+            this.lbQuantidade.Text = "Quantidade";
+            // 
+            // txtValorCompra
+            // 
+            this.txtValorCompra.Location = new System.Drawing.Point(314, 161);
+            this.txtValorCompra.Name = "txtValorCompra";
+            this.txtValorCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtValorCompra.TabIndex = 21;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(123, 97);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(100, 20);
+            this.txtTipo.TabIndex = 21;
+            // 
+            // lbValorCompra
+            // 
+            this.lbValorCompra.AutoSize = true;
+            this.lbValorCompra.Location = new System.Drawing.Point(238, 164);
+            this.lbValorCompra.Name = "lbValorCompra";
+            this.lbValorCompra.Size = new System.Drawing.Size(70, 13);
+            this.lbValorCompra.TabIndex = 20;
+            this.lbValorCompra.Text = "Valor Compra";
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Location = new System.Drawing.Point(57, 100);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(28, 13);
+            this.lbTipo.TabIndex = 20;
+            this.lbTipo.Text = "Tipo";
             // 
             // txtDescricao
             // 
@@ -126,6 +174,16 @@
             this.lbID.TabIndex = 15;
             this.lbID.Text = "Produto ID";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(314, 197);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(203, 23);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnSalver
             // 
             this.btnSalver.Location = new System.Drawing.Point(105, 197);
@@ -151,64 +209,6 @@
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 7;
             this.lbNome.Text = "Nome";
-            // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(57, 100);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(28, 13);
-            this.lbTipo.TabIndex = 20;
-            this.lbTipo.Text = "Tipo";
-            // 
-            // lbValorCompra
-            // 
-            this.lbValorCompra.AutoSize = true;
-            this.lbValorCompra.Location = new System.Drawing.Point(238, 164);
-            this.lbValorCompra.Name = "lbValorCompra";
-            this.lbValorCompra.Size = new System.Drawing.Size(70, 13);
-            this.lbValorCompra.TabIndex = 20;
-            this.lbValorCompra.Text = "Valor Compra";
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.Location = new System.Drawing.Point(123, 97);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(100, 20);
-            this.txtTipo.TabIndex = 21;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(314, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 21;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(314, 197);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(203, 23);
-            this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // lbQuantidade
-            // 
-            this.lbQuantidade.AutoSize = true;
-            this.lbQuantidade.Location = new System.Drawing.Point(420, 164);
-            this.lbQuantidade.Name = "lbQuantidade";
-            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
-            this.lbQuantidade.TabIndex = 22;
-            this.lbQuantidade.Text = "Quantidade";
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(488, 161);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(77, 20);
-            this.txtQuantidade.TabIndex = 23;
             // 
             // FormAddProdutos
             // 
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Button btnSalver;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtValorCompra;
         private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtQuantidade;

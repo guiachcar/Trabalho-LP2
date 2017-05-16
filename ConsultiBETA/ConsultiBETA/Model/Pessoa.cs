@@ -141,6 +141,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public string Cep { get => cep; set => cep = value; }
+        public string Cep { get { return cep; } set { cep = value; }
+        }
     }
 }
