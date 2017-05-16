@@ -78,7 +78,7 @@ namespace ConsultiBETA
             }
             else
             {
-                int id = int.Parse(lbID.Text);
+                int id = int.Parse(lbID.Text) - 1;
                 Listas.funcionarios[id].Cpf = txtCPF.Text;
                 Listas.funcionarios[id].Nome = txtNome.Text;
                 Listas.funcionarios[id].Endereco = txtRua.Text;
