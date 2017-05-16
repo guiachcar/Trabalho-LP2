@@ -38,9 +38,7 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = new DataGridViewRow();
-            linha = dgClientes.CurrentRow;
-            FormAddClientes form = new FormAddClientes();
+            FormAddClientes form = new FormAddClientes(dgClientes);
             form.Show();
 
         }

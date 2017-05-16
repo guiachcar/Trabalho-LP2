@@ -39,7 +39,6 @@
             this.lbDescricao = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lbValorVenda = new System.Windows.Forms.Label();
-            this.lbNumero = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalver = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.panel1.Controls.Add(this.lbDescricao);
             this.panel1.Controls.Add(this.txtValor);
             this.panel1.Controls.Add(this.lbValorVenda);
-            this.panel1.Controls.Add(this.lbNumero);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalver);
@@ -154,16 +152,6 @@
             this.lbValorVenda.TabIndex = 16;
             this.lbValorVenda.Text = "Valor Venda";
             // 
-            // lbNumero
-            // 
-            this.lbNumero.AutoSize = true;
-            this.lbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumero.Location = new System.Drawing.Point(299, 9);
-            this.lbNumero.Name = "lbNumero";
-            this.lbNumero.Size = new System.Drawing.Size(20, 24);
-            this.lbNumero.TabIndex = 15;
-            this.lbNumero.Text = "0";
-            // 
             // lbID
             // 
             this.lbID.AutoSize = true;
@@ -233,7 +221,6 @@
         private System.Windows.Forms.Label lbDescricao;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lbValorVenda;
-        private System.Windows.Forms.Label lbNumero;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Button btnSalver;
         private System.Windows.Forms.TextBox txtNome;

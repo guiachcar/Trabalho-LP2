@@ -50,23 +50,23 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.gbFiltrar);
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 481);
+            this.panel1.Size = new System.Drawing.Size(694, 528);
             this.panel1.TabIndex = 0;
             // 
             // gbFiltrar
@@ -134,7 +134,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
+            this.btnExcluir.Location = new System.Drawing.Point(307, 38);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(117, 23);
             this.btnExcluir.TabIndex = 14;
@@ -144,7 +144,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(136, 446);
+            this.btnEditar.Location = new System.Drawing.Point(172, 38);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(118, 23);
             this.btnEditar.TabIndex = 12;
@@ -154,7 +154,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 446);
+            this.btnNovo.Location = new System.Drawing.Point(37, 38);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(118, 23);
             this.btnNovo.TabIndex = 13;
@@ -164,6 +164,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgClientes);
             this.groupBox2.Location = new System.Drawing.Point(9, 83);
             this.groupBox2.Name = "groupBox2";
@@ -176,6 +178,8 @@
             // 
             this.dgClientes.AllowUserToAddRows = false;
             this.dgClientes.AllowUserToDeleteRows = false;
+            this.dgClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -190,12 +194,10 @@
             this.Bairro,
             this.Cidade,
             this.Estado});
-            this.dgClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgClientes.Enabled = false;
             this.dgClientes.Location = new System.Drawing.Point(3, 16);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.ReadOnly = true;
-            this.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgClientes.Size = new System.Drawing.Size(625, 326);
             this.dgClientes.TabIndex = 0;
             // 
@@ -259,11 +261,23 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnExcluir);
+            this.groupBox1.Location = new System.Drawing.Point(12, 431);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(631, 92);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 481);
+            this.ClientSize = new System.Drawing.Size(694, 528);
             this.Controls.Add(this.panel1);
             this.Name = "FormClientes";
             this.Text = "Clientes";
@@ -272,6 +286,7 @@
             this.gbFiltrar.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,5 +315,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

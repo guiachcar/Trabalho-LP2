@@ -47,23 +47,23 @@
             this.valor_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.gbFiltrar);
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.gbProdutos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 480);
+            this.panel1.Size = new System.Drawing.Size(914, 561);
             this.panel1.TabIndex = 2;
             // 
             // gbFiltrar
@@ -128,7 +128,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
+            this.btnExcluir.Location = new System.Drawing.Point(308, 26);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(117, 23);
             this.btnExcluir.TabIndex = 14;
@@ -138,7 +138,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(136, 446);
+            this.btnEditar.Location = new System.Drawing.Point(165, 26);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(118, 23);
             this.btnEditar.TabIndex = 12;
@@ -148,7 +148,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 446);
+            this.btnNovo.Location = new System.Drawing.Point(18, 26);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(118, 23);
             this.btnNovo.TabIndex = 13;
@@ -158,16 +158,23 @@
             // 
             // gbProdutos
             // 
+            this.gbProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbProdutos.Controls.Add(this.dgProdutos);
             this.gbProdutos.Location = new System.Drawing.Point(9, 83);
             this.gbProdutos.Name = "gbProdutos";
-            this.gbProdutos.Size = new System.Drawing.Size(829, 345);
+            this.gbProdutos.Size = new System.Drawing.Size(893, 343);
             this.gbProdutos.TabIndex = 10;
             this.gbProdutos.TabStop = false;
             this.gbProdutos.Text = "Produtos";
             // 
             // dgProdutos
             // 
+            this.dgProdutos.AllowUserToAddRows = false;
+            this.dgProdutos.AllowUserToDeleteRows = false;
+            this.dgProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -177,54 +184,71 @@
             this.valor_venda,
             this.Valor_Compra,
             this.Quantidade});
-            this.dgProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgProdutos.Enabled = false;
             this.dgProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgProdutos.Name = "dgProdutos";
-            this.dgProdutos.Size = new System.Drawing.Size(823, 326);
+            this.dgProdutos.ReadOnly = true;
+            this.dgProdutos.Size = new System.Drawing.Size(887, 324);
             this.dgProdutos.TabIndex = 0;
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
             // Tipo
             // 
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
             // Descricao
             // 
             this.Descricao.HeaderText = "Descrição";
             this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
             this.Descricao.Width = 200;
             // 
             // valor_venda
             // 
             this.valor_venda.HeaderText = "Valor Venda";
             this.valor_venda.Name = "valor_venda";
+            this.valor_venda.ReadOnly = true;
             // 
             // Valor_Compra
             // 
             this.Valor_Compra.HeaderText = "Valor Compra";
             this.Valor_Compra.Name = "Valor_Compra";
+            this.Valor_Compra.ReadOnly = true;
             // 
             // Quantidade
             // 
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Controls.Add(this.btnExcluir);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Location = new System.Drawing.Point(12, 429);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(714, 100);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
             // 
             // FormProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 480);
+            this.ClientSize = new System.Drawing.Size(914, 561);
             this.Controls.Add(this.panel1);
             this.Name = "FormProdutos";
             this.Text = "Produtos";
@@ -233,6 +257,7 @@
             this.gbFiltrar.PerformLayout();
             this.gbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,5 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valor_venda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor_Compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

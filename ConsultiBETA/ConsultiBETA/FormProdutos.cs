@@ -37,7 +37,7 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FormAddProdutos form = new FormAddProdutos();
+            FormAddProdutos form = new FormAddProdutos(dgProdutos);
             form.Show();
         }
 
