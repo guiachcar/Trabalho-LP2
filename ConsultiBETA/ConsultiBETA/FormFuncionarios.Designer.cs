@@ -66,11 +66,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(650, 479);
+            this.panel1.Size = new System.Drawing.Size(729, 487);
             this.panel1.TabIndex = 1;
             // 
             // gbFiltrar
             // 
+            this.gbFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFiltrar.AutoSize = true;
             this.gbFiltrar.Controls.Add(this.txtDigiteAqui);
             this.gbFiltrar.Controls.Add(this.cbFiltrar);
             this.gbFiltrar.Controls.Add(this.lbConsulta);
@@ -142,6 +145,7 @@
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
@@ -175,6 +179,13 @@
             // 
             // dgFuncioanarios
             // 
+            this.dgFuncioanarios.AllowUserToAddRows = false;
+            this.dgFuncioanarios.AllowUserToDeleteRows = false;
+            this.dgFuncioanarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgFuncioanarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgFuncioanarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgFuncioanarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuncioanarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -187,10 +198,10 @@
             this.Bairro,
             this.Cidade,
             this.Estado});
-            this.dgFuncioanarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgFuncioanarios.Enabled = false;
             this.dgFuncioanarios.Location = new System.Drawing.Point(3, 16);
             this.dgFuncioanarios.Name = "dgFuncioanarios";
+            this.dgFuncioanarios.ReadOnly = true;
             this.dgFuncioanarios.Size = new System.Drawing.Size(625, 326);
             this.dgFuncioanarios.TabIndex = 0;
             // 
@@ -198,61 +209,73 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
             // CPF
             // 
             this.CPF.HeaderText = "CPF";
             this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
             // 
             // Telefone
             // 
             this.Telefone.HeaderText = "Telefone";
             this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
             // 
             // Rua
             // 
             this.Rua.HeaderText = "Rua";
             this.Rua.Name = "Rua";
+            this.Rua.ReadOnly = true;
             // 
             // Numero
             // 
             this.Numero.HeaderText = "Numero";
             this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
             // 
             // CEP
             // 
             this.CEP.HeaderText = "CEP";
             this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
             // 
             // Bairro
             // 
             this.Bairro.HeaderText = "Bairro";
             this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
             // 
             // Cidade
             // 
             this.Cidade.HeaderText = "Cidade";
             this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 479);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(729, 487);
             this.Controls.Add(this.panel1);
             this.Name = "FormFuncionarios";
             this.Text = "Funcionarios";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
             this.gbFuncionarios.ResumeLayout(false);

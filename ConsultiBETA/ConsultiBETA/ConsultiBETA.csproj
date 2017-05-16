@@ -80,7 +80,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\Listas.cs" />
     <Compile Include="Controller\PessoaController.cs" />
     <Compile Include="FormAddChamados.cs">
       <SubType>Form</SubType>
@@ -147,12 +149,6 @@
     </Compile>
     <Compile Include="FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFuncionariocs01.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFuncionariocs01.Designer.cs">
-      <DependentUpon>FormFuncionariocs01.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFuncionarios.cs">
       <SubType>Form</SubType>
@@ -233,9 +229,6 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFuncionariocs01.resx">
-      <DependentUpon>FormFuncionariocs01.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +281,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

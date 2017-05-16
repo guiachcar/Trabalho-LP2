@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConsultiBETA.Controller;
+using ConsultiBETA.Model;
 
 namespace ConsultiBETA
 {
@@ -15,6 +17,16 @@ namespace ConsultiBETA
         public FormFuncionarios()
         {
             InitializeComponent();
+            Exibir();
+        }
+        public void Exibir()
+        {
+            dgFuncioanarios.Rows.Clear();
+            foreach (Funcionario f in Listas.funcionarios)
+            {
+                dgFuncioanarios.Rows.Add(f.Id,f.Nome, f.Cpf, f.Telefone, f.Endereco, f.Nro,f.Cep,f.Bairro,f.Cidade,f.Uf);
+            }
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -25,8 +37,17 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            DataGridViewRow linha = new DataGridViewRow();
+            linha = dgFuncioanarios.CurrentRow;
             FormAddFuncionarios form = new FormAddFuncionarios();
             form.Show();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            FuncionarioController funcionarios = new FuncionarioController();
+            funcionarios.Excluir(funcionarios.getFunc(dgFuncioanarios.CurrentRow.Index));
+            Exibir();
         }
     }
 }

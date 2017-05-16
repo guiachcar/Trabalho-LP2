@@ -14,8 +14,9 @@ namespace ConsultiBETA.Model
         private String endereco;
         private String nro;
         private String bairro;
-        private String Cidade;
+        private String cidade;
         private String uf;
+        private String cep;
         private String telefone;
         private String cpf;
 
@@ -88,16 +89,16 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public string Cidade1
+        public string Cidade
         {
             get
             {
-                return Cidade;
+                return cidade;
             }
 
             set
             {
-                Cidade = value;
+                cidade = value;
             }
         }
 
@@ -139,5 +140,7 @@ namespace ConsultiBETA.Model
                 cpf = value;
             }
         }
+
+        public string Cep { get => cep; set => cep = value; }
     }
 }
