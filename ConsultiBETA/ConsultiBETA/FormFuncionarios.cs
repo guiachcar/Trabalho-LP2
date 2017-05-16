@@ -37,10 +37,9 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow linha = new DataGridViewRow();
-            linha = dgFuncioanarios.CurrentRow;
-            FormAddFuncionarios form = new FormAddFuncionarios();
+            FormAddFuncionarios form = new FormAddFuncionarios(dgFuncioanarios);
             form.Show();
+  
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -48,6 +47,20 @@ namespace ConsultiBETA
             FuncionarioController funcionarios = new FuncionarioController();
             funcionarios.Excluir(funcionarios.getFunc(dgFuncioanarios.CurrentRow.Index));
             Exibir();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string busca = txtDigiteAqui.Text;
+
+            dgFuncioanarios.Rows.Clear();
+            List<Funcionario> result = Listas.funcionarios.FindAll(x => x.Nome == busca );
+            foreach (Funcionario f in result)
+            {
+                {
+                    dgFuncioanarios.Rows.Add(f.Id, f.Nome, f.Cpf, f.Telefone, f.Endereco, f.Nro, f.Cep, f.Bairro, f.Cidade, f.Uf);
+                }
+            }
         }
     }
 }

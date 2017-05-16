@@ -50,18 +50,19 @@
             this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbFuncionarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.gbFiltrar);
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnEditar);
-            this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.gbFuncionarios);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -136,10 +137,11 @@
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
+            this.btnExcluir.Location = new System.Drawing.Point(335, 36);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(117, 23);
             this.btnExcluir.TabIndex = 14;
@@ -149,7 +151,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(136, 446);
+            this.btnEditar.Location = new System.Drawing.Point(184, 36);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(118, 23);
             this.btnEditar.TabIndex = 12;
@@ -159,7 +161,7 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.Location = new System.Drawing.Point(12, 446);
+            this.btnNovo.Location = new System.Drawing.Point(33, 36);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(118, 23);
             this.btnNovo.TabIndex = 13;
@@ -169,10 +171,14 @@
             // 
             // gbFuncionarios
             // 
+            this.gbFuncionarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFuncionarios.AutoSize = true;
             this.gbFuncionarios.Controls.Add(this.dgFuncioanarios);
             this.gbFuncionarios.Location = new System.Drawing.Point(9, 83);
             this.gbFuncionarios.Name = "gbFuncionarios";
-            this.gbFuncionarios.Size = new System.Drawing.Size(631, 345);
+            this.gbFuncionarios.Size = new System.Drawing.Size(638, 331);
             this.gbFuncionarios.TabIndex = 10;
             this.gbFuncionarios.TabStop = false;
             this.gbFuncionarios.Text = "Funcionarios";
@@ -185,7 +191,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgFuncioanarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgFuncioanarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgFuncioanarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgFuncioanarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgFuncioanarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -198,11 +204,11 @@
             this.Bairro,
             this.Cidade,
             this.Estado});
-            this.dgFuncioanarios.Enabled = false;
             this.dgFuncioanarios.Location = new System.Drawing.Point(3, 16);
             this.dgFuncioanarios.Name = "dgFuncioanarios";
             this.dgFuncioanarios.ReadOnly = true;
-            this.dgFuncioanarios.Size = new System.Drawing.Size(625, 326);
+            this.dgFuncioanarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgFuncioanarios.Size = new System.Drawing.Size(631, 301);
             this.dgFuncioanarios.TabIndex = 0;
             // 
             // ID
@@ -265,6 +271,19 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnExcluir);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnNovo);
+            this.groupBox1.Location = new System.Drawing.Point(12, 405);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(635, 70);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            // 
             // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,6 +299,7 @@
             this.gbFiltrar.PerformLayout();
             this.gbFuncionarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncioanarios)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -308,5 +328,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

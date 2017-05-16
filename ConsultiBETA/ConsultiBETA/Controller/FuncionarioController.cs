@@ -18,6 +18,7 @@ namespace ConsultiBETA.Controller
         {
             Listas.funcionarios.Remove(funcionario);
         }
+        
         public Funcionario getFunc(int id)
         {
             return Listas.funcionarios[id];
