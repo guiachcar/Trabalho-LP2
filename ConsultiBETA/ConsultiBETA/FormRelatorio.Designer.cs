@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gbFiltrarRelatorio = new System.Windows.Forms.GroupBox();
-            this.gbDataDe = new System.Windows.Forms.GroupBox();
-            this.rbChamado = new System.Windows.Forms.RadioButton();
-            this.rbEstoque = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.gbEntre = new System.Windows.Forms.GroupBox();
             this.gbA = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.gbDataDe = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.gbFiltrarRelatorio = new System.Windows.Forms.GroupBox();
+            this.rbEstoque = new System.Windows.Forms.RadioButton();
+            this.rbChamado = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
-            this.gbFiltrarRelatorio.SuspendLayout();
-            this.gbDataDe.SuspendLayout();
             this.gbEntre.SuspendLayout();
             this.gbA.SuspendLayout();
+            this.gbDataDe.SuspendLayout();
+            this.gbFiltrarRelatorio.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -58,55 +58,25 @@
             this.panel1.Size = new System.Drawing.Size(526, 268);
             this.panel1.TabIndex = 0;
             // 
-            // gbFiltrarRelatorio
+            // btnCancelar
             // 
-            this.gbFiltrarRelatorio.Controls.Add(this.rbEstoque);
-            this.gbFiltrarRelatorio.Controls.Add(this.rbChamado);
-            this.gbFiltrarRelatorio.Location = new System.Drawing.Point(143, 23);
-            this.gbFiltrarRelatorio.Name = "gbFiltrarRelatorio";
-            this.gbFiltrarRelatorio.Size = new System.Drawing.Size(231, 53);
-            this.gbFiltrarRelatorio.TabIndex = 0;
-            this.gbFiltrarRelatorio.TabStop = false;
-            this.gbFiltrarRelatorio.Text = "De";
+            this.btnCancelar.Location = new System.Drawing.Point(241, 233);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(118, 23);
+            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // gbDataDe
+            // btnImprimir
             // 
-            this.gbDataDe.Controls.Add(this.dateTimePicker1);
-            this.gbDataDe.Location = new System.Drawing.Point(6, 19);
-            this.gbDataDe.Name = "gbDataDe";
-            this.gbDataDe.Size = new System.Drawing.Size(225, 70);
-            this.gbDataDe.TabIndex = 0;
-            this.gbDataDe.TabStop = false;
-            this.gbDataDe.Text = "De";
-            // 
-            // rbChamado
-            // 
-            this.rbChamado.AutoSize = true;
-            this.rbChamado.Location = new System.Drawing.Point(6, 19);
-            this.rbChamado.Name = "rbChamado";
-            this.rbChamado.Size = new System.Drawing.Size(70, 17);
-            this.rbChamado.TabIndex = 0;
-            this.rbChamado.TabStop = true;
-            this.rbChamado.Text = "Chamado";
-            this.rbChamado.UseVisualStyleBackColor = true;
-            // 
-            // rbEstoque
-            // 
-            this.rbEstoque.AutoSize = true;
-            this.rbEstoque.Location = new System.Drawing.Point(112, 19);
-            this.rbEstoque.Name = "rbEstoque";
-            this.rbEstoque.Size = new System.Drawing.Size(64, 17);
-            this.rbEstoque.TabIndex = 0;
-            this.rbEstoque.TabStop = true;
-            this.rbEstoque.Text = "Estoque";
-            this.rbEstoque.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.btnImprimir.Location = new System.Drawing.Point(117, 233);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(118, 23);
+            this.btnImprimir.TabIndex = 14;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // gbEntre
             // 
@@ -136,25 +106,55 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 2;
             // 
-            // btnImprimir
+            // gbDataDe
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(117, 233);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(118, 23);
-            this.btnImprimir.TabIndex = 14;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.gbDataDe.Controls.Add(this.dateTimePicker1);
+            this.gbDataDe.Location = new System.Drawing.Point(6, 19);
+            this.gbDataDe.Name = "gbDataDe";
+            this.gbDataDe.Size = new System.Drawing.Size(225, 70);
+            this.gbDataDe.TabIndex = 0;
+            this.gbDataDe.TabStop = false;
+            this.gbDataDe.Text = "De";
             // 
-            // btnCancelar
+            // dateTimePicker1
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(241, 233);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(118, 23);
-            this.btnCancelar.TabIndex = 14;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.dateTimePicker1.Location = new System.Drawing.Point(6, 28);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // gbFiltrarRelatorio
+            // 
+            this.gbFiltrarRelatorio.Controls.Add(this.rbEstoque);
+            this.gbFiltrarRelatorio.Controls.Add(this.rbChamado);
+            this.gbFiltrarRelatorio.Location = new System.Drawing.Point(143, 23);
+            this.gbFiltrarRelatorio.Name = "gbFiltrarRelatorio";
+            this.gbFiltrarRelatorio.Size = new System.Drawing.Size(231, 53);
+            this.gbFiltrarRelatorio.TabIndex = 0;
+            this.gbFiltrarRelatorio.TabStop = false;
+            this.gbFiltrarRelatorio.Text = "De";
+            // 
+            // rbEstoque
+            // 
+            this.rbEstoque.AutoSize = true;
+            this.rbEstoque.Location = new System.Drawing.Point(112, 19);
+            this.rbEstoque.Name = "rbEstoque";
+            this.rbEstoque.Size = new System.Drawing.Size(64, 17);
+            this.rbEstoque.TabIndex = 0;
+            this.rbEstoque.TabStop = true;
+            this.rbEstoque.Text = "Estoque";
+            this.rbEstoque.UseVisualStyleBackColor = true;
+            // 
+            // rbChamado
+            // 
+            this.rbChamado.AutoSize = true;
+            this.rbChamado.Location = new System.Drawing.Point(6, 19);
+            this.rbChamado.Name = "rbChamado";
+            this.rbChamado.Size = new System.Drawing.Size(70, 17);
+            this.rbChamado.TabIndex = 0;
+            this.rbChamado.TabStop = true;
+            this.rbChamado.Text = "Chamado";
+            this.rbChamado.UseVisualStyleBackColor = true;
             // 
             // FormRelatorio
             // 
@@ -163,13 +163,14 @@
             this.ClientSize = new System.Drawing.Size(526, 268);
             this.Controls.Add(this.panel1);
             this.Name = "FormRelatorio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatórios";
             this.panel1.ResumeLayout(false);
-            this.gbFiltrarRelatorio.ResumeLayout(false);
-            this.gbFiltrarRelatorio.PerformLayout();
-            this.gbDataDe.ResumeLayout(false);
             this.gbEntre.ResumeLayout(false);
             this.gbA.ResumeLayout(false);
+            this.gbDataDe.ResumeLayout(false);
+            this.gbFiltrarRelatorio.ResumeLayout(false);
+            this.gbFiltrarRelatorio.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbNumero = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gbServicos = new System.Windows.Forms.GroupBox();
-            this.btnServicosRemover = new System.Windows.Forms.Button();
-            this.btnServicoesAdicionar = new System.Windows.Forms.Button();
-            this.dgServicos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.lbValorTotalResultado = new System.Windows.Forms.Label();
+            this.lbValorTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnProdutosAdicionar = new System.Windows.Forms.Button();
             this.btnProdutosRemover = new System.Windows.Forms.Button();
             this.cbProdutos = new System.Windows.Forms.GroupBox();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
-            this.lbValorTotal = new System.Windows.Forms.Label();
-            this.lbValorTotalResultado = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor_venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnServicoesAdicionar = new System.Windows.Forms.Button();
+            this.btnServicosRemover = new System.Windows.Forms.Button();
+            this.gbServicos = new System.Windows.Forms.GroupBox();
+            this.dgServicos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbNumero = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.gbServicos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicos)).BeginInit();
             this.panel3.SuspendLayout();
             this.cbProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.gbServicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,99 +80,45 @@
             this.panel1.Size = new System.Drawing.Size(817, 421);
             this.panel1.TabIndex = 0;
             // 
-            // lbNumero
+            // btnCancelar
             // 
-            this.lbNumero.AutoSize = true;
-            this.lbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumero.Location = new System.Drawing.Point(342, 9);
-            this.lbNumero.Name = "lbNumero";
-            this.lbNumero.Size = new System.Drawing.Size(20, 24);
-            this.lbNumero.TabIndex = 16;
-            this.lbNumero.Text = "0";
+            this.btnCancelar.Location = new System.Drawing.Point(225, 373);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(167, 23);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lbID
+            // btnSalvar
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(221, 9);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(83, 24);
-            this.lbID.TabIndex = 17;
-            this.lbID.Text = "VendaID";
+            this.btnSalvar.Location = new System.Drawing.Point(30, 373);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(167, 23);
+            this.btnSalvar.TabIndex = 23;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // panel2
+            // lbValorTotalResultado
             // 
-            this.panel2.Controls.Add(this.btnServicoesAdicionar);
-            this.panel2.Controls.Add(this.btnServicosRemover);
-            this.panel2.Controls.Add(this.gbServicos);
-            this.panel2.Location = new System.Drawing.Point(12, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 130);
-            this.panel2.TabIndex = 19;
+            this.lbValorTotalResultado.AutoSize = true;
+            this.lbValorTotalResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValorTotalResultado.Location = new System.Drawing.Point(652, 357);
+            this.lbValorTotalResultado.Name = "lbValorTotalResultado";
+            this.lbValorTotalResultado.Size = new System.Drawing.Size(122, 39);
+            this.lbValorTotalResultado.TabIndex = 22;
+            this.lbValorTotalResultado.Text = "250,80";
             // 
-            // gbServicos
+            // lbValorTotal
             // 
-            this.gbServicos.Controls.Add(this.dgServicos);
-            this.gbServicos.Location = new System.Drawing.Point(15, 18);
-            this.gbServicos.Name = "gbServicos";
-            this.gbServicos.Size = new System.Drawing.Size(647, 97);
-            this.gbServicos.TabIndex = 0;
-            this.gbServicos.TabStop = false;
-            this.gbServicos.Text = "Serviços";
-            // 
-            // btnServicosRemover
-            // 
-            this.btnServicosRemover.Location = new System.Drawing.Point(687, 73);
-            this.btnServicosRemover.Name = "btnServicosRemover";
-            this.btnServicosRemover.Size = new System.Drawing.Size(75, 23);
-            this.btnServicosRemover.TabIndex = 1;
-            this.btnServicosRemover.Text = "Remover";
-            this.btnServicosRemover.UseVisualStyleBackColor = true;
-            // 
-            // btnServicoesAdicionar
-            // 
-            this.btnServicoesAdicionar.Location = new System.Drawing.Point(687, 34);
-            this.btnServicoesAdicionar.Name = "btnServicoesAdicionar";
-            this.btnServicoesAdicionar.Size = new System.Drawing.Size(75, 23);
-            this.btnServicoesAdicionar.TabIndex = 1;
-            this.btnServicoesAdicionar.Text = "Adicionar";
-            this.btnServicoesAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // dgServicos
-            // 
-            this.dgServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nome,
-            this.Descricao,
-            this.Valor});
-            this.dgServicos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgServicos.Enabled = false;
-            this.dgServicos.Location = new System.Drawing.Point(3, 16);
-            this.dgServicos.Name = "dgServicos";
-            this.dgServicos.Size = new System.Drawing.Size(641, 78);
-            this.dgServicos.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 300;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
+            this.lbValorTotal.AutoSize = true;
+            this.lbValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValorTotal.Location = new System.Drawing.Point(445, 357);
+            this.lbValorTotal.Name = "lbValorTotal";
+            this.lbValorTotal.Size = new System.Drawing.Size(184, 39);
+            this.lbValorTotal.TabIndex = 21;
+            this.lbValorTotal.Text = "Valor Total";
             // 
             // panel3
             // 
@@ -229,46 +175,6 @@
             this.dgProdutos.Size = new System.Drawing.Size(641, 78);
             this.dgProdutos.TabIndex = 1;
             // 
-            // lbValorTotal
-            // 
-            this.lbValorTotal.AutoSize = true;
-            this.lbValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValorTotal.Location = new System.Drawing.Point(445, 357);
-            this.lbValorTotal.Name = "lbValorTotal";
-            this.lbValorTotal.Size = new System.Drawing.Size(184, 39);
-            this.lbValorTotal.TabIndex = 21;
-            this.lbValorTotal.Text = "Valor Total";
-            // 
-            // lbValorTotalResultado
-            // 
-            this.lbValorTotalResultado.AutoSize = true;
-            this.lbValorTotalResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValorTotalResultado.Location = new System.Drawing.Point(652, 357);
-            this.lbValorTotalResultado.Name = "lbValorTotalResultado";
-            this.lbValorTotalResultado.Size = new System.Drawing.Size(122, 39);
-            this.lbValorTotalResultado.TabIndex = 22;
-            this.lbValorTotalResultado.Text = "250,80";
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(30, 373);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(167, 23);
-            this.btnSalvar.TabIndex = 23;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(225, 373);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(167, 23);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
@@ -300,6 +206,100 @@
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnServicoesAdicionar);
+            this.panel2.Controls.Add(this.btnServicosRemover);
+            this.panel2.Controls.Add(this.gbServicos);
+            this.panel2.Location = new System.Drawing.Point(12, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(776, 130);
+            this.panel2.TabIndex = 19;
+            // 
+            // btnServicoesAdicionar
+            // 
+            this.btnServicoesAdicionar.Location = new System.Drawing.Point(687, 34);
+            this.btnServicoesAdicionar.Name = "btnServicoesAdicionar";
+            this.btnServicoesAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnServicoesAdicionar.TabIndex = 1;
+            this.btnServicoesAdicionar.Text = "Adicionar";
+            this.btnServicoesAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // btnServicosRemover
+            // 
+            this.btnServicosRemover.Location = new System.Drawing.Point(687, 73);
+            this.btnServicosRemover.Name = "btnServicosRemover";
+            this.btnServicosRemover.Size = new System.Drawing.Size(75, 23);
+            this.btnServicosRemover.TabIndex = 1;
+            this.btnServicosRemover.Text = "Remover";
+            this.btnServicosRemover.UseVisualStyleBackColor = true;
+            // 
+            // gbServicos
+            // 
+            this.gbServicos.Controls.Add(this.dgServicos);
+            this.gbServicos.Location = new System.Drawing.Point(15, 18);
+            this.gbServicos.Name = "gbServicos";
+            this.gbServicos.Size = new System.Drawing.Size(647, 97);
+            this.gbServicos.TabIndex = 0;
+            this.gbServicos.TabStop = false;
+            this.gbServicos.Text = "Serviços";
+            // 
+            // dgServicos
+            // 
+            this.dgServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgServicos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nome,
+            this.Descricao,
+            this.Valor});
+            this.dgServicos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgServicos.Enabled = false;
+            this.dgServicos.Location = new System.Drawing.Point(3, 16);
+            this.dgServicos.Name = "dgServicos";
+            this.dgServicos.Size = new System.Drawing.Size(641, 78);
+            this.dgServicos.TabIndex = 1;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.Width = 300;
+            // 
+            // Valor
+            // 
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            // 
+            // lbNumero
+            // 
+            this.lbNumero.AutoSize = true;
+            this.lbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumero.Location = new System.Drawing.Point(342, 9);
+            this.lbNumero.Name = "lbNumero";
+            this.lbNumero.Size = new System.Drawing.Size(20, 24);
+            this.lbNumero.TabIndex = 16;
+            this.lbNumero.Text = "0";
+            // 
+            // lbID
+            // 
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(221, 9);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(83, 24);
+            this.lbID.TabIndex = 17;
+            this.lbID.Text = "VendaID";
+            // 
             // FormAddVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,15 +307,16 @@
             this.ClientSize = new System.Drawing.Size(817, 421);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vendas Itens e Serviços";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.gbServicos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgServicos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.cbProdutos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.gbServicos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgServicos)).EndInit();
             this.ResumeLayout(false);
 
         }

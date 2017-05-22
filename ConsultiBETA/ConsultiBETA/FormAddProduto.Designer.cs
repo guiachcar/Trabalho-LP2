@@ -184,6 +184,7 @@
             this.ClientSize = new System.Drawing.Size(571, 239);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddProdutos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar/Alterar Produto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

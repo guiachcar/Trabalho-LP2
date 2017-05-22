@@ -15,6 +15,7 @@ namespace ConsultiBETA
 {
     public partial class FormClientes : Form
     {
+        ClienteController controller = new ClienteController();
         public FormClientes()
         {
             InitializeComponent();
@@ -23,11 +24,8 @@ namespace ConsultiBETA
 
         public void Exibir()
         {
-            dgClientes.Rows.Clear();
-            foreach (Cliente c in Listas.clientes)
-            {
-                dgClientes.Rows.Add(c.Id, c.Nome, c.Cpf, c.Telefone, c.Endereco, c.Nro, c.Cep, c.Bairro, c.Cidade, c.Uf);
-            }
+            dgClientes.DataSource = controller.Listar();
+            dgClientes.DataMember = "pessoa";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -45,11 +43,7 @@ namespace ConsultiBETA
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ClienteController clientes = new ClienteController();
-            if (dgClientes.CurrentRow != null)
-            {
-                clientes.Excluir(clientes.getCliente(dgClientes.CurrentRow.Index));
-            }
+            controller.Excluir(controller.getCliente(int.Parse(dgClientes.Rows[dgClientes.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
         }
     }

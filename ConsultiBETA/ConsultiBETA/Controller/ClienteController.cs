@@ -4,26 +4,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsultiBETA.Model;
+using System.Windows.Forms;
+using System.Data;
 
 namespace ConsultiBETA.Controller
 {
-    class ClienteController
+    class ClienteController:Controller
     {
         public void Cadastrar(Cliente cliente)
         {
-            Listas.clientes.Add(cliente);
+            string sqlQuery = "INSERT INTO pessoa (nome,endereco,nro,bairro,cidade,uf,telefone,cpf)" + "VALUES('" + cliente.Nome + "','" + cliente.Endereco + "','" + cliente.Nro + "','" + cliente.Bairro + "','" + cliente.Cidade + "','" + cliente.Uf + "','" + cliente.Telefone + "','" + cliente.Cpf + "')";
+            int idCadastrado = ExecutarSql(sqlQuery);
+            string sqlQuery1 = "INSERT INTO cliente (pessoa_id) VALUES (" + idCadastrado + ")";
+            int idCadastrado1 = ExecutarSql(sqlQuery1);
         }
         public void Excluir(Cliente cliente)
         {
-            Listas.clientes.Remove(cliente);
+            DialogResult confirm = MessageBox.Show("Deseja realmente excluir o Cliente?", "Excluir Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                string sqlQuery = "DELETE FROM cliente WHERE pessoa_id=" + cliente.Id;
+                ExecutarSql(sqlQuery);
+                string sqlQuery1 = "DELETE FROM pessoa WHERE _id=" + cliente.Id;
+                ExecutarSql(sqlQuery1);
+            }
+
+        }
+        public void Editar(Cliente cliente)
+        {
+            string sqlQuery = "UPDATE pessoa SET nome='" + cliente.Nome + "',endereco='" + cliente.Endereco + "',nro='" + cliente.Nro + "',bairro='" + cliente.Bairro + "',cidade='" + cliente.Cidade + "',uf='" + cliente.Uf + "',telefone='" + cliente.Telefone + "',cpf='" + cliente.Cpf + "' WHERE _id=" + cliente.Id;
+            ExecutarSql(sqlQuery);
         }
         public Cliente getCliente(int id)
         {
-            return Listas.clientes[id];
+            DataRow clienteRow;
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id=c.pessoa_id  WHERE p._id=" + id;
+            clienteRow = ExecutarSqlRetornoObj(sqlQuery);
+            Cliente cliente = new Cliente();
+            cliente.Id = clienteRow.Field<int>("_id");
+            cliente.Nome = clienteRow.Field<string>("nome");
+            cliente.Endereco = clienteRow.Field<string>("endereco");
+            cliente.Nro = clienteRow.Field<string>("nro");
+            cliente.Bairro = clienteRow.Field<string>("bairro");
+            cliente.Cidade = clienteRow.Field<string>("cidade");
+            cliente.Uf = clienteRow.Field<string>("uf");
+            cliente.Telefone = clienteRow.Field<string>("telefone");
+            cliente.Cpf = clienteRow.Field<string>("cpf");
+            return cliente;
         }
-        public List<Cliente> Listar()
+
+        public DataSet Listar()
         {
-            return Listas.clientes;
+            string table = "pessoa";
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id=c.pessoa_id";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+
         }
     }
 }
+

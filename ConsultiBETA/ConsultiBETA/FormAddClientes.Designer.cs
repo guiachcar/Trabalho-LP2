@@ -304,6 +304,7 @@
             this.ClientSize = new System.Drawing.Size(768, 280);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar/Alterar Clientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

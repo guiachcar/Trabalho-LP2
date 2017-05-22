@@ -59,7 +59,7 @@ namespace ConsultiBETA
             }
             else
             {
-                int id = int.Parse(lbID.Text);
+                int id = int.Parse(lbID.Text) -1;
                 Listas.produtos[id].Nome = txtNome.Text;
                 Listas.produtos[id].Tipo = txtTipo.Text;
                 Listas.produtos[id].Descricao = txtDescricao.Text;

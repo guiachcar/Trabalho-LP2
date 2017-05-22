@@ -221,6 +221,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormChamados";
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chamados";
             this.panel1.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);

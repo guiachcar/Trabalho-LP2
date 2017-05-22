@@ -14,6 +14,7 @@ namespace ConsultiBETA
 {
     public partial class FormFuncionarios : Form
     {
+        FuncionarioController controller = new FuncionarioController();
         public FormFuncionarios()
         {
             InitializeComponent();
@@ -21,12 +22,14 @@ namespace ConsultiBETA
         }
         public void Exibir()
         {
-            dgFuncioanarios.Rows.Clear();
+            /*dgFuncioanarios.Rows.Clear();
             foreach (Funcionario f in Listas.funcionarios)
             {
                 dgFuncioanarios.Rows.Add(f.Id,f.Nome, f.Cpf, f.Telefone, f.Endereco, f.Nro,f.Cep,f.Bairro,f.Cidade,f.Uf);
             }
-
+            */
+            dgFuncioanarios.DataSource = controller.Listar();
+            dgFuncioanarios.DataMember = "pessoa";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -44,8 +47,7 @@ namespace ConsultiBETA
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            FuncionarioController funcionarios = new FuncionarioController();
-            funcionarios.Excluir(funcionarios.getFunc(dgFuncioanarios.CurrentRow.Index));
+            controller.Excluir(controller.getFunc(int.Parse(dgFuncioanarios.Rows[dgFuncioanarios.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
         }
 

@@ -340,6 +340,7 @@
             this.ClientSize = new System.Drawing.Size(752, 351);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddFuncionarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adiconar/Alterar Funcionarios";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

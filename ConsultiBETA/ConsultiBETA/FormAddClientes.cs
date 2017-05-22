@@ -23,7 +23,7 @@ namespace ConsultiBETA
         }
         public FormAddClientes(DataGridView form1)
         {
-            Cliente cliente = Listas.clientes[form1.CurrentRow.Index];
+            Cliente cliente = clientes.getCliente(int.Parse(form1.Rows[form1.CurrentRow.Index].Cells[0].Value.ToString()));
             InitializeComponent();
             lbID.Text = cliente.Id.ToString();
             txtCPF.SelectedText = cliente.Cpf;
@@ -42,11 +42,11 @@ namespace ConsultiBETA
         private void btnSalver_Click(object sender, EventArgs e)
         {
 
+            Cliente cliente = new Cliente();
+
             if (lbID.Text == "Cliente ID")
             {
-                Cliente cliente = new Cliente();
-
-                cliente.Id = Listas.clientes.Count + 1;
+                
                 cliente.Nome = txtNome.Text;
                 cliente.Cpf = txtCPF.Text;
                 cliente.Telefone = txtTelefone.Text;
@@ -69,17 +69,18 @@ namespace ConsultiBETA
             }
             else{
 
-                int id = int.Parse(lbID.Text) - 1;
-                Listas.clientes[id].Cpf = txtCPF.Text;
-                Listas.clientes[id].Nome = txtNome.Text;
-                Listas.clientes[id].Endereco = txtRua.Text;
-                Listas.clientes[id].Nro = txtNro.Text;
-                Listas.clientes[id].Bairro = txtBairro.Text;
-                Listas.clientes[id].Cidade = txtCidade.Text;
-                Listas.clientes[id].Uf = cbEstado.Text;
-                Listas.clientes[id].Cep = txtCEP.Text;
-                Listas.clientes[id].Telefone = txtTelefone.Text;
-
+                int id = int.Parse(lbID.Text);
+                cliente.Id = id;
+                cliente.Cpf = txtCPF.Text;
+                cliente.Nome = txtNome.Text;
+                cliente.Endereco = txtRua.Text;
+                cliente.Nro = txtNro.Text;
+                cliente.Bairro = txtBairro.Text;
+                cliente.Cidade = txtCidade.Text;
+                cliente.Uf = cbEstado.Text;
+                cliente.Cep = txtCEP.Text;
+                cliente.Telefone = txtTelefone.Text;
+                clientes.Editar(cliente);
                 MessageBox.Show("Cliente Alterado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 this.Close();
                 FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;

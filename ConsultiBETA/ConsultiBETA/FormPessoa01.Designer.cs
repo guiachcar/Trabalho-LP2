@@ -403,6 +403,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormPessoa01";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Cliente";
             this.Load += new System.EventHandler(this.FormPessoa_Load);
             this.panel1.ResumeLayout(false);

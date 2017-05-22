@@ -221,6 +221,7 @@
             this.ClientSize = new System.Drawing.Size(661, 480);
             this.Controls.Add(this.panel1);
             this.Name = "FormServicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Serviços";
             this.panel1.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);

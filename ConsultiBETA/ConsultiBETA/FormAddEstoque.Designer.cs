@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNumProduto = new System.Windows.Forms.Label();
             this.lbNumero = new System.Windows.Forms.Label();
+            this.lbIDProduto = new System.Windows.Forms.Label();
             this.lbIDEstoque = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalver = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbQuantitade = new System.Windows.Forms.Label();
-            this.lbIDProduto = new System.Windows.Forms.Label();
-            this.lbNumProduto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.panel1.Size = new System.Drawing.Size(444, 166);
             this.panel1.TabIndex = 3;
             // 
+            // lbNumProduto
+            // 
+            this.lbNumProduto.AutoSize = true;
+            this.lbNumProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumProduto.Location = new System.Drawing.Point(136, 42);
+            this.lbNumProduto.Name = "lbNumProduto";
+            this.lbNumProduto.Size = new System.Drawing.Size(40, 24);
+            this.lbNumProduto.TabIndex = 15;
+            this.lbNumProduto.Text = "100";
+            // 
             // lbNumero
             // 
             this.lbNumero.AutoSize = true;
@@ -65,6 +75,16 @@
             this.lbNumero.Size = new System.Drawing.Size(20, 24);
             this.lbNumero.TabIndex = 15;
             this.lbNumero.Text = "1";
+            // 
+            // lbIDProduto
+            // 
+            this.lbIDProduto.AutoSize = true;
+            this.lbIDProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIDProduto.Location = new System.Drawing.Point(20, 42);
+            this.lbIDProduto.Name = "lbIDProduto";
+            this.lbIDProduto.Size = new System.Drawing.Size(98, 24);
+            this.lbIDProduto.TabIndex = 15;
+            this.lbIDProduto.Text = "Produto ID";
             // 
             // lbIDEstoque
             // 
@@ -112,26 +132,6 @@
             this.lbQuantitade.TabIndex = 7;
             this.lbQuantitade.Text = "Quantidade";
             // 
-            // lbIDProduto
-            // 
-            this.lbIDProduto.AutoSize = true;
-            this.lbIDProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDProduto.Location = new System.Drawing.Point(20, 42);
-            this.lbIDProduto.Name = "lbIDProduto";
-            this.lbIDProduto.Size = new System.Drawing.Size(98, 24);
-            this.lbIDProduto.TabIndex = 15;
-            this.lbIDProduto.Text = "Produto ID";
-            // 
-            // lbNumProduto
-            // 
-            this.lbNumProduto.AutoSize = true;
-            this.lbNumProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumProduto.Location = new System.Drawing.Point(136, 42);
-            this.lbNumProduto.Name = "lbNumProduto";
-            this.lbNumProduto.Size = new System.Drawing.Size(40, 24);
-            this.lbNumProduto.TabIndex = 15;
-            this.lbNumProduto.Text = "100";
-            // 
             // FormAddEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +139,7 @@
             this.ClientSize = new System.Drawing.Size(444, 166);
             this.Controls.Add(this.panel1);
             this.Name = "FormAddEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Num Produtos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

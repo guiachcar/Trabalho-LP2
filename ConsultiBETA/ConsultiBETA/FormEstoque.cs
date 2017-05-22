@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConsultiBETA.Model;
+using ConsultiBETA.Controller;
 
 namespace ConsultiBETA
 {
@@ -17,22 +19,26 @@ namespace ConsultiBETA
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void Exibir()
         {
-            FormAddProdutos form = new FormAddProdutos();
-            form.Show();
+            dgProdutos.Rows.Clear();
+            foreach (Produto p in Listas.produtos )
+            {
+                Estoque result = Listas.estoques.Find(x => x.Produto_id == p.Id);
+                dgProdutos.Rows.Add(p.Nome, p.Tipo, p.Descricao, p.Valor_venda, p.Valor_compra,result.Quantidade);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        
+
+        private void EntradaItem(object sender, EventArgs e)
         {
-            FormAddProdutos form = new FormAddProdutos();
-            form.Show();
+
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void EditarClick(object sender, EventArgs e)
         {
-            FormAddEstoque form = new FormAddEstoque();
-            form.Show();
+
         }
     }
 }

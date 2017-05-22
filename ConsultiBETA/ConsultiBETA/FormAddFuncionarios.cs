@@ -14,7 +14,6 @@ namespace ConsultiBETA
 {
     public partial class FormAddFuncionarios : Form
     {
-        int index = 1;
         FuncionarioController funcionarios = new FuncionarioController();
         public FormAddFuncionarios()
         {
@@ -22,7 +21,7 @@ namespace ConsultiBETA
         }
         public FormAddFuncionarios(DataGridView form1)
         {
-            Funcionario funcionario = Listas.funcionarios[form1.CurrentRow.Index];
+            Funcionario funcionario = funcionarios.getFunc(int.Parse(form1.Rows[form1.CurrentRow.Index].Cells[0].Value.ToString()));
             InitializeComponent();
             lbID.Text = funcionario.Id.ToString();
             txtCPF.SelectedText = funcionario.Cpf;
@@ -48,12 +47,12 @@ namespace ConsultiBETA
         
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
-            if(lbID.Text == "Funcionario ID")
-            {
-                Funcionario funcionario = new Funcionario();
 
-                funcionario.Id = Listas.funcionarios.Count + 1;
+            Funcionario funcionario = new Funcionario();
+
+            if (lbID.Text == "Funcionario ID")
+            {
+                
                 funcionario.Cpf = txtCPF.Text;
                 funcionario.Nome = txtNome.Text;
                 funcionario.Endereco = txtRua.Text;
@@ -79,18 +78,20 @@ namespace ConsultiBETA
             else
             {
                 int id = int.Parse(lbID.Text);
-                Listas.funcionarios[id].Cpf = txtCPF.Text;
-                Listas.funcionarios[id].Nome = txtNome.Text;
-                Listas.funcionarios[id].Endereco = txtRua.Text;
-                Listas.funcionarios[id].Nro = txtNro.Text;
-                Listas.funcionarios[id].Bairro = txtBairro.Text;
-                Listas.funcionarios[id].Cidade = txtCidade.Text;
-                Listas.funcionarios[id].Uf = cbEstado.Text;
-                Listas.funcionarios[id].Cep = txtCEP.Text;
-                Listas.funcionarios[id].Cargo = cbCargo.Text;
-                Listas.funcionarios[id].Telefone = txtTelefone.Text;
-                Listas.funcionarios[id].Salario = float.Parse(txtSalario.Text);
+                funcionario.Id = id;
+                funcionario.Cpf = txtCPF.Text;
+                funcionario.Nome = txtNome.Text;
+                funcionario.Endereco = txtRua.Text;
+                funcionario.Nro = txtNro.Text;
+                funcionario.Bairro = txtBairro.Text;
+                funcionario.Cidade = txtCidade.Text;
+                funcionario.Uf = cbEstado.Text;
+                funcionario.Cep = txtCEP.Text;
+                funcionario.Cargo = cbCargo.Text;
+                funcionario.Telefone = txtTelefone.Text;
+                funcionario.Salario = float.Parse(txtSalario.Text);
 
+                funcionarios.Editar(funcionario);
                 MessageBox.Show("Funcionario Alterado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
                 this.Close();
                 FormFuncionarios f = Application.OpenForms["FormFuncionarios"] as FormFuncionarios;
