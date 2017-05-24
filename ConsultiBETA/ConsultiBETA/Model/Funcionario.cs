@@ -10,6 +10,7 @@ namespace ConsultiBETA.Model
     {
         private String cargo;
         private float salario;
+        private string senha;
 
         public Funcionario() 
         {
@@ -37,6 +38,19 @@ namespace ConsultiBETA.Model
             set
             {
                 salario = value;
+            }
+        }
+
+        public string Senha
+        {
+            get
+            {
+                return senha;
+            }
+
+            set
+            {
+                senha = value;
             }
         }
     }

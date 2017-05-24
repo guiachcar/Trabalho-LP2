@@ -7,11 +7,12 @@ using ConsultiBETA.Model;
 
 namespace ConsultiBETA.Controller
 {
-    class ServicoController
+    class ServicoController:Controller
     {
         public void Cadastrar(Servico servico)
         {
-            Listas.servicos.Add(servico);
+            string sqlQuery = "INSERT INTO servico (nome,descricao,valor)" + "VALUES('" + servico.Nome + "','" + servico.Descricao + "','" + servico.Valor + "')";
+            int idCadastrado = ExecutarSql(sqlQuery);
         }
         public void Excluir(Servico servico)
         {

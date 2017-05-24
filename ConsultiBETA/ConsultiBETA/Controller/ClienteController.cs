@@ -11,12 +11,16 @@ namespace ConsultiBETA.Controller
 {
     class ClienteController:Controller
     {
+
+        PessoaController controllerPessoa = new PessoaController();
         public void Cadastrar(Cliente cliente)
         {
-            string sqlQuery = "INSERT INTO pessoa (nome,endereco,nro,bairro,cidade,uf,telefone,cpf)" + "VALUES('" + cliente.Nome + "','" + cliente.Endereco + "','" + cliente.Nro + "','" + cliente.Bairro + "','" + cliente.Cidade + "','" + cliente.Uf + "','" + cliente.Telefone + "','" + cliente.Cpf + "')";
-            int idCadastrado = ExecutarSql(sqlQuery);
-            string sqlQuery1 = "INSERT INTO cliente (pessoa_id) VALUES (" + idCadastrado + ")";
-            int idCadastrado1 = ExecutarSql(sqlQuery1);
+
+            Pessoa pessoa = new Pessoa();
+            pessoa = cliente;
+            int idCadastrado = controllerPessoa.Cadastrar(pessoa);
+            string sqlQuery = "INSERT INTO cliente (pessoa_id) VALUES (" + idCadastrado + ")";
+            int idCadastrado1 = ExecutarSql(sqlQuery);
         }
         public void Excluir(Cliente cliente)
         {
@@ -26,15 +30,13 @@ namespace ConsultiBETA.Controller
             {
                 string sqlQuery = "DELETE FROM cliente WHERE pessoa_id=" + cliente.Id;
                 ExecutarSql(sqlQuery);
-                string sqlQuery1 = "DELETE FROM pessoa WHERE _id=" + cliente.Id;
-                ExecutarSql(sqlQuery1);
+                controllerPessoa.ExcluirPessoa(cliente);
             }
 
         }
         public void Editar(Cliente cliente)
         {
-            string sqlQuery = "UPDATE pessoa SET nome='" + cliente.Nome + "',endereco='" + cliente.Endereco + "',nro='" + cliente.Nro + "',bairro='" + cliente.Bairro + "',cidade='" + cliente.Cidade + "',uf='" + cliente.Uf + "',telefone='" + cliente.Telefone + "',cpf='" + cliente.Cpf + "' WHERE _id=" + cliente.Id;
-            ExecutarSql(sqlQuery);
+            controllerPessoa.EditarPessoa(cliente);
         }
         public Cliente getCliente(int id)
         {

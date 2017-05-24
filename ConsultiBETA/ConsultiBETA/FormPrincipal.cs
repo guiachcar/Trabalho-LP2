@@ -7,20 +7,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConsultiBETA.Model;
+using ConsultiBETA.Controller;
 
 namespace ConsultiBETA
 {
     public partial class Principal : Form
     {
-        frm_splash frm_splash1;
+        FormLogin login_frm;
+        frm_splash splash_frm;
+        
         public Principal()
         {
+            
+
             InitializeComponent();
+
+
         }
-        public Principal(frm_splash frm_splash)
+        public Principal(FormLogin login, frm_splash frm_splash)
         {
-            frm_splash1 = frm_splash;
+            login_frm = login;
+            splash_frm = frm_splash;
             InitializeComponent();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    relatóriosToolStripMenuItem.Visible = false;
+                    lbFinalizarChamados.Visible = false;
+                    pbFinalizarChamado.Visible = false;
+                    break;
+                case "Administrativo":
+                    dgChamadosRecentes.Visible = false;
+                    lbFinalizarChamados.Visible = false;
+                    pbFinalizarChamado.Visible = false;
+                    pbAbrirChamado.Visible = false;
+                    lbAbrirChamado.Visible = false;
+
+                    break;
+                case "Estoquista":
+                    relatóriosToolStripMenuItem.Visible = false;
+                    cadastroToolStripMenuItem.Visible = false;
+                    lbAbrirChamado.Visible = false;
+                    lbFinalizarChamados.Visible = false;
+                    pbAbrirChamado.Visible = false;
+                    pbFinalizarChamado.Visible = false;
+                    break;
+                case "Gerencia":
+                    pbFinalizarChamado.Visible = false;
+                    lbFinalizarChamados.Visible = false;
+                    break;
+                case "Técnico":
+                    cadastroToolStripMenuItem.Visible = false;
+                    relatóriosToolStripMenuItem.Visible = false;
+                    pbAbrirChamado.Visible = false;
+                    lbAbrirChamado.Visible = false;
+                    break;
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -73,8 +116,8 @@ namespace ConsultiBETA
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            frm_splash1.Close();
-            
+            login_frm.Close();
+            splash_frm.Close();          
 
         }
 

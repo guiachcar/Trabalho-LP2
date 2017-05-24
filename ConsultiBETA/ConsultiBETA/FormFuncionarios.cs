@@ -18,6 +18,18 @@ namespace ConsultiBETA
         public FormFuncionarios()
         {
             InitializeComponent();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    btnNovo.Visible = false;
+                    btnExcluir.Visible = false;
+                    btnEditar.Text = "Visualizar";
+                    break;
+                case "Administrativo":
+                    btnExcluir.Visible = false;
+                    break;
+
+            }
             Exibir();
         }
         public void Exibir()

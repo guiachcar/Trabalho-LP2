@@ -42,17 +42,17 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgChamadosRecentes = new System.Windows.Forms.DataGridView();
             this.lbChamadosRecentes = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbFinalizarChamado = new System.Windows.Forms.PictureBox();
+            this.pbBuscarCliente = new System.Windows.Forms.PictureBox();
+            this.pbAbrirChamado = new System.Windows.Forms.PictureBox();
             this.lbFinalizarChamados = new System.Windows.Forms.Label();
             this.lbBuscarCliente = new System.Windows.Forms.Label();
             this.lbAbrirChamado = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgChamadosRecentes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFinalizarChamado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAbrirChamado)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -187,40 +187,40 @@
             this.lbChamadosRecentes.TabIndex = 5;
             this.lbChamadosRecentes.Text = "Chamados Recentes";
             // 
-            // pictureBox3
+            // pbFinalizarChamado
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.MistyRose;
-            this.pictureBox3.Image = global::ConsultiBETA.Properties.Resources.venda;
-            this.pictureBox3.Location = new System.Drawing.Point(683, 319);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(281, 237);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.pbFinalizarChamado.BackColor = System.Drawing.Color.MistyRose;
+            this.pbFinalizarChamado.Image = global::ConsultiBETA.Properties.Resources.venda;
+            this.pbFinalizarChamado.Location = new System.Drawing.Point(683, 319);
+            this.pbFinalizarChamado.Name = "pbFinalizarChamado";
+            this.pbFinalizarChamado.Size = new System.Drawing.Size(281, 237);
+            this.pbFinalizarChamado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbFinalizarChamado.TabIndex = 8;
+            this.pbFinalizarChamado.TabStop = false;
             // 
-            // pictureBox2
+            // pbBuscarCliente
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.LightGreen;
-            this.pictureBox2.Image = global::ConsultiBETA.Properties.Resources.cliente2;
-            this.pictureBox2.Location = new System.Drawing.Point(365, 320);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(281, 237);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pbBuscarCliente.BackColor = System.Drawing.Color.LightGreen;
+            this.pbBuscarCliente.Image = global::ConsultiBETA.Properties.Resources.cliente2;
+            this.pbBuscarCliente.Location = new System.Drawing.Point(365, 320);
+            this.pbBuscarCliente.Name = "pbBuscarCliente";
+            this.pbBuscarCliente.Size = new System.Drawing.Size(281, 237);
+            this.pbBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbBuscarCliente.TabIndex = 7;
+            this.pbBuscarCliente.TabStop = false;
+            this.pbBuscarCliente.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox1
+            // pbAbrirChamado
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Image = global::ConsultiBETA.Properties.Resources.chamados;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 319);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 237);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbAbrirChamado.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pbAbrirChamado.Image = global::ConsultiBETA.Properties.Resources.chamados;
+            this.pbAbrirChamado.Location = new System.Drawing.Point(52, 319);
+            this.pbAbrirChamado.Name = "pbAbrirChamado";
+            this.pbAbrirChamado.Size = new System.Drawing.Size(281, 237);
+            this.pbAbrirChamado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbAbrirChamado.TabIndex = 6;
+            this.pbAbrirChamado.TabStop = false;
+            this.pbAbrirChamado.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbFinalizarChamados
             // 
@@ -261,9 +261,9 @@
             this.Controls.Add(this.lbAbrirChamado);
             this.Controls.Add(this.lbBuscarCliente);
             this.Controls.Add(this.lbFinalizarChamados);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbFinalizarChamado);
+            this.Controls.Add(this.pbBuscarCliente);
+            this.Controls.Add(this.pbAbrirChamado);
             this.Controls.Add(this.lbChamadosRecentes);
             this.Controls.Add(this.dgChamadosRecentes);
             this.Controls.Add(this.menuStrip1);
@@ -277,9 +277,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgChamadosRecentes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFinalizarChamado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBuscarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAbrirChamado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,9 +301,9 @@
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgChamadosRecentes;
         private System.Windows.Forms.Label lbChamadosRecentes;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbAbrirChamado;
+        private System.Windows.Forms.PictureBox pbBuscarCliente;
+        private System.Windows.Forms.PictureBox pbFinalizarChamado;
         private System.Windows.Forms.Label lbFinalizarChamados;
         private System.Windows.Forms.Label lbBuscarCliente;
         private System.Windows.Forms.Label lbAbrirChamado;

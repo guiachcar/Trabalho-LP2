@@ -23,6 +23,12 @@ namespace ConsultiBETA
         }
         public FormAddClientes(DataGridView form1)
         {
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Técnico":
+                    btnSalver.Visible = false;
+                    break;
+            }
             Cliente cliente = clientes.getCliente(int.Parse(form1.Rows[form1.CurrentRow.Index].Cells[0].Value.ToString()));
             InitializeComponent();
             lbID.Text = cliente.Id.ToString();

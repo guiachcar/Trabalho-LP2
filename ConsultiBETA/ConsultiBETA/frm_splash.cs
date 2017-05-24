@@ -28,8 +28,8 @@ namespace ConsultiBETA
             {
                 tmProgressarBar.Enabled = false;
                 this.Visible = false;
-                Principal form_principal = new Principal(this);
-                form_principal.Show();
+                FormLogin login = new FormLogin(this);
+                login.Show();
 
             }
         }

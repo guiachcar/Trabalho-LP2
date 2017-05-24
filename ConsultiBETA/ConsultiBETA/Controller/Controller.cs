@@ -11,7 +11,7 @@ namespace ConsultiBETA.Controller
 {
     class Controller
     {
-        private string conexao = "Persist Security Info=False;server=159.203.179.94;database=consulti;uid=consulti;server = 159.203.179.94; database = consulti; uid = consulti; pwd =ifsp2017";
+        private string conexao = "Persist Security Info=False;server=159.203.179.94;database=consulti;uid=consulti;server = 159.203.179.94; database = consulti;Connect Timeout=28800;Command Timeout=28800; uid = consulti; pwd =ifsp2017";
         public int ExecutarSql(string sqlQuery)
         {
             int ultimoId = 0;

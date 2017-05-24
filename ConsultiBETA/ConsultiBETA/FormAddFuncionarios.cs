@@ -17,7 +17,8 @@ namespace ConsultiBETA
         FuncionarioController funcionarios = new FuncionarioController();
         public FormAddFuncionarios()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            
         }
         public FormAddFuncionarios(DataGridView form1)
         {
@@ -35,7 +36,30 @@ namespace ConsultiBETA
             cbCargo.SelectedItem = funcionario.Cargo;
             txtTelefone.SelectedText = funcionario.Telefone;
             txtSalario.SelectedText = funcionario.Salario.ToString();
-            
+            txtSenha.SelectedText = funcionario.Senha;
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    txtBairro.ReadOnly = true;
+                    txtCEP.ReadOnly = true;
+                    txtCidade.ReadOnly = true;
+                    txtCPF.ReadOnly = true;
+                    txtNome.ReadOnly = true;
+                    txtNro.ReadOnly = true;
+                    txtRua.ReadOnly = true;
+                    txtTelefone.ReadOnly = true;
+                    txtSalario.Visible = false;
+                    txtSenha.Visible = false;
+                    lbSenha.Visible = false;
+                    lbSalario.Visible = false;
+                    btnSalvar.Visible = false;
+                    break;
+                case "Administrativo":
+                    lbSenha.Visible = false;
+                    txtSenha.Visible = false;
+                    break;
+
+            }
         }
 
 
@@ -64,6 +88,7 @@ namespace ConsultiBETA
                 funcionario.Cargo = cbCargo.Text;
                 funcionario.Telefone = txtTelefone.Text;
                 funcionario.Salario = float.Parse(txtSalario.Text);
+                funcionario.Senha = txtSenha.Text;
 
                 funcionarios.Cadastrar(funcionario);
                 MessageBox.Show("Funcionario Cadastrado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
@@ -90,6 +115,7 @@ namespace ConsultiBETA
                 funcionario.Cargo = cbCargo.Text;
                 funcionario.Telefone = txtTelefone.Text;
                 funcionario.Salario = float.Parse(txtSalario.Text);
+                funcionario.Senha = txtSenha.Text;
 
                 funcionarios.Editar(funcionario);
                 MessageBox.Show("Funcionario Alterado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);

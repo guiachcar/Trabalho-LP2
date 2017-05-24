@@ -55,12 +55,18 @@
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lbSenha = new System.Windows.Forms.Label();
+            this.lbDesSenha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbDesSenha);
+            this.panel1.Controls.Add(this.lbSenha);
+            this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.cbCargo);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -333,6 +339,31 @@
             this.lbNome.TabIndex = 15;
             this.lbNome.Text = "Nome";
             // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(412, 102);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(153, 20);
+            this.txtSenha.TabIndex = 31;
+            // 
+            // lbSenha
+            // 
+            this.lbSenha.AutoSize = true;
+            this.lbSenha.Location = new System.Drawing.Point(365, 106);
+            this.lbSenha.Name = "lbSenha";
+            this.lbSenha.Size = new System.Drawing.Size(38, 13);
+            this.lbSenha.TabIndex = 32;
+            this.lbSenha.Text = "Senha";
+            // 
+            // lbDesSenha
+            // 
+            this.lbDesSenha.AutoSize = true;
+            this.lbDesSenha.Location = new System.Drawing.Point(571, 105);
+            this.lbDesSenha.Name = "lbDesSenha";
+            this.lbDesSenha.Size = new System.Drawing.Size(166, 13);
+            this.lbDesSenha.TabIndex = 33;
+            this.lbDesSenha.Text = "Mínimo 6 caracteres e máximo 10";
+            // 
             // FormAddFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,5 +410,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.ComboBox cbCargo;
+        private System.Windows.Forms.Label lbDesSenha;
+        private System.Windows.Forms.Label lbSenha;
+        private System.Windows.Forms.TextBox txtSenha;
     }
 }
