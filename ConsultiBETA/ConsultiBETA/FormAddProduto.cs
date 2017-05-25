@@ -65,8 +65,16 @@ namespace ConsultiBETA
                 Listas.produtos[id].Descricao = txtDescricao.Text;
                 Listas.produtos[id].Valor_compra = float.Parse(txtValorCompra.Text);
                 Listas.produtos[id].Valor_venda = float.Parse(txtValor.Text);
+                MessageBox.Show("Produto alterado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
+                FormProdutos p = Application.OpenForms["FormProdutos"] as FormProdutos;
 
+                if (p != null)
+                {
+                    p.Exibir();
+                }
             }
+
 
         }
 
