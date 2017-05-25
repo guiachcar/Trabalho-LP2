@@ -22,20 +22,31 @@ namespace ConsultiBETA
         }
         public FormAddServicos(DataGridView dgServicos)
         {
-            Servico servico = Listas.servicos[dgServicos.CurrentRow.Index];
             InitializeComponent();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    txtNome.ReadOnly = true;
+                    txtDescricao.ReadOnly = true;
+                    txtValor.ReadOnly = true;
+                    btnSalver.Visible = false;
+                    break;
+                
+            }
+            Servico servico = servicos.getServico(int.Parse(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString()));
+            
             lbID.Text = servico.Id.ToString();
             txtNome.Text = servico.Nome;
             txtDescricao.Text = servico.Descricao;
             txtValor.Text = servico.Valor.ToString();
-
         }
         private void btnSalver_Click(object sender, EventArgs e)
         {
-            if(lbID.Text == "Serviço ID")
+
+            Servico servico = new Servico();
+
+            if (lbID.Text == "Serviço ID")
             {
-                Servico servico = new Servico();
-                servico.Id = Listas.servicos.Count + 1;
                 servico.Nome = txtNome.Text;
                 servico.Descricao = txtDescricao.Text;
                 servico.Valor = float.Parse(txtValor.Text);
@@ -53,9 +64,10 @@ namespace ConsultiBETA
             else
             {
                 int id = int.Parse(lbID.Text) -1;
-                Listas.servicos[id].Nome = txtNome.Text;
-                Listas.servicos[id].Descricao = txtDescricao.Text;
-                Listas.servicos[id].Valor = float.Parse(txtValor.Text);
+                servico.Nome = txtNome.Text;
+                servico.Descricao = txtDescricao.Text;
+                servico.Valor = float.Parse(txtValor.Text);
+                servicos.Editar(servico);
                 MessageBox.Show("Serviço alterado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 this.Close();
                 FormServicos s = Application.OpenForms["FormServicos"] as FormServicos;

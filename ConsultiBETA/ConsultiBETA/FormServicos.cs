@@ -14,20 +14,27 @@ namespace ConsultiBETA
 {
     public partial class FormServicos : Form
     {
+        ServicoController controller = new ServicoController();
         public FormServicos()
         {
             InitializeComponent();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    btnEditar.Text = "Visualizar";
+                    btnExcluir.Visible = false;
+                    btnNovo.Visible = false;
+                    break;
+
+            }
             Exibir();
         }
         
 
         public void Exibir()
         {
-            dgServicos.Rows.Clear();
-            foreach (Servico s in Listas.servicos)
-            {
-                dgServicos.Rows.Add(s.Id, s.Nome, s.Descricao, s.Valor);
-            }
+            dgServicos.DataSource = controller.Listar();
+            dgServicos.DataMember = "servico";
         }
         
 
@@ -46,11 +53,7 @@ namespace ConsultiBETA
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ServicoController produtos = new ServicoController();
-            if(dgServicos != null)
-            {
-                produtos.Excluir(produtos.getServico(dgServicos.CurrentRow.Index));
-            }
+            controller.Excluir(controller.getServico(int.Parse(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
         }
     }

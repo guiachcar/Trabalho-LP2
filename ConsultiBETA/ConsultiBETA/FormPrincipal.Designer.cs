@@ -257,7 +257,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1020, 780);
+            this.ClientSize = new System.Drawing.Size(1020, 772);
             this.Controls.Add(this.lbAbrirChamado);
             this.Controls.Add(this.lbBuscarCliente);
             this.Controls.Add(this.lbFinalizarChamados);
@@ -274,6 +274,7 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSULTI";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgChamadosRecentes)).EndInit();
