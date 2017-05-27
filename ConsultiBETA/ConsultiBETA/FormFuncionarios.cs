@@ -59,8 +59,12 @@ namespace ConsultiBETA
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            controller.Excluir(controller.getFunc(int.Parse(dgFuncioanarios.Rows[dgFuncioanarios.CurrentRow.Index].Cells[0].Value.ToString())));
-            Exibir();
+            DialogResult confirm = MessageBox.Show("Deseja realmente excluir o Funcionário?", "Excluir funcionario", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (confirm.ToString().ToUpper() == "YES")
+            {
+                controller.Excluir(controller.getFunc(int.Parse(dgFuncioanarios.Rows[dgFuncioanarios.CurrentRow.Index].Cells[0].Value.ToString())));
+                Exibir();
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace ConsultiBETA
         public static int usuarioLogado;
         public static string nivelAcesso;
 
+       
         public FormLogin()
         {
             InitializeComponent();
@@ -44,10 +45,13 @@ namespace ConsultiBETA
                 funcionario = controller.getFuncCPF(txUsuario.Text);
                 usuarioLogado = funcionario.Id;
                 nivelAcesso = funcionario.Cargo;
-                
                 this.Visible = false;
                 Principal form_principal = new Principal(this,frm_splash);
                 form_principal.Show();
+                txtSenha.Text = "";
+                lbAguarde.Visible = false;
+                btCancelar.Visible = true;
+                btEntrar.Visible = true;
 
             }
             else

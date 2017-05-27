@@ -116,8 +116,8 @@ namespace ConsultiBETA
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            login_frm.Close();
-            splash_frm.Close();          
+            login_frm.ShowDialog(splash_frm);
+            
 
         }
 

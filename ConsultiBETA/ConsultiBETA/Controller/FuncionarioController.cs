@@ -26,14 +26,10 @@ namespace ConsultiBETA.Controller
         }
         public void Excluir(Funcionario funcionario)
         {
-            DialogResult confirm = MessageBox.Show("Deseja realmente excluir o Funcionário?", "Excluir funcionario", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-
-            if (confirm.ToString().ToUpper() == "YES")
-            {
+            
                 string sqlQuery = "DELETE FROM funcionario WHERE pessoa_id=" + funcionario.Id;
                 ExecutarSql(sqlQuery);
                 controllerPessoa.ExcluirPessoa(funcionario);
-            }
             
         }
         public void Editar(Funcionario funcionario)

@@ -12,8 +12,10 @@ namespace ConsultiBETA.Model
         private int cliente_id;
         private int funcionario_id;
         private int venda_id;
-        private List<String> acao;
+        private List<Acao> acao;
         private int status;
+        private DateTime data_abertura;
+        private DateTime data_agendamento;
 
         public Chamado()
         {
@@ -72,7 +74,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public List<string> Acao
+        public List<Acao> Acao
         {
             get
             {
@@ -95,6 +97,32 @@ namespace ConsultiBETA.Model
             set
             {
                 status = value;
+            }
+        }
+
+        public DateTime Data_abertura
+        {
+            get
+            {
+                return data_abertura;
+            }
+
+            set
+            {
+                data_abertura = value;
+            }
+        }
+
+        public DateTime Data_agendamento
+        {
+            get
+            {
+                return data_agendamento;
+            }
+
+            set
+            {
+                data_agendamento = value;
             }
         }
     }

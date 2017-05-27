@@ -80,13 +80,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AcaoController.cs" />
+    <Compile Include="Controller\ChamadoController.cs" />
     <Compile Include="Controller\ClienteController.cs" />
+    <Compile Include="Controller\EstoqueController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\Listas.cs" />
     <Compile Include="Controller\PessoaController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Controller\ServicoController.cs" />
+    <Compile Include="Controller\VendaController.cs" />
     <Compile Include="FormAddChamados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +205,7 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Acao.cs" />
     <Compile Include="Model\Chamado.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Estoque.cs" />
