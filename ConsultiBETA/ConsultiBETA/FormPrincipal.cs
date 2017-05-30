@@ -30,6 +30,11 @@ namespace ConsultiBETA
             login_frm = login;
             splash_frm = frm_splash;
             InitializeComponent();
+            lbUsuario.Text = FormLogin.usuarioLogadoNome;
+            if(FormLogin.nivelAcesso != "Gerencia")
+            {
+                historicoToolStripMenuItem.Visible = false;
+            }
             switch (FormLogin.nivelAcesso)
             {
                 case "Atendente":
@@ -159,6 +164,19 @@ namespace ConsultiBETA
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbUsuario_Click(object sender, EventArgs e)
+        {
+            FormAddFuncionarios form = new FormAddFuncionarios(FormLogin.usuarioLogado);
+            form.ShowDialog();
+
+        }
+
+        private void historicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHistorico form = new FormHistorico();
+            form.Show();
         }
     }
 }

@@ -100,7 +100,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(358, 247);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
-            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -110,7 +110,7 @@
             this.btnSalver.Location = new System.Drawing.Point(160, 247);
             this.btnSalver.Name = "btnSalver";
             this.btnSalver.Size = new System.Drawing.Size(188, 23);
-            this.btnSalver.TabIndex = 14;
+            this.btnSalver.TabIndex = 10;
             this.btnSalver.Text = "Salvar";
             this.btnSalver.UseVisualStyleBackColor = true;
             this.btnSalver.Click += new System.EventHandler(this.btnSalver_Click);
@@ -120,7 +120,7 @@
             this.txtTelefone.Location = new System.Drawing.Point(77, 89);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(265, 20);
-            this.txtTelefone.TabIndex = 13;
+            this.txtTelefone.TabIndex = 3;
             // 
             // lbTelefone
             // 
@@ -148,7 +148,7 @@
             this.gbEndereco.Location = new System.Drawing.Point(15, 128);
             this.gbEndereco.Name = "gbEndereco";
             this.gbEndereco.Size = new System.Drawing.Size(716, 106);
-            this.gbEndereco.TabIndex = 11;
+            this.gbEndereco.TabIndex = 4;
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Endereço";
             // 
@@ -174,7 +174,7 @@
             this.cbEstado.Location = new System.Drawing.Point(616, 55);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(47, 21);
-            this.cbEstado.TabIndex = 8;
+            this.cbEstado.TabIndex = 9;
             // 
             // lbEstado
             // 
@@ -206,21 +206,21 @@
             this.txtCidade.Location = new System.Drawing.Point(343, 56);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(210, 20);
-            this.txtCidade.TabIndex = 4;
+            this.txtCidade.TabIndex = 8;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(62, 56);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(218, 20);
-            this.txtBairro.TabIndex = 4;
+            this.txtBairro.TabIndex = 7;
             // 
             // txtNro
             // 
             this.txtNro.Location = new System.Drawing.Point(343, 21);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(98, 20);
-            this.txtNro.TabIndex = 4;
+            this.txtNro.TabIndex = 5;
             // 
             // txtRua
             // 
@@ -270,7 +270,7 @@
             this.txtCPF.Location = new System.Drawing.Point(430, 48);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(153, 20);
-            this.txtCPF.TabIndex = 10;
+            this.txtCPF.TabIndex = 2;
             // 
             // lbCPF
             // 
@@ -286,7 +286,7 @@
             this.txtNome.Location = new System.Drawing.Point(77, 48);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 20);
-            this.txtNome.TabIndex = 8;
+            this.txtNome.TabIndex = 1;
             // 
             // lbNome
             // 

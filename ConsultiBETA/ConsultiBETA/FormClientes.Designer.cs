@@ -35,9 +35,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.txtDigiteAqui = new System.Windows.Forms.TextBox();
-            this.cbFiltrar = new System.Windows.Forms.ComboBox();
-            this.lbConsulta = new System.Windows.Forms.Label();
-            this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
@@ -104,9 +101,6 @@
             // gbFiltrar
             // 
             this.gbFiltrar.Controls.Add(this.txtDigiteAqui);
-            this.gbFiltrar.Controls.Add(this.cbFiltrar);
-            this.gbFiltrar.Controls.Add(this.lbConsulta);
-            this.gbFiltrar.Controls.Add(this.lbPor);
             this.gbFiltrar.Controls.Add(this.btnBuscar);
             this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
             this.gbFiltrar.Name = "gbFiltrar";
@@ -117,43 +111,10 @@
             // 
             // txtDigiteAqui
             // 
-            this.txtDigiteAqui.Location = new System.Drawing.Point(282, 23);
+            this.txtDigiteAqui.Location = new System.Drawing.Point(129, 23);
             this.txtDigiteAqui.Name = "txtDigiteAqui";
-            this.txtDigiteAqui.Size = new System.Drawing.Size(201, 20);
+            this.txtDigiteAqui.Size = new System.Drawing.Size(354, 20);
             this.txtDigiteAqui.TabIndex = 14;
-            // 
-            // cbFiltrar
-            // 
-            this.cbFiltrar.FormattingEnabled = true;
-            this.cbFiltrar.Items.AddRange(new object[] {
-            "Nome",
-            "CPF",
-            "Telefone",
-            "Rua",
-            "Numero",
-            "CEP"});
-            this.cbFiltrar.Location = new System.Drawing.Point(69, 22);
-            this.cbFiltrar.Name = "cbFiltrar";
-            this.cbFiltrar.Size = new System.Drawing.Size(121, 21);
-            this.cbFiltrar.TabIndex = 13;
-            // 
-            // lbConsulta
-            // 
-            this.lbConsulta.AutoSize = true;
-            this.lbConsulta.Location = new System.Drawing.Point(208, 29);
-            this.lbConsulta.Name = "lbConsulta";
-            this.lbConsulta.Size = new System.Drawing.Size(58, 13);
-            this.lbConsulta.TabIndex = 12;
-            this.lbConsulta.Text = "Digite Aqui";
-            // 
-            // lbPor
-            // 
-            this.lbPor.AutoSize = true;
-            this.lbPor.Location = new System.Drawing.Point(15, 30);
-            this.lbPor.Name = "lbPor";
-            this.lbPor.Size = new System.Drawing.Size(23, 13);
-            this.lbPor.TabIndex = 12;
-            this.lbPor.Text = "Por";
             // 
             // btnBuscar
             // 
@@ -163,6 +124,7 @@
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // groupBox2
             // 
@@ -216,9 +178,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbFiltrar;
         private System.Windows.Forms.TextBox txtDigiteAqui;
-        private System.Windows.Forms.ComboBox cbFiltrar;
-        private System.Windows.Forms.Label lbConsulta;
-        private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;

@@ -14,31 +14,46 @@ namespace ConsultiBETA
 {
     public partial class FormEstoque : Form
     {
+        EstoqueController controller = new EstoqueController();
         public FormEstoque()
         {
             InitializeComponent();
+            Exibir();
+            if (dgProdutos.RowCount == 0 || FormLogin.nivelAcesso == "Atendente" || FormLogin.nivelAcesso == "Tecnico")
+            {
+                btnEditar.Visible = false;
+            }
+            dgProdutos.Columns[0].Visible = false;
+            dgProdutos.Columns[1].Visible = false;
+            dgProdutos.Columns[3].Visible = false;
         }
-
+        
         public void Exibir()
         {
-            dgProdutos.Rows.Clear();
-            foreach (Produto p in Listas.produtos )
-            {
-                Estoque result = Listas.estoques.Find(x => x.Produto_id == p.Id);
-                dgProdutos.Rows.Add(p.Nome, p.Tipo, p.Descricao, p.Valor_venda, p.Valor_compra,result.Quantidade);
-            }
+            dgProdutos.DataSource = controller.Listar();
+            dgProdutos.DataMember = "estoque";
+  
         }
 
-        
+
 
         private void EntradaItem(object sender, EventArgs e)
         {
-
+            FormAddEstoque form = new FormAddEstoque();
+            form.Show();
         }
 
         private void EditarClick(object sender, EventArgs e)
         {
+            FormAddEstoque form = new FormAddEstoque(dgProdutos);
+            form.Show();
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            //dgProdutos.DataSource = controller.BuscarProduto(txtDigiteAqui.Text);
+            //dgProdutos.DataMember = "produto";
         }
     }
 }

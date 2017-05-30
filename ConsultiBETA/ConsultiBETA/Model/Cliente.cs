@@ -8,9 +8,9 @@ namespace ConsultiBETA.Model
 {
     class Cliente: Pessoa
     {
+                
         public Cliente()
         {
-
         }
     }
 }

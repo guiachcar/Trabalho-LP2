@@ -8,7 +8,7 @@ namespace ConsultiBETA.Model
 {
     class Produto
     {
-        private int _id;
+        private int _id_produto;
         private String nome;
         private String tipo;
         private String descricao;
@@ -25,12 +25,12 @@ namespace ConsultiBETA.Model
         {
             get
             {
-                return _id;
+                return _id_produto;
             }
 
             set
             {
-                _id = value;
+                _id_produto = value;
             }
         }
 

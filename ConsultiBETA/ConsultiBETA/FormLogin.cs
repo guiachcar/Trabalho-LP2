@@ -17,6 +17,7 @@ namespace ConsultiBETA
         frm_splash frm_splash;
         public static int usuarioLogado;
         public static string nivelAcesso;
+        public static string usuarioLogadoNome;
 
        
         public FormLogin()
@@ -27,6 +28,8 @@ namespace ConsultiBETA
         {
             frm_splash = frm_splash1;
             InitializeComponent();
+            txtSenha.MaxLength = 10;
+            txtSenha.PasswordChar = '*';
         }
 
 
@@ -45,6 +48,7 @@ namespace ConsultiBETA
                 funcionario = controller.getFuncCPF(txUsuario.Text);
                 usuarioLogado = funcionario.Id;
                 nivelAcesso = funcionario.Cargo;
+                usuarioLogadoNome = funcionario.Nome;
                 this.Visible = false;
                 Principal form_principal = new Principal(this,frm_splash);
                 form_principal.Show();

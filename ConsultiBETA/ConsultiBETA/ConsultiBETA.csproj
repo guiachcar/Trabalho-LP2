@@ -86,7 +86,7 @@
     <Compile Include="Controller\EstoqueController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\Controller.cs" />
-    <Compile Include="Controller\Listas.cs" />
+    <Compile Include="Controller\HistoricoController.cs" />
     <Compile Include="Controller\PessoaController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Controller\ServicoController.cs" />
@@ -126,6 +126,12 @@
     </Compile>
     <Compile Include="FormEstoque.Designer.cs">
       <DependentUpon>FormEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorico.Designer.cs">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -193,6 +199,12 @@
     <Compile Include="FormSobre.Designer.cs">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormViewHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewHistorico.Designer.cs">
+      <DependentUpon>FormViewHistorico.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +246,9 @@
     <EmbeddedResource Include="FormEstoque.resx">
       <DependentUpon>FormEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorico.resx">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSobre.resx">
       <DependentUpon>FormSobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewHistorico.resx">
+      <DependentUpon>FormViewHistorico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_splash.resx">
       <DependentUpon>frm_splash.cs</DependentUpon>
@@ -353,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\venda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

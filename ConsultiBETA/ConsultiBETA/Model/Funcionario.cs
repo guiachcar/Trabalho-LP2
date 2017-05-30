@@ -8,7 +8,7 @@ namespace ConsultiBETA.Model
 {
     class Funcionario: Pessoa
     {
-        private String cargo;
+        private string cargo;
         private float salario;
         private string senha;
 
@@ -53,5 +53,7 @@ namespace ConsultiBETA.Model
                 senha = value;
             }
         }
+
+     
     }
 }

@@ -14,19 +14,28 @@ namespace ConsultiBETA
 {
     public partial class FormProdutos : Form
     {
+        ProdutoController controller = new ProdutoController();
+        int verifica = 1;
         public FormProdutos()
         {
             InitializeComponent();
             Exibir();
         }
+        public FormProdutos(int produto_id)
+        {
+            InitializeComponent();
+            Exibir();
+            btnExcluir.Visible = false;
+            btnNovo.Visible = false;
+            btnEditar.Text = "Selecionar";
+            Exibir();
+            verifica = produto_id;
+        }
 
         public void Exibir()
         {
-            dgProdutos.Rows.Clear();
-            foreach(Produto p in Listas.produtos)
-            {
-                dgProdutos.Rows.Add(p.Id, p.Nome, p.Tipo, p.Descricao, p.Valor_venda, p.Valor_compra);
-            }
+            dgProdutos.DataSource = controller.Listar();
+            dgProdutos.DataMember = "produto";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -37,18 +46,29 @@ namespace ConsultiBETA
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FormAddProdutos form = new FormAddProdutos(dgProdutos);
-            form.Show();
+            if(verifica != 0)
+            {
+                FormAddProdutos form = new FormAddProdutos(dgProdutos);
+                form.Show();
+            }
+            else
+            {
+                FormAddEstoque.produto_id_selecionado = dgProdutos.CurrentRow.Index;
+                this.Close();
+            }
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ProdutoController produtos = new ProdutoController();
-            if(dgProdutos != null)
-            {
-                produtos.Excluir(produtos.getProduto(dgProdutos.CurrentRow.Index));
-            }
+            controller.Excluir(controller.getProduto(int.Parse(dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgProdutos.DataSource = controller.BuscarProduto(txtDigiteAqui.Text);
+            dgProdutos.DataMember = "produto";
         }
     }
 }

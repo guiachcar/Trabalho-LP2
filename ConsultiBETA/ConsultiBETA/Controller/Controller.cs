@@ -12,8 +12,39 @@ namespace ConsultiBETA.Controller
     class Controller
     {
         private string conexao = "Persist Security Info=False;server=159.203.179.94;database=consulti;uid=consulti;server = 159.203.179.94; database = consulti;Connect Timeout=28800;Command Timeout=28800; uid = consulti; pwd =ifsp2017";
+
+        
+        public void RegistrarHistorico(String query, int funcionario_id)
+        {
+            MySqlConnection objConexao = new MySqlConnection(conexao);
+            query = query.Replace("'", " + ");
+            query = query.Replace("INSERT INTO", "I-");
+            query = query.Replace("UPDATE", "U-");
+            query = query.Replace("SET", ",");
+            query = query.Replace("DELETE", "Exclusão de cadastro");
+            string sqlQuery = "INSERT INTO historico (funcionario_id , query) VALUES (" + funcionario_id + ", '"+query+"')";
+            try
+            {
+                objConexao.Open();
+                MySqlCommand exQuery = new MySqlCommand(sqlQuery, objConexao);
+                exQuery.ExecuteNonQuery();
+
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("Erro ao cadastrar no banco" + e, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                objConexao.Close();
+                objConexao.Dispose();
+            }
+
+        }
+
         public int ExecutarSql(string sqlQuery)
         {
+        
             int ultimoId = 0;
             MySqlConnection objConexao = new MySqlConnection(conexao);
             try
@@ -35,14 +66,17 @@ namespace ConsultiBETA.Controller
             finally
             {
                 objConexao.Close();
+                RegistrarHistorico(sqlQuery, FormLogin.usuarioLogado);
                 objConexao.Dispose();
-                
+
             }
             return ultimoId;
 
         }
         public DataRow ExecutarSqlRetornoObj(string sqlQuery)
         {
+
+            
             DataRow informacao = null;
             DataSet mDataSet = new DataSet();
             MySqlConnection objConexao = new MySqlConnection(conexao);
@@ -86,6 +120,7 @@ namespace ConsultiBETA.Controller
         public List<DataRow> ExecutarSqlRetorno(string sqlQuery)
         {
 
+            
             //Cria lista
             List<DataRow> lista = new List<DataRow>();
 
@@ -131,6 +166,7 @@ namespace ConsultiBETA.Controller
 
         public DataSet ExecutarSqlRetGrid(string sqlQuery,string table)
         {
+
             
             DataSet mDataSet = new DataSet();
             

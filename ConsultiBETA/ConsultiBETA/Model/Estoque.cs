@@ -6,41 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsultiBETA.Model
 {
-    class Estoque
+    class Estoque:Produto
     {
-        private int _id;
-        private int produto_id;
         private int quantidade;
 
         public Estoque()
         {
 
         }
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
+        
 
-            set
-            {
-                _id = value;
-            }
-        }
-
-        public int Produto_id
-        {
-            get
-            {
-                return produto_id;
-            }
-
-            set
-            {
-                produto_id = value;
-            }
-        }
+        
 
         public int Quantidade
         {
@@ -54,5 +30,7 @@ namespace ConsultiBETA.Model
                 quantidade = value;
             }
         }
+
+        
     }
 }

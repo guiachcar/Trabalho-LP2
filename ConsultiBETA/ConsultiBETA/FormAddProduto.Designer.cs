@@ -71,14 +71,15 @@
             this.txtValorCompra.Location = new System.Drawing.Point(312, 161);
             this.txtValorCompra.Name = "txtValorCompra";
             this.txtValorCompra.Size = new System.Drawing.Size(100, 20);
-            this.txtValorCompra.TabIndex = 21;
+            this.txtValorCompra.TabIndex = 5;
+            this.txtValorCompra.Text = "0,00";
             // 
             // txtTipo
             // 
             this.txtTipo.Location = new System.Drawing.Point(122, 94);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(100, 20);
-            this.txtTipo.TabIndex = 21;
+            this.txtTipo.TabIndex = 2;
             // 
             // lbValorCompra
             // 
@@ -103,7 +104,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(124, 127);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(438, 20);
-            this.txtDescricao.TabIndex = 19;
+            this.txtDescricao.TabIndex = 3;
             // 
             // lbDescricao
             // 
@@ -119,7 +120,7 @@
             this.txtValor.Location = new System.Drawing.Point(125, 161);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
-            this.txtValor.TabIndex = 17;
+            this.txtValor.TabIndex = 4;
             this.txtValor.Text = "0,00";
             // 
             // lbValorVenda
@@ -146,7 +147,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(314, 197);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -156,7 +157,7 @@
             this.btnSalver.Location = new System.Drawing.Point(105, 197);
             this.btnSalver.Name = "btnSalver";
             this.btnSalver.Size = new System.Drawing.Size(203, 23);
-            this.btnSalver.TabIndex = 14;
+            this.btnSalver.TabIndex = 6;
             this.btnSalver.Text = "Salvar";
             this.btnSalver.UseVisualStyleBackColor = true;
             this.btnSalver.Click += new System.EventHandler(this.btnSalver_Click);
@@ -166,7 +167,7 @@
             this.txtNome.Location = new System.Drawing.Point(122, 61);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 20);
-            this.txtNome.TabIndex = 8;
+            this.txtNome.TabIndex = 1;
             // 
             // lbNome
             // 

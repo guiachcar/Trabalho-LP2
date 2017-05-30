@@ -9,7 +9,7 @@ namespace ConsultiBETA.Model
     class Pessoa
     {
 
-        private int _id;
+        private int _id_pessoa;
         private String nome;
         private String endereco;
         private String nro;
@@ -28,12 +28,12 @@ namespace ConsultiBETA.Model
         {
             get
             {
-                return _id;
+                return _id_pessoa;
             }
 
             set
             {
-                _id = value;
+                _id_pessoa = value;
             }
         }
 

@@ -26,6 +26,7 @@ namespace ConsultiBETA
         {
             dgClientes.DataSource = controller.Listar();
             dgClientes.DataMember = "pessoa";
+            dgClientes.Columns[0].Visible = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -45,6 +46,13 @@ namespace ConsultiBETA
         {
             controller.Excluir(controller.getCliente(int.Parse(dgClientes.Rows[dgClientes.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgClientes.DataSource = controller.BuscarCliente(txtDigiteAqui.Text);
+            dgClientes.DataMember = "pessoa";
+
         }
     }
 }

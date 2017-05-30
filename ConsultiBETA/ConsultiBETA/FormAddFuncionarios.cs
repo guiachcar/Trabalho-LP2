@@ -20,9 +20,9 @@ namespace ConsultiBETA
             InitializeComponent();
             
         }
-        public FormAddFuncionarios(DataGridView form1)
+        public FormAddFuncionarios(int usuario)
         {
-            Funcionario funcionario = funcionarios.getFunc(int.Parse(form1.Rows[form1.CurrentRow.Index].Cells[0].Value.ToString()));
+            Funcionario funcionario = funcionarios.getFunc(usuario);
             InitializeComponent();
             lbID.Text = funcionario.Id.ToString();
             txtCPF.SelectedText = funcionario.Cpf;
@@ -36,31 +36,115 @@ namespace ConsultiBETA
             cbCargo.SelectedItem = funcionario.Cargo;
             txtTelefone.SelectedText = funcionario.Telefone;
             txtSalario.SelectedText = funcionario.Salario.ToString();
-            txtSenha.SelectedText = funcionario.Senha;
-            switch (FormLogin.nivelAcesso)
-            {
-                case "Atendente":
-                    txtBairro.ReadOnly = true;
-                    txtCEP.ReadOnly = true;
-                    txtCidade.ReadOnly = true;
-                    txtCPF.ReadOnly = true;
-                    txtNome.ReadOnly = true;
-                    txtNro.ReadOnly = true;
-                    txtRua.ReadOnly = true;
-                    txtTelefone.ReadOnly = true;
-                    txtSalario.Visible = false;
-                    txtSenha.Visible = false;
-                    lbSenha.Visible = false;
-                    lbSalario.Visible = false;
-                    btnSalvar.Visible = false;
-                    break;
-                case "Administrativo":
-                    lbSenha.Visible = false;
-                    txtSenha.Visible = false;
-                    break;
+            txtSenha.SelectedText = funcionario.Senha.ToString();
+            lbCargo.Visible = false;
+            cbCargo.Visible = false;
+            lbSalario.Visible = false;
+            txtSalario.Visible = false;
+            txtSenha.PasswordChar = '*';
 
-            }
         }
+        public FormAddFuncionarios(DataGridView form1)
+        {
+            Funcionario funcionario = funcionarios.getFunc(int.Parse(form1.Rows[form1.CurrentRow.Index].Cells[11].Value.ToString()));
+            InitializeComponent();
+            lbID.Text = funcionario.Id.ToString();
+            txtCPF.SelectedText = funcionario.Cpf;
+            txtNome.SelectedText = funcionario.Nome;
+            txtRua.SelectedText = funcionario.Endereco;
+            txtNro.SelectedText = funcionario.Nro;
+            txtBairro.SelectedText = funcionario.Bairro;
+            txtCidade.SelectedText = funcionario.Cidade;
+            cbEstado.SelectedItem = funcionario.Uf;
+            txtCEP.SelectedText = funcionario.Cep;
+            cbCargo.SelectedItem = funcionario.Cargo;
+            txtTelefone.SelectedText = funcionario.Telefone;
+            txtSalario.SelectedText = funcionario.Salario.ToString();
+            txtSenha.SelectedText = funcionario.Senha.ToString();
+            txtSenha.PasswordChar = '*';
+            if (funcionario.Id != FormLogin.usuarioLogado)
+            {
+                switch (FormLogin.nivelAcesso)
+                {
+                    case "Atendente":
+                        txtBairro.ReadOnly = true;
+                        txtCEP.ReadOnly = true;
+                        txtCidade.ReadOnly = true;
+                        txtCPF.ReadOnly = true;
+                        txtNome.ReadOnly = true;
+                        txtNro.ReadOnly = true;
+                        txtRua.ReadOnly = true;
+                        txtTelefone.ReadOnly = true;
+                        txtSalario.Visible = false;
+                        txtSenha.Visible = false;
+                        lbSenha.Visible = false;
+                        lbDesSenha.Visible = false;
+                        lbSalario.Visible = false;
+                        btnSalvar.Visible = false;
+                        break;
+                    case "Tecnico":
+                        txtBairro.ReadOnly = true;
+                        txtCEP.ReadOnly = true;
+                        txtCidade.ReadOnly = true;
+                        txtCPF.ReadOnly = true;
+                        txtNome.ReadOnly = true;
+                        txtNro.ReadOnly = true;
+                        txtRua.ReadOnly = true;
+                        txtTelefone.ReadOnly = true;
+                        txtSalario.Visible = false;
+                        txtSenha.Visible = false;
+                        lbSenha.Visible = false;
+                        lbDesSenha.Visible = false;
+                        lbSalario.Visible = false;
+                        btnSalvar.Visible = false;
+                        break;
+                    case "Estoquista":
+                        txtBairro.ReadOnly = true;
+                        txtCEP.ReadOnly = true;
+                        txtCidade.ReadOnly = true;
+                        txtCPF.ReadOnly = true;
+                        txtNome.ReadOnly = true;
+                        txtNro.ReadOnly = true;
+                        txtRua.ReadOnly = true;
+                        txtTelefone.ReadOnly = true;
+                        txtSalario.Visible = false;
+                        txtSenha.Visible = false;
+                        lbSenha.Visible = false;
+                        lbDesSenha.Visible = false;
+                        lbSalario.Visible = false;
+                        btnSalvar.Visible = false;
+                        break;
+                }
+            }
+            else
+            {
+                switch (FormLogin.nivelAcesso)
+                {
+                    case "Atendente":
+                        lbCargo.Visible = false;
+                        cbCargo.Visible = false;
+                        lbSalario.Visible = false;
+                        txtSalario.Visible = false;
+                        break;
+                    case "Tecnico":
+                        lbCargo.Visible = false;
+                        cbCargo.Visible = false;
+                        lbSalario.Visible = false;
+                        txtSalario.Visible = false;
+                        break;
+                    case "Estoquista":
+                        lbCargo.Visible = false;
+                        cbCargo.Visible = false;
+                        lbSalario.Visible = false;
+                        txtSalario.Visible = false;
+                        break;
+                }
+            }
+
+
+        }
+            
+        
 
 
 

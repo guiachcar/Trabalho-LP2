@@ -34,14 +34,14 @@ namespace ConsultiBETA
         }
         public void Exibir()
         {
-            /*dgFuncioanarios.Rows.Clear();
-            foreach (Funcionario f in Listas.funcionarios)
-            {
-                dgFuncioanarios.Rows.Add(f.Id,f.Nome, f.Cpf, f.Telefone, f.Endereco, f.Nro,f.Cep,f.Bairro,f.Cidade,f.Uf);
-            }
-            */
+            
             dgFuncioanarios.DataSource = controller.Listar();
             dgFuncioanarios.DataMember = "pessoa";
+            dgFuncioanarios.Columns[0].Visible = false;
+            dgFuncioanarios.Columns[10].Visible = false;
+            dgFuncioanarios.Columns[11].Visible = false;
+            dgFuncioanarios.Columns[13].Visible = false;
+            dgFuncioanarios.Columns[14].Visible = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -69,16 +69,8 @@ namespace ConsultiBETA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string busca = txtDigiteAqui.Text;
-
-            dgFuncioanarios.Rows.Clear();
-            List<Funcionario> result = Listas.funcionarios.FindAll(x => x.Nome == busca );
-            foreach (Funcionario f in result)
-            {
-                {
-                    dgFuncioanarios.Rows.Add(f.Id, f.Nome, f.Cpf, f.Telefone, f.Endereco, f.Nro, f.Cep, f.Bairro, f.Cidade, f.Uf);
-                }
-            }
+            dgFuncioanarios.DataSource = controller.BuscarFuncionario(txtDigiteAqui.Text);
+            dgFuncioanarios.DataMember = "pessoa";
         }
     }
 }

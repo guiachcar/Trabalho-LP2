@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbDesSenha = new System.Windows.Forms.Label();
+            this.lbSenha = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.cbCargo = new System.Windows.Forms.ComboBox();
             this.lbID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -55,9 +58,6 @@
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.lbSenha = new System.Windows.Forms.Label();
-            this.lbDesSenha = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbEndereco.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,31 @@
             this.panel1.Size = new System.Drawing.Size(752, 351);
             this.panel1.TabIndex = 0;
             // 
+            // lbDesSenha
+            // 
+            this.lbDesSenha.AutoSize = true;
+            this.lbDesSenha.Location = new System.Drawing.Point(571, 105);
+            this.lbDesSenha.Name = "lbDesSenha";
+            this.lbDesSenha.Size = new System.Drawing.Size(166, 13);
+            this.lbDesSenha.TabIndex = 33;
+            this.lbDesSenha.Text = "Mínimo 6 caracteres e máximo 10";
+            // 
+            // lbSenha
+            // 
+            this.lbSenha.AutoSize = true;
+            this.lbSenha.Location = new System.Drawing.Point(365, 106);
+            this.lbSenha.Name = "lbSenha";
+            this.lbSenha.Size = new System.Drawing.Size(38, 13);
+            this.lbSenha.TabIndex = 32;
+            this.lbSenha.Text = "Senha";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(412, 102);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(153, 20);
+            this.txtSenha.TabIndex = 4;
+            // 
             // cbCargo
             // 
             this.cbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -100,7 +125,7 @@
             this.cbCargo.Location = new System.Drawing.Point(84, 147);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(261, 21);
-            this.cbCargo.TabIndex = 30;
+            this.cbCargo.TabIndex = 5;
             // 
             // lbID
             // 
@@ -117,7 +142,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(355, 316);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
-            this.btnCancelar.TabIndex = 27;
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -127,7 +152,7 @@
             this.txtSalario.Location = new System.Drawing.Point(412, 149);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(153, 20);
-            this.txtSalario.TabIndex = 25;
+            this.txtSalario.TabIndex = 6;
             // 
             // lbSalario
             // 
@@ -152,7 +177,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(161, 316);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(188, 23);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.TabIndex = 13;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -162,7 +187,7 @@
             this.txtTelefone.Location = new System.Drawing.Point(84, 103);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(261, 20);
-            this.txtTelefone.TabIndex = 21;
+            this.txtTelefone.TabIndex = 3;
             // 
             // lbTelefone
             // 
@@ -190,7 +215,7 @@
             this.gbEndereco.Location = new System.Drawing.Point(12, 196);
             this.gbEndereco.Name = "gbEndereco";
             this.gbEndereco.Size = new System.Drawing.Size(716, 106);
-            this.gbEndereco.TabIndex = 19;
+            this.gbEndereco.TabIndex = 7;
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Endereço";
             // 
@@ -216,7 +241,7 @@
             this.cbEstado.Location = new System.Drawing.Point(616, 55);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(47, 21);
-            this.cbEstado.TabIndex = 8;
+            this.cbEstado.TabIndex = 12;
             // 
             // lbEstado
             // 
@@ -232,7 +257,7 @@
             this.txtCEP.Location = new System.Drawing.Point(508, 21);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(155, 20);
-            this.txtCEP.TabIndex = 6;
+            this.txtCEP.TabIndex = 9;
             // 
             // lbCEP
             // 
@@ -248,28 +273,28 @@
             this.txtCidade.Location = new System.Drawing.Point(343, 56);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(210, 20);
-            this.txtCidade.TabIndex = 4;
+            this.txtCidade.TabIndex = 11;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(62, 56);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(218, 20);
-            this.txtBairro.TabIndex = 4;
+            this.txtBairro.TabIndex = 10;
             // 
             // txtNro
             // 
             this.txtNro.Location = new System.Drawing.Point(343, 21);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(98, 20);
-            this.txtNro.TabIndex = 4;
+            this.txtNro.TabIndex = 8;
             // 
             // txtRua
             // 
             this.txtRua.Location = new System.Drawing.Point(59, 21);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(221, 20);
-            this.txtRua.TabIndex = 4;
+            this.txtRua.TabIndex = 7;
             // 
             // lbCidade
             // 
@@ -312,7 +337,7 @@
             this.txtCPF.Location = new System.Drawing.Point(412, 59);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(153, 20);
-            this.txtCPF.TabIndex = 18;
+            this.txtCPF.TabIndex = 2;
             // 
             // lbCPF
             // 
@@ -328,7 +353,7 @@
             this.txtNome.Location = new System.Drawing.Point(84, 62);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(261, 20);
-            this.txtNome.TabIndex = 16;
+            this.txtNome.TabIndex = 1;
             // 
             // lbNome
             // 
@@ -338,31 +363,6 @@
             this.lbNome.Size = new System.Drawing.Size(35, 13);
             this.lbNome.TabIndex = 15;
             this.lbNome.Text = "Nome";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(412, 102);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(153, 20);
-            this.txtSenha.TabIndex = 31;
-            // 
-            // lbSenha
-            // 
-            this.lbSenha.AutoSize = true;
-            this.lbSenha.Location = new System.Drawing.Point(365, 106);
-            this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(38, 13);
-            this.lbSenha.TabIndex = 32;
-            this.lbSenha.Text = "Senha";
-            // 
-            // lbDesSenha
-            // 
-            this.lbDesSenha.AutoSize = true;
-            this.lbDesSenha.Location = new System.Drawing.Point(571, 105);
-            this.lbDesSenha.Name = "lbDesSenha";
-            this.lbDesSenha.Size = new System.Drawing.Size(166, 13);
-            this.lbDesSenha.TabIndex = 33;
-            this.lbDesSenha.Text = "Mínimo 6 caracteres e máximo 10";
             // 
             // FormAddFuncionarios
             // 

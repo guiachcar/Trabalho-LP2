@@ -28,7 +28,7 @@ namespace ConsultiBETA.Controller
 
             if (confirm.ToString().ToUpper() == "YES")
             {
-                string sqlQuery = "DELETE FROM cliente WHERE pessoa_id=" + cliente.Id;
+                string sqlQuery = "DELETE FROM cliente WHERE _id_cliente=" + cliente.Id ;
                 ExecutarSql(sqlQuery);
                 controllerPessoa.ExcluirPessoa(cliente);
             }
@@ -41,10 +41,10 @@ namespace ConsultiBETA.Controller
         public Cliente getCliente(int id)
         {
             DataRow clienteRow;
-            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id=c.pessoa_id  WHERE p._id=" + id;
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id_pessoa=c.pessoa_id  WHERE p._id_pessoa=" + id;
             clienteRow = ExecutarSqlRetornoObj(sqlQuery);
             Cliente cliente = new Cliente();
-            cliente.Id = clienteRow.Field<int>("_id");
+            cliente.Id = clienteRow.Field<int>("pessoa_id");
             cliente.Nome = clienteRow.Field<string>("nome");
             cliente.Endereco = clienteRow.Field<string>("endereco");
             cliente.Nro = clienteRow.Field<string>("nro");
@@ -59,7 +59,15 @@ namespace ConsultiBETA.Controller
         public DataSet Listar()
         {
             string table = "pessoa";
-            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id=c.pessoa_id";
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id_pessoa=c.pessoa_id";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+
+        }
+        
+        public DataSet BuscarCliente(string consulta)
+        {
+            string table = "pessoa";
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN cliente c ON p._id_pessoa=c.pessoa_id WHERE p.nome LIKE '%" + consulta+"%' OR p.cpf LIKE '%"+consulta+"%' OR p.endereco LIKE '%"+consulta+"%' OR p.cidade LIKE '%"+consulta+"%'";
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }

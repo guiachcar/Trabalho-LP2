@@ -8,7 +8,7 @@ namespace ConsultiBETA.Model
 {
     class Chamado
     {
-        private int _id;
+        private int _id_chamado;
         private int cliente_id;
         private int funcionario_id;
         private int venda_id;
@@ -22,18 +22,7 @@ namespace ConsultiBETA.Model
 
         }
 
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-
-            set
-            {
-                _id = value;
-            }
-        }
+        
 
         public int Cliente_id
         {
@@ -123,6 +112,19 @@ namespace ConsultiBETA.Model
             set
             {
                 data_agendamento = value;
+            }
+        }
+
+        public int Id_chamado
+        {
+            get
+            {
+                return _id_chamado;
+            }
+
+            set
+            {
+                _id_chamado = value;
             }
         }
     }

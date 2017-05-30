@@ -8,7 +8,7 @@ namespace ConsultiBETA.Model
 {
     class Venda
     {
-        private int _id;
+        private int _id_venda;
         private List<Produto> produtos;
         private List<Servico> servicos;
         private float valor_total;
@@ -23,12 +23,12 @@ namespace ConsultiBETA.Model
         {
             get
             {
-                return _id;
+                return _id_venda;
             }
 
             set
             {
-                _id = value;
+                _id_venda = value;
             }
         }
 
