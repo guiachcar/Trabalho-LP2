@@ -67,6 +67,13 @@ namespace ConsultiBETA.Controller
             return ExecutarSqlRetGrid(sqlQuery, table);
             
         }
+        public DataSet ListarTecnicos()
+        {
+            string table = "pessoa";
+            string sqlQuery = "SELECT * FROM pessoa p INNER JOIN funcionario f ON p._id_pessoa=f.pessoa_id WHERE f.cargo='Tecnico' ORDER BY p.nome ASC";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+
+        }
         public bool verificarLogin(string cpf, string senha)
         {
             DataRow funcionarioRow;

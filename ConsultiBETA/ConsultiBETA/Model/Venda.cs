@@ -9,14 +9,16 @@ namespace ConsultiBETA.Model
     class Venda
     {
         private int _id_venda;
-        private List<Produto> produtos;
-        private List<Servico> servicos;
+        private List<ItemVendaProduto> produtos;
+        private List<ItemVendaServico> servicos;
         private float valor_total;
-        private int status;
+        private Status status_venda;
+        private DateTime data_pagamento;
 
         public Venda()
         {
-
+            this.produtos = new List<ItemVendaProduto>();
+            this.servicos = new List<ItemVendaServico>();
         }
 
         public int Id
@@ -32,7 +34,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        internal List<Produto> Produtos
+        internal List<ItemVendaProduto> Produtos
         {
             get
             {
@@ -45,7 +47,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        internal List<Servico> Servicos
+        internal List<ItemVendaServico> Servicos
         {
             get
             {
@@ -71,16 +73,29 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public int Status
+        public Status Status_Venda
         {
             get
             {
-                return status;
+                return status_venda;
             }
 
             set
             {
-                status = value;
+                status_venda = value;
+            }
+        }
+
+        public DateTime Data_pagamento
+        {
+            get
+            {
+                return data_pagamento;
+            }
+
+            set
+            {
+                data_pagamento = value;
             }
         }
     }

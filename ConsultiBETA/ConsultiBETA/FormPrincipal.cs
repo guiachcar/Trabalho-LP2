@@ -151,9 +151,9 @@ namespace ConsultiBETA
 
         private void relatóriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormRelatorio form = new FormRelatorio();
+            //FormRelatorio form = new FormRelatorio();
             //form.MdiParent = this;
-            form.ShowDialog();
+            //form.ShowDialog();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

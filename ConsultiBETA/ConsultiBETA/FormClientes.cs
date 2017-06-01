@@ -27,6 +27,18 @@ namespace ConsultiBETA
             dgClientes.DataSource = controller.Listar();
             dgClientes.DataMember = "pessoa";
             dgClientes.Columns[0].Visible = false;
+            dgClientes.Columns[1].HeaderText = "Nome";
+            dgClientes.Columns[2].HeaderText = "Endereço";
+            dgClientes.Columns[3].HeaderText = "Número";
+            dgClientes.Columns[4].Visible = false;
+            dgClientes.Columns[5].HeaderText = "Cidade";
+            dgClientes.Columns[6].HeaderText = "Estado";
+            dgClientes.Columns[7].Visible = false;
+            dgClientes.Columns[8].HeaderText = "Telefone";
+            dgClientes.Columns[9].Visible = false;
+            dgClientes.Columns[10].Visible = false;
+            dgClientes.Columns[11].Visible = false;
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)

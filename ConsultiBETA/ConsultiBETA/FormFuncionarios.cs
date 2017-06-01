@@ -38,8 +38,18 @@ namespace ConsultiBETA
             dgFuncioanarios.DataSource = controller.Listar();
             dgFuncioanarios.DataMember = "pessoa";
             dgFuncioanarios.Columns[0].Visible = false;
+            dgFuncioanarios.Columns[1].HeaderText = "Nome";
+            dgFuncioanarios.Columns[2].HeaderText = "Endereço";
+            dgFuncioanarios.Columns[3].HeaderText = "Número";
+            dgFuncioanarios.Columns[4].Visible = false;
+            dgFuncioanarios.Columns[5].HeaderText = "Cidade";
+            dgFuncioanarios.Columns[6].HeaderText = "Estado";
+            dgFuncioanarios.Columns[7].Visible = false;
+            dgFuncioanarios.Columns[8].HeaderText = "Telefone";
+            dgFuncioanarios.Columns[9].Visible = false;
             dgFuncioanarios.Columns[10].Visible = false;
             dgFuncioanarios.Columns[11].Visible = false;
+            dgFuncioanarios.Columns[12].HeaderText = "Cargo";
             dgFuncioanarios.Columns[13].Visible = false;
             dgFuncioanarios.Columns[14].Visible = false;
         }

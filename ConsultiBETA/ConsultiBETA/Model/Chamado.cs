@@ -6,64 +6,57 @@ using System.Threading.Tasks;
 
 namespace ConsultiBETA.Model
 {
-    class Chamado
+    class Chamado : Venda
     {
         private int _id_chamado;
-        private int cliente_id;
-        private int funcionario_id;
-        private int venda_id;
+        private Cliente cliente;
+        private Funcionario funcionario;
         private List<Acao> acao;
-        private int status;
+        private string descricao;
+        private Status status;
         private DateTime data_abertura;
         private DateTime data_agendamento;
 
-        public Chamado()
-        {
-
-        }
-
-        
-
-        public int Cliente_id
+        public int Id_chamado
         {
             get
             {
-                return cliente_id;
+                return _id_chamado;
             }
 
             set
             {
-                cliente_id = value;
+                _id_chamado = value;
             }
         }
 
-        public int Funcionario_id
+        internal Cliente Cliente
         {
             get
             {
-                return funcionario_id;
+                return cliente;
             }
 
             set
             {
-                funcionario_id = value;
+                cliente = value;
             }
         }
 
-        public int Venda_id
+        internal Funcionario Funcionario
         {
             get
             {
-                return venda_id;
+                return funcionario;
             }
 
             set
             {
-                venda_id = value;
+                funcionario = value;
             }
         }
 
-        public List<Acao> Acao
+        internal List<Acao> Acao
         {
             get
             {
@@ -76,7 +69,20 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public int Status
+        public string Descricao
+        {
+            get
+            {
+                return descricao;
+            }
+
+            set
+            {
+                descricao = value;
+            }
+        }
+
+        internal Status Status1
         {
             get
             {
@@ -112,19 +118,6 @@ namespace ConsultiBETA.Model
             set
             {
                 data_agendamento = value;
-            }
-        }
-
-        public int Id_chamado
-        {
-            get
-            {
-                return _id_chamado;
-            }
-
-            set
-            {
-                _id_chamado = value;
             }
         }
     }

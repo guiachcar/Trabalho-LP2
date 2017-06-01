@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.txtDigiteAqui = new System.Windows.Forms.TextBox();
             this.cbFiltrar = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgServicos = new System.Windows.Forms.DataGridView();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lbQuantidade = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -48,6 +51,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbQuantidade);
+            this.panel1.Controls.Add(this.txtQuantidade);
+            this.panel1.Controls.Add(this.btnSelecionar);
             this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
@@ -58,6 +64,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 480);
             this.panel1.TabIndex = 1;
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecionar.Location = new System.Drawing.Point(383, 445);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(117, 23);
+            this.btnSelecionar.TabIndex = 16;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // gbFiltrar
             // 
@@ -181,6 +199,22 @@
             this.dgServicos.Size = new System.Drawing.Size(641, 326);
             this.dgServicos.TabIndex = 0;
             // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(260, 448);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(117, 20);
+            this.txtQuantidade.TabIndex = 17;
+            // 
+            // lbQuantidade
+            // 
+            this.lbQuantidade.AutoSize = true;
+            this.lbQuantidade.Location = new System.Drawing.Point(175, 451);
+            this.lbQuantidade.Name = "lbQuantidade";
+            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbQuantidade.TabIndex = 18;
+            this.lbQuantidade.Text = "Quantidade";
+            // 
             // FormServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +225,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Serviços";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -213,5 +248,8 @@
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgServicos;
+        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.Label lbQuantidade;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

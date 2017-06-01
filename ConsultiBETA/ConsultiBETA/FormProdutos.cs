@@ -19,6 +19,9 @@ namespace ConsultiBETA
         public FormProdutos()
         {
             InitializeComponent();
+            btnSelecionar.Visible = false;
+            txtQuantidade.Visible = false;
+            lbQuantidade.Visible = false;
             Exibir();
         }
         public FormProdutos(int produto_id)
@@ -27,15 +30,31 @@ namespace ConsultiBETA
             Exibir();
             btnExcluir.Visible = false;
             btnNovo.Visible = false;
+            btnSelecionar.Visible = false;
+            txtQuantidade.Visible = false;
+            lbQuantidade.Visible = false;
             btnEditar.Text = "Selecionar";
-            Exibir();
             verifica = produto_id;
+        }
+        public FormProdutos(DataGridView dgItemProduto)
+        {
+            InitializeComponent();
+            Exibir();
+            btnExcluir.Visible = false;
+            btnNovo.Visible = false;
+            btnEditar.Visible = false;
         }
 
         public void Exibir()
         {
             dgProdutos.DataSource = controller.Listar();
             dgProdutos.DataMember = "produto";
+            dgProdutos.Columns[0].HeaderText = "Id";
+            dgProdutos.Columns[1].HeaderText = "Produto";
+            dgProdutos.Columns[2].HeaderText = "Tipo";
+            dgProdutos.Columns[3].HeaderText = "Descrição";
+            dgProdutos.Columns[4].HeaderText = "Valor";
+            dgProdutos.Columns[5].Visible = false;
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -69,6 +88,24 @@ namespace ConsultiBETA
         {
             dgProdutos.DataSource = controller.BuscarProduto(txtDigiteAqui.Text);
             dgProdutos.DataMember = "produto";
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            if(dgProdutos.CurrentRow != null)
+            {
+                if (txtQuantidade.Text != "")
+                {
+                    FormAddChamados.dgvItemsProdutos.Rows.Add(dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[0].Value.ToString(), dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+            }
+
         }
     }
 }

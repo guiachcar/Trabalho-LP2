@@ -14,10 +14,15 @@ namespace ConsultiBETA
 {
     public partial class FormServicos : Form
     {
+        
         ServicoController controller = new ServicoController();
         public FormServicos()
         {
+
             InitializeComponent();
+            btnSelecionar.Visible = false;
+            txtQuantidade.Visible = false;
+            lbQuantidade.Visible = false;
             switch (FormLogin.nivelAcesso)
             {
                 case "Atendente":
@@ -29,12 +34,27 @@ namespace ConsultiBETA
             }
             Exibir();
         }
+        public FormServicos(DataGridView dgItemServico)
+        {
+            InitializeComponent();
+            Exibir();
+            btnEditar.Visible = false;
+            btnExcluir.Visible = false;
+            btnNovo.Visible = false;
+
+            
+        }
         
 
         public void Exibir()
         {
             dgServicos.DataSource = controller.Listar();
             dgServicos.DataMember = "servico";
+            dgServicos.Columns[0].HeaderText = "Id";
+            dgServicos.Columns[1].HeaderText = "Nome";
+            dgServicos.Columns[2].HeaderText = "Descrição";
+            dgServicos.Columns[3].HeaderText = "Valor";
+
         }
         
 
@@ -55,6 +75,22 @@ namespace ConsultiBETA
         {
             controller.Excluir(controller.getServico(int.Parse(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString())));
             Exibir();
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            if(dgServicos.CurrentRow != null)
+            {
+                if(txtQuantidade.Text != "")
+                {
+                    FormAddChamados.dgvItemsServicos.Rows.Add(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString(), dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
+                    this.Close();
+                }else
+                {
+                    MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                
+            }
         }
     }
 }

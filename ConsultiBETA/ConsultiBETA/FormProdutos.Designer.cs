@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.gbProdutos = new System.Windows.Forms.GroupBox();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lbQuantidade = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
@@ -58,6 +61,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbQuantidade);
+            this.groupBox1.Controls.Add(this.txtQuantidade);
+            this.groupBox1.Controls.Add(this.btnSelecionar);
             this.groupBox1.Controls.Add(this.btnNovo);
             this.groupBox1.Controls.Add(this.btnExcluir);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -66,6 +72,16 @@
             this.groupBox1.Size = new System.Drawing.Size(714, 100);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Location = new System.Drawing.Point(444, 26);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(117, 23);
+            this.btnSelecionar.TabIndex = 15;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnNovo
             // 
@@ -147,8 +163,25 @@
             this.dgProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgProdutos.Name = "dgProdutos";
             this.dgProdutos.ReadOnly = true;
+            this.dgProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdutos.Size = new System.Drawing.Size(887, 324);
             this.dgProdutos.TabIndex = 0;
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(338, 28);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(100, 20);
+            this.txtQuantidade.TabIndex = 16;
+            // 
+            // lbQuantidade
+            // 
+            this.lbQuantidade.AutoSize = true;
+            this.lbQuantidade.Location = new System.Drawing.Point(261, 31);
+            this.lbQuantidade.Name = "lbQuantidade";
+            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbQuantidade.TabIndex = 17;
+            this.lbQuantidade.Text = "Quantidade";
             // 
             // FormProdutos
             // 
@@ -161,6 +194,7 @@
             this.Text = "Produtos";
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
             this.gbProdutos.ResumeLayout(false);
@@ -181,5 +215,8 @@
         private System.Windows.Forms.GroupBox gbProdutos;
         private System.Windows.Forms.DataGridView dgProdutos;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.Label lbQuantidade;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }
