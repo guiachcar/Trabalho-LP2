@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbDataAbertura = new System.Windows.Forms.Label();
             this.btnImprimirVenda = new System.Windows.Forms.Button();
             this.btnRemProduto = new System.Windows.Forms.Button();
             this.btnAddProduto = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lbDataAbertura = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItemProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItemServico)).BeginInit();
@@ -100,8 +100,17 @@
             this.panel1.Size = new System.Drawing.Size(835, 547);
             this.panel1.TabIndex = 4;
             // 
+            // lbDataAbertura
+            // 
+            this.lbDataAbertura.AutoSize = true;
+            this.lbDataAbertura.Location = new System.Drawing.Point(166, 19);
+            this.lbDataAbertura.Name = "lbDataAbertura";
+            this.lbDataAbertura.Size = new System.Drawing.Size(0, 13);
+            this.lbDataAbertura.TabIndex = 39;
+            // 
             // btnImprimirVenda
             // 
+            this.btnImprimirVenda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimirVenda.Location = new System.Drawing.Point(141, 512);
             this.btnImprimirVenda.Name = "btnImprimirVenda";
             this.btnImprimirVenda.Size = new System.Drawing.Size(160, 23);
@@ -111,6 +120,7 @@
             // 
             // btnRemProduto
             // 
+            this.btnRemProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemProduto.Location = new System.Drawing.Point(559, 299);
             this.btnRemProduto.Name = "btnRemProduto";
             this.btnRemProduto.Size = new System.Drawing.Size(94, 23);
@@ -121,6 +131,7 @@
             // 
             // btnAddProduto
             // 
+            this.btnAddProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddProduto.Location = new System.Drawing.Point(459, 299);
             this.btnAddProduto.Name = "btnAddProduto";
             this.btnAddProduto.Size = new System.Drawing.Size(94, 23);
@@ -153,6 +164,8 @@
             // 
             this.dgItemProduto.AllowUserToAddRows = false;
             this.dgItemProduto.AllowUserToDeleteRows = false;
+            this.dgItemProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgItemProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgItemProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItemProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,6 +204,8 @@
             // 
             this.dgItemServico.AllowUserToAddRows = false;
             this.dgItemServico.AllowUserToDeleteRows = false;
+            this.dgItemServico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgItemServico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgItemServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItemServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -227,6 +242,7 @@
             // 
             // lbDataAgendamento
             // 
+            this.lbDataAgendamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDataAgendamento.AutoSize = true;
             this.lbDataAgendamento.Location = new System.Drawing.Point(286, 19);
             this.lbDataAgendamento.Name = "lbDataAgendamento";
@@ -236,6 +252,7 @@
             // 
             // dtpDataAgendamento
             // 
+            this.dtpDataAgendamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDataAgendamento.Location = new System.Drawing.Point(459, 15);
             this.dtpDataAgendamento.Name = "dtpDataAgendamento";
             this.dtpDataAgendamento.Size = new System.Drawing.Size(315, 20);
@@ -243,6 +260,7 @@
             // 
             // cbTecnico
             // 
+            this.cbTecnico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTecnico.FormattingEnabled = true;
             this.cbTecnico.Location = new System.Drawing.Point(459, 56);
             this.cbTecnico.Name = "cbTecnico";
@@ -259,6 +277,7 @@
             // 
             // lbProdutos
             // 
+            this.lbProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbProdutos.AutoSize = true;
             this.lbProdutos.Location = new System.Drawing.Point(407, 174);
             this.lbProdutos.Name = "lbProdutos";
@@ -277,14 +296,17 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Location = new System.Drawing.Point(617, 468);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(162, 21);
             this.cbStatus.TabIndex = 25;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // lbStatus
             // 
+            this.lbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbStatus.AutoSize = true;
             this.lbStatus.Location = new System.Drawing.Point(572, 473);
             this.lbStatus.Name = "lbStatus";
@@ -303,6 +325,9 @@
             // 
             // rtbAcao
             // 
+            this.rtbAcao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbAcao.Location = new System.Drawing.Point(18, 356);
             this.rtbAcao.Name = "rtbAcao";
             this.rtbAcao.Size = new System.Drawing.Size(761, 96);
@@ -311,6 +336,8 @@
             // 
             // rtbDescricao
             // 
+            this.rtbDescricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbDescricao.Location = new System.Drawing.Point(136, 94);
             this.rtbDescricao.Name = "rtbDescricao";
             this.rtbDescricao.Size = new System.Drawing.Size(640, 64);
@@ -319,6 +346,7 @@
             // 
             // lbTecnico
             // 
+            this.lbTecnico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTecnico.AutoSize = true;
             this.lbTecnico.Location = new System.Drawing.Point(385, 59);
             this.lbTecnico.Name = "lbTecnico";
@@ -356,6 +384,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(473, 512);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(167, 23);
@@ -366,6 +395,7 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.Location = new System.Drawing.Point(307, 512);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(160, 23);
@@ -376,6 +406,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvar.Location = new System.Drawing.Point(656, 512);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(167, 23);
@@ -384,20 +415,14 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // lbDataAbertura
-            // 
-            this.lbDataAbertura.AutoSize = true;
-            this.lbDataAbertura.Location = new System.Drawing.Point(166, 19);
-            this.lbDataAbertura.Name = "lbDataAbertura";
-            this.lbDataAbertura.Size = new System.Drawing.Size(0, 13);
-            this.lbDataAbertura.TabIndex = 39;
-            // 
             // FormAddChamados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(835, 547);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormAddChamados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar/Alterar/Fechar Chamados";

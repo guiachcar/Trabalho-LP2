@@ -20,14 +20,14 @@ namespace ConsultiBETA.Controller
             Pessoa pessoa = new Pessoa();
             pessoa = funcionario;
             int idCadastrado = controllerPessoa.Cadastrar(pessoa);
-            string sqlQuery = "INSERT INTO funcionario (pessoa_id,cargo,salario,senha)" + "VALUES('" + idCadastrado + "','" + funcionario.Cargo + "','" + funcionario.Salario + "','" + funcionario.Senha + "')";
+            string sqlQuery = "INSERT INTO funcionario (pessoa_id,cargo,salario,senha)" + "VALUES('" + idCadastrado + "','" + funcionario.Cargo + "', REPLACE('" + funcionario.Salario.ToString() + "',',','.'),'" + funcionario.Senha + "')";
             int idCadastrado1 = ExecutarSql(sqlQuery);
 
         }
         public void Excluir(Funcionario funcionario)
         {
             
-                string sqlQuery = "DELETE FROM funcionario WHERE _id_funcionario=" + funcionario.Id;
+                string sqlQuery = "DELETE FROM funcionario WHERE pessoa_id=" + funcionario.Id;
                 ExecutarSql(sqlQuery);
                 controllerPessoa.ExcluirPessoa(funcionario);
             
@@ -35,7 +35,7 @@ namespace ConsultiBETA.Controller
         public void Editar(Funcionario funcionario)
         {
             controllerPessoa.EditarPessoa(funcionario);
-            string sqlQuery = "UPDATE funcionario SET salario=" + funcionario.Salario + ",cargo='" + funcionario.Cargo + "', senha = '" + funcionario.Senha + "' WHERE _id_funcionario=" + funcionario.Id;
+            string sqlQuery = "UPDATE funcionario SET salario=REPLACE('" + funcionario.Salario.ToString() + "',',','.') , cargo='"+ funcionario.Cargo + "', senha = '" + funcionario.Senha + "' WHERE pessoa_id=" + funcionario.Id;
             ExecutarSql(sqlQuery);
         }
         public Funcionario getFunc(int id)
@@ -55,7 +55,7 @@ namespace ConsultiBETA.Controller
             funcionario.Telefone = funcionarioRow.Field<string>("telefone");
             funcionario.Cpf = funcionarioRow.Field<string>("cpf");
             funcionario.Cargo = funcionarioRow.Field<string>("cargo");
-            funcionario.Salario = funcionarioRow.Field<float>("salario");
+            funcionario.Salario = funcionarioRow.Field<decimal>("salario");
             funcionario.Senha = funcionarioRow.Field<string>("senha");
             return funcionario;
         }
@@ -103,7 +103,7 @@ namespace ConsultiBETA.Controller
             funcionario.Telefone = funcionarioRow.Field<string>("telefone");
             funcionario.Cpf = funcionarioRow.Field<string>("cpf");
             funcionario.Cargo = funcionarioRow.Field<string>("cargo");
-            funcionario.Salario = funcionarioRow.Field<float>("salario");
+            funcionario.Salario = funcionarioRow.Field<decimal>("salario");
             funcionario.Senha = funcionarioRow.Field<string>("senha");
             return funcionario;
         }

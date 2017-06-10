@@ -20,6 +20,23 @@ namespace ConsultiBETA
         {
             InitializeComponent();
             Exibir();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    break;
+                case "Administrativo":
+                    break;
+                case "Estoquista":
+                    btnNovo.Visible = false;
+                    btnEditar.Text = "Visualizar";
+                    break;
+                case "Gerencia":
+                    break;
+                case "Técnico":
+                    btnNovo.Visible = false;
+                    btnEditar.Text = "Visualizar";
+                    break;
+            }
         }
 
         public void Exibir()

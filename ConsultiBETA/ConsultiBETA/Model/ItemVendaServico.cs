@@ -11,19 +11,19 @@ namespace ConsultiBETA.Model
     {
         private int _id_item_venda_servico;
         private Servico servico;
-        private int venda_id;
+        private Venda venda;
         private int quantidade;
 
-        public int Venda_id
+        public Venda Venda
         {
             get
             {
-                return venda_id;
+                return venda;
             }
 
             set
             {
-                venda_id = value;
+                venda = value;
             }
         }
 

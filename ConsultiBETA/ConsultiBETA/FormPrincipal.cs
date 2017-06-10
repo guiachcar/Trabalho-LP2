@@ -16,7 +16,8 @@ namespace ConsultiBETA
     {
         FormLogin login_frm;
         frm_splash splash_frm;
-        
+
+        ChamadoController controllerChamado = new ChamadoController();
         public Principal()
         {
             
@@ -39,36 +40,89 @@ namespace ConsultiBETA
             {
                 case "Atendente":
                     relatóriosToolStripMenuItem.Visible = false;
-                    lbFinalizarChamados.Visible = false;
-                    pbFinalizarChamado.Visible = false;
+                    historicoToolStripMenuItem.Visible = false;
+
+                    
+                    ExibirRecente();
                     break;
                 case "Administrativo":
-                    dgChamadosRecentes.Visible = false;
-                    lbFinalizarChamados.Visible = false;
-                    pbFinalizarChamado.Visible = false;
-                    pbAbrirChamado.Visible = false;
-                    lbAbrirChamado.Visible = false;
-
+                    lbFinalizarChamados.Text = "Visualizar";
+                    
                     break;
                 case "Estoquista":
                     relatóriosToolStripMenuItem.Visible = false;
                     cadastroToolStripMenuItem.Visible = false;
                     lbAbrirChamado.Visible = false;
-                    lbFinalizarChamados.Visible = false;
+                    lbFinalizarChamados.Text = "Visualizar";
                     pbAbrirChamado.Visible = false;
-                    pbFinalizarChamado.Visible = false;
+                    vendaToolStripMenuItem.Visible = false;
+                    ExibirRecente();
                     break;
                 case "Gerencia":
-                    pbFinalizarChamado.Visible = false;
-                    lbFinalizarChamados.Visible = false;
+                    lbFinalizarChamados.Text = "Visualizar/Fechar";
+                    ExibirRecente();
                     break;
                 case "Técnico":
                     cadastroToolStripMenuItem.Visible = false;
                     relatóriosToolStripMenuItem.Visible = false;
+                    vendaToolStripMenuItem.Visible = false;
                     pbAbrirChamado.Visible = false;
                     lbAbrirChamado.Visible = false;
+                    ExibirTecnico();
                     break;
             }
+        }
+        public void ExibirRecente()
+        {
+            dgChamadosRecentes.DataSource = controllerChamado.ListarChamadosRecentes();
+            dgChamadosRecentes.DataMember = "chamado";
+            dgChamadosRecentes.Columns[0].HeaderText = "Chamado";
+            dgChamadosRecentes.Columns[1].Visible = false;
+            dgChamadosRecentes.Columns[2].Visible = false;
+            dgChamadosRecentes.Columns[3].Visible = false;
+            dgChamadosRecentes.Columns[4].HeaderText = "Descrição";
+            dgChamadosRecentes.Columns[5].Visible = false;
+            dgChamadosRecentes.Columns[6].HeaderText = "Data Abertura";
+            dgChamadosRecentes.Columns[7].HeaderText = "Data Agendamento";
+            dgChamadosRecentes.Columns[8].HeaderText = "Data Fechamento";
+            dgChamadosRecentes.Columns[9].Visible = false;
+            dgChamadosRecentes.Columns[10].HeaderText = "Cliente";
+            dgChamadosRecentes.Columns[11].Visible = false;
+            dgChamadosRecentes.Columns[12].Visible = false;
+            dgChamadosRecentes.Columns[13].Visible = false;
+            dgChamadosRecentes.Columns[14].Visible = false;
+            dgChamadosRecentes.Columns[15].Visible = false;
+            dgChamadosRecentes.Columns[16].Visible = false;
+            dgChamadosRecentes.Columns[17].HeaderText = "Telefone Cliente";
+            dgChamadosRecentes.Columns[18].Visible = false;
+            dgChamadosRecentes.Columns[19].Visible = false;
+            dgChamadosRecentes.Columns[20].HeaderText = "Status";
+        }
+        public void ExibirTecnico()
+        {
+            dgChamadosRecentes.DataSource = controllerChamado.ListarChamadosTecnico(FormLogin.usuarioLogado);
+            dgChamadosRecentes.DataMember = "chamado";
+            dgChamadosRecentes.Columns[0].HeaderText = "Chamado";
+            dgChamadosRecentes.Columns[1].Visible = false;
+            dgChamadosRecentes.Columns[2].Visible = false;
+            dgChamadosRecentes.Columns[3].Visible = false;
+            dgChamadosRecentes.Columns[4].HeaderText = "Descrição";
+            dgChamadosRecentes.Columns[5].Visible = false;
+            dgChamadosRecentes.Columns[6].HeaderText = "Data Abertura";
+            dgChamadosRecentes.Columns[7].HeaderText = "Data Agendamento";
+            dgChamadosRecentes.Columns[8].HeaderText = "Data Fechamento";
+            dgChamadosRecentes.Columns[9].Visible = false;
+            dgChamadosRecentes.Columns[10].HeaderText = "Cliente";
+            dgChamadosRecentes.Columns[11].Visible = false;
+            dgChamadosRecentes.Columns[12].Visible = false;
+            dgChamadosRecentes.Columns[13].Visible = false;
+            dgChamadosRecentes.Columns[14].Visible = false;
+            dgChamadosRecentes.Columns[15].Visible = false;
+            dgChamadosRecentes.Columns[16].Visible = false;
+            dgChamadosRecentes.Columns[17].HeaderText = "Telefone Cliente";
+            dgChamadosRecentes.Columns[18].Visible = false;
+            dgChamadosRecentes.Columns[19].Visible = false;
+            dgChamadosRecentes.Columns[20].HeaderText = "Status";
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -158,12 +212,15 @@ namespace ConsultiBETA
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            FormClientes form = new FormClientes();
+            form.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            FormAddChamados form = new FormAddChamados();
+            form.ShowDialog();
+            ExibirTecnico();
         }
 
         private void lbUsuario_Click(object sender, EventArgs e)
@@ -177,6 +234,41 @@ namespace ConsultiBETA
         {
             FormHistorico form = new FormHistorico();
             form.Show();
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVenda form = new FormVenda();
+            form.Show();
+        }
+
+        private void pbFinalizarChamado_Click(object sender, EventArgs e)
+        {
+            FormAddChamados form = new FormAddChamados(dgChamadosRecentes);
+            form.ShowDialog();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    ExibirRecente();
+                    break;
+                case "Administrativo":
+                    ExibirRecente();
+
+                    break;
+                case "Estoquista":
+                    ExibirRecente();
+                    break;
+                case "Gerencia":
+                    ExibirRecente();
+                    break;
+                case "Técnico":
+                    ExibirTecnico();
+                    break;
+            }
         }
     }
 }

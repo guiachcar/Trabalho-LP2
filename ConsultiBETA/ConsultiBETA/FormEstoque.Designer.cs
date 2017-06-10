@@ -35,6 +35,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.gbProdutos = new System.Windows.Forms.GroupBox();
             this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.btnNovoProduto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbProdutos.SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnNovoProduto);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.gbFiltrar);
             this.panel1.Controls.Add(this.gbProdutos);
@@ -54,7 +56,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(133, 447);
+            this.btnEditar.Location = new System.Drawing.Point(12, 447);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(118, 23);
             this.btnEditar.TabIndex = 16;
@@ -110,8 +112,19 @@
             this.dgProdutos.Location = new System.Drawing.Point(3, 16);
             this.dgProdutos.Name = "dgProdutos";
             this.dgProdutos.ReadOnly = true;
+            this.dgProdutos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdutos.Size = new System.Drawing.Size(823, 326);
             this.dgProdutos.TabIndex = 0;
+            // 
+            // btnNovoProduto
+            // 
+            this.btnNovoProduto.Location = new System.Drawing.Point(136, 447);
+            this.btnNovoProduto.Name = "btnNovoProduto";
+            this.btnNovoProduto.Size = new System.Drawing.Size(118, 23);
+            this.btnNovoProduto.TabIndex = 17;
+            this.btnNovoProduto.Text = "Adicionar Produto";
+            this.btnNovoProduto.UseVisualStyleBackColor = true;
+            this.btnNovoProduto.Click += new System.EventHandler(this.btnNovoProduto_Click);
             // 
             // FormEstoque
             // 
@@ -119,6 +132,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 482);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estoque";
@@ -140,5 +155,6 @@
         private System.Windows.Forms.GroupBox gbProdutos;
         private System.Windows.Forms.DataGridView dgProdutos;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNovoProduto;
     }
 }

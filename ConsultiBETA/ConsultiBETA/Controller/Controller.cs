@@ -11,9 +11,10 @@ namespace ConsultiBETA.Controller
 {
     class Controller
     {
-        private string conexao = "Persist Security Info=False;server=159.203.179.94;database=consulti;uid=consulti;server = 159.203.179.94; database = consulti;Connect Timeout=28800;Command Timeout=28800; uid = consulti; pwd =ifsp2017";
+        //private string conexao = "Persist Security Info=False;server=159.203.179.94;database=consulti;uid=consulti;server = 159.203.179.94; database = consulti;Connect Timeout=28800;Command Timeout=28800; uid = consulti; pwd =ifsp2017";
+        private string conexao = "Persist Security Info=False;server=localhost;database=consulti;uid=root;server = localhost; database = consulti;Connect Timeout=28800;Command Timeout=28800; uid = root; pwd =";
 
-        
+
         public void RegistrarHistorico(String query, int funcionario_id)
         {
             MySqlConnection objConexao = new MySqlConnection(conexao);

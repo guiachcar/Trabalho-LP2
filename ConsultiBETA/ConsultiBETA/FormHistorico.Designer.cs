@@ -64,8 +64,10 @@
             this.ClientSize = new System.Drawing.Size(772, 466);
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.dgHistorico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormHistorico";
-            this.Text = "FormHistorico";
+            this.Text = "Historico Operações";
             ((System.ComponentModel.ISupportInitialize)(this.dgHistorico)).EndInit();
             this.ResumeLayout(false);
 

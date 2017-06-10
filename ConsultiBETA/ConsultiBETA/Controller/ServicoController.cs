@@ -14,7 +14,7 @@ namespace ConsultiBETA.Controller
         public void Cadastrar(Servico servico)
         {
 
-            string sqlQuery = "INSERT INTO servico (nome,descricao,valor) VALUES ('" +servico.Nome+ "','"+ servico.Descricao +"',"+servico.Valor+")";
+            string sqlQuery = "INSERT INTO servico (nome,descricao,valor) VALUES ('" +servico.Nome+ "','"+ servico.Descricao + "',REPLACE('" + servico.Valor.ToString() + "',',','.'))";
             int idCadastrado = ExecutarSql(sqlQuery);
         }
         public void Excluir(Servico servico)
@@ -30,7 +30,7 @@ namespace ConsultiBETA.Controller
         }
         public void Editar(Servico servico)
         {
-            string sqlQuery = "UPDATE servico SET nome='" + servico.Nome + "',descricao='" + servico.Descricao + "',valor=" + servico.Valor + " WHERE _id_servico=" + servico.Id;
+            string sqlQuery = "UPDATE servico SET nome='" + servico.Nome + "',descricao='" + servico.Descricao + "',valor=REPLACE('" + servico.Valor.ToString() + "',',','.')  WHERE _id_servico=" + servico.Id;
             ExecutarSql(sqlQuery);
         }
 
@@ -43,7 +43,7 @@ namespace ConsultiBETA.Controller
             servico.Id = servicoRow.Field<int>("_id_servico");
             servico.Nome = servicoRow.Field<string>("nome");
             servico.Descricao = servicoRow.Field<string>("descricao");
-            servico.Valor = servicoRow.Field<float>("valor");
+            servico.Valor = servicoRow.Field<decimal>("valor");
             return servico;
         }
 
@@ -53,10 +53,10 @@ namespace ConsultiBETA.Controller
             string sqlQuery = "SELECT * FROM servico";
             return ExecutarSqlRetGrid(sqlQuery, table);
         }
-        public DataSet BuscarProduto(string consulta)
+        public DataSet BuscarServico(string consulta)
         {
-            string table = "produto";
-            string sqlQuery = "SELECT * FROM servico WHERE nome LIKE '%" + consulta + "%' OR descricao LIKE '%";
+            string table = "servico";
+            string sqlQuery = "SELECT * FROM servico WHERE nome LIKE '%" + consulta + "%' OR descricao LIKE '%"+consulta+"%'";
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }

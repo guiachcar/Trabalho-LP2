@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbProdutoNome = new System.Windows.Forms.Label();
+            this.lbId = new System.Windows.Forms.Label();
+            this.btnProduto = new System.Windows.Forms.Button();
             this.lbIDProduto = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalver = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lbQuantitade = new System.Windows.Forms.Label();
-            this.btnProduto = new System.Windows.Forms.Button();
-            this.lbId = new System.Windows.Forms.Label();
-            this.lbProdutoNome = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(498, 222);
             this.panel1.TabIndex = 3;
+            // 
+            // lbProdutoNome
+            // 
+            this.lbProdutoNome.AutoSize = true;
+            this.lbProdutoNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProdutoNome.Location = new System.Drawing.Point(176, 15);
+            this.lbProdutoNome.Name = "lbProdutoNome";
+            this.lbProdutoNome.Size = new System.Drawing.Size(0, 20);
+            this.lbProdutoNome.TabIndex = 17;
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(25, 90);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(0, 13);
+            this.lbId.TabIndex = 16;
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnProduto.Image = global::ConsultiBETA.Properties.Resources.add;
+            this.btnProduto.Location = new System.Drawing.Point(176, 13);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(169, 108);
+            this.btnProduto.TabIndex = 1;
+            this.btnProduto.Text = "Buscar";
+            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduto.UseVisualStyleBackColor = false;
+            this.btnProduto.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbIDProduto
             // 
@@ -104,42 +134,14 @@
             this.lbQuantitade.TabIndex = 7;
             this.lbQuantitade.Text = "Quantidade";
             // 
-            // btnProduto
-            // 
-            this.btnProduto.BackColor = System.Drawing.Color.LawnGreen;
-            this.btnProduto.Image = global::ConsultiBETA.Properties.Resources.add;
-            this.btnProduto.Location = new System.Drawing.Point(176, 13);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(169, 108);
-            this.btnProduto.TabIndex = 1;
-            this.btnProduto.Text = "Buscar";
-            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduto.UseVisualStyleBackColor = false;
-            this.btnProduto.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(25, 90);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(0, 13);
-            this.lbId.TabIndex = 16;
-            // 
-            // lbProdutoNome
-            // 
-            this.lbProdutoNome.AutoSize = true;
-            this.lbProdutoNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProdutoNome.Location = new System.Drawing.Point(176, 15);
-            this.lbProdutoNome.Name = "lbProdutoNome";
-            this.lbProdutoNome.Size = new System.Drawing.Size(0, 20);
-            this.lbProdutoNome.TabIndex = 17;
-            // 
             // FormAddEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 222);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormAddEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Num Produtos";

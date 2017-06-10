@@ -35,7 +35,7 @@
             this.lbBuscarCliente = new System.Windows.Forms.Label();
             this.lbAbrirChamado = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
-            this.historicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.pbFinalizarChamado = new System.Windows.Forms.PictureBox();
             this.pbBuscarCliente = new System.Windows.Forms.PictureBox();
             this.pbAbrirChamado = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,46 +62,57 @@
             // menuHistorico
             // 
             this.menuHistorico.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuHistorico.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuHistorico.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.toolStripMenuItem1,
             this.estoqueToolStripMenuItem,
             this.relatóriosToolStripMenuItem,
+            this.vendaToolStripMenuItem,
+            this.historicoToolStripMenuItem,
             this.ajudaToolStripMenuItem,
-            this.sairToolStripMenuItem,
-            this.historicoToolStripMenuItem});
+            this.sairToolStripMenuItem});
+            this.menuHistorico.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuHistorico.Location = new System.Drawing.Point(0, 0);
             this.menuHistorico.Name = "menuHistorico";
-            this.menuHistorico.Size = new System.Drawing.Size(1020, 24);
+            this.menuHistorico.Size = new System.Drawing.Size(1020, 38);
             this.menuHistorico.TabIndex = 1;
             this.menuHistorico.Text = "menuStrip1";
             // 
             // dgChamadosRecentes
             // 
-            this.dgChamadosRecentes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgChamadosRecentes.AllowUserToAddRows = false;
+            this.dgChamadosRecentes.AllowUserToDeleteRows = false;
+            this.dgChamadosRecentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgChamadosRecentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgChamadosRecentes.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dgChamadosRecentes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgChamadosRecentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgChamadosRecentes.Location = new System.Drawing.Point(51, 70);
+            this.dgChamadosRecentes.Location = new System.Drawing.Point(51, 91);
             this.dgChamadosRecentes.Name = "dgChamadosRecentes";
-            this.dgChamadosRecentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
-            this.dgChamadosRecentes.Size = new System.Drawing.Size(907, 217);
+            this.dgChamadosRecentes.ReadOnly = true;
+            this.dgChamadosRecentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgChamadosRecentes.Size = new System.Drawing.Size(913, 217);
             this.dgChamadosRecentes.TabIndex = 4;
             // 
             // lbChamadosRecentes
             // 
+            this.lbChamadosRecentes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbChamadosRecentes.AutoSize = true;
-            this.lbChamadosRecentes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbChamadosRecentes.Location = new System.Drawing.Point(293, 50);
+            this.lbChamadosRecentes.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lbChamadosRecentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChamadosRecentes.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.lbChamadosRecentes.Location = new System.Drawing.Point(405, 57);
             this.lbChamadosRecentes.Name = "lbChamadosRecentes";
-            this.lbChamadosRecentes.Size = new System.Drawing.Size(106, 13);
+            this.lbChamadosRecentes.Size = new System.Drawing.Size(203, 24);
             this.lbChamadosRecentes.TabIndex = 5;
             this.lbChamadosRecentes.Text = "Chamados Recentes";
             // 
             // lbFinalizarChamados
             // 
+            this.lbFinalizarChamados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFinalizarChamados.AutoSize = true;
             this.lbFinalizarChamados.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbFinalizarChamados.Location = new System.Drawing.Point(777, 504);
@@ -110,6 +123,7 @@
             // 
             // lbBuscarCliente
             // 
+            this.lbBuscarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbBuscarCliente.AutoSize = true;
             this.lbBuscarCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbBuscarCliente.Location = new System.Drawing.Point(469, 504);
@@ -120,6 +134,7 @@
             // 
             // lbAbrirChamado
             // 
+            this.lbAbrirChamado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAbrirChamado.AutoSize = true;
             this.lbAbrirChamado.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbAbrirChamado.Location = new System.Drawing.Point(153, 504);
@@ -132,32 +147,43 @@
             // 
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lbUsuario.Location = new System.Drawing.Point(923, 7);
+            this.lbUsuario.Location = new System.Drawing.Point(913, 9);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(0, 13);
             this.lbUsuario.TabIndex = 13;
             this.lbUsuario.Click += new System.EventHandler(this.lbUsuario_Click);
             // 
-            // historicoToolStripMenuItem
+            // btnAtualizar
             // 
-            this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
-            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.historicoToolStripMenuItem.Text = "Historico";
-            this.historicoToolStripMenuItem.Click += new System.EventHandler(this.historicoToolStripMenuItem_Click);
+            this.btnAtualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtualizar.BackColor = System.Drawing.Color.Ivory;
+            this.btnAtualizar.Image = global::ConsultiBETA.Properties.Resources.atualizarmenor;
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAtualizar.Location = new System.Drawing.Point(811, 50);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(153, 37);
+            this.btnAtualizar.TabIndex = 15;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // pbFinalizarChamado
             // 
+            this.pbFinalizarChamado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbFinalizarChamado.BackColor = System.Drawing.Color.MistyRose;
-            this.pbFinalizarChamado.Image = global::ConsultiBETA.Properties.Resources.venda;
+            this.pbFinalizarChamado.Image = global::ConsultiBETA.Properties.Resources.salvar;
             this.pbFinalizarChamado.Location = new System.Drawing.Point(683, 319);
             this.pbFinalizarChamado.Name = "pbFinalizarChamado";
             this.pbFinalizarChamado.Size = new System.Drawing.Size(281, 237);
             this.pbFinalizarChamado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbFinalizarChamado.TabIndex = 8;
             this.pbFinalizarChamado.TabStop = false;
+            this.pbFinalizarChamado.Click += new System.EventHandler(this.pbFinalizarChamado_Click);
             // 
             // pbBuscarCliente
             // 
+            this.pbBuscarCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pbBuscarCliente.BackColor = System.Drawing.Color.LightGreen;
             this.pbBuscarCliente.Image = global::ConsultiBETA.Properties.Resources.cliente2;
             this.pbBuscarCliente.Location = new System.Drawing.Point(365, 320);
@@ -170,6 +196,7 @@
             // 
             // pbAbrirChamado
             // 
+            this.pbAbrirChamado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pbAbrirChamado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pbAbrirChamado.Image = global::ConsultiBETA.Properties.Resources.chamados;
             this.pbAbrirChamado.Location = new System.Drawing.Point(52, 319);
@@ -248,6 +275,22 @@
             this.relatóriosToolStripMenuItem.Text = "Relatórios";
             this.relatóriosToolStripMenuItem.Click += new System.EventHandler(this.relatóriosToolStripMenuItem_Click);
             // 
+            // vendaToolStripMenuItem
+            // 
+            this.vendaToolStripMenuItem.Image = global::ConsultiBETA.Properties.Resources.venda;
+            this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.vendaToolStripMenuItem.Text = "Venda";
+            this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
+            // 
+            // historicoToolStripMenuItem
+            // 
+            this.historicoToolStripMenuItem.Image = global::ConsultiBETA.Properties.Resources.historico;
+            this.historicoToolStripMenuItem.Name = "historicoToolStripMenuItem";
+            this.historicoToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.historicoToolStripMenuItem.Text = "Historico";
+            this.historicoToolStripMenuItem.Click += new System.EventHandler(this.historicoToolStripMenuItem_Click);
+            // 
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -278,6 +321,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1020, 772);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.lbAbrirChamado);
             this.Controls.Add(this.lbBuscarCliente);
@@ -331,6 +375,8 @@
         private System.Windows.Forms.Label lbAbrirChamado;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.ToolStripMenuItem historicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vendaToolStripMenuItem;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }
 

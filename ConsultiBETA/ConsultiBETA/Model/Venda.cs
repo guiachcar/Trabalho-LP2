@@ -11,7 +11,7 @@ namespace ConsultiBETA.Model
         private int _id_venda;
         private List<ItemVendaProduto> produtos;
         private List<ItemVendaServico> servicos;
-        private float valor_total;
+        private decimal valor_total;
         private Status status_venda;
         private DateTime data_pagamento;
 
@@ -60,7 +60,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public float Valor_total
+        public decimal Valor_total
         {
             get
             {

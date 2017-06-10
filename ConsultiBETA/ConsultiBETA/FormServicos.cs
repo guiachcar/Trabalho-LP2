@@ -27,7 +27,6 @@ namespace ConsultiBETA
             {
                 case "Atendente":
                     btnEditar.Text = "Visualizar";
-                    btnExcluir.Visible = false;
                     btnNovo.Visible = false;
                     break;
 
@@ -39,7 +38,6 @@ namespace ConsultiBETA
             InitializeComponent();
             Exibir();
             btnEditar.Visible = false;
-            btnExcluir.Visible = false;
             btnNovo.Visible = false;
 
             
@@ -54,6 +52,7 @@ namespace ConsultiBETA
             dgServicos.Columns[1].HeaderText = "Nome";
             dgServicos.Columns[2].HeaderText = "Descrição";
             dgServicos.Columns[3].HeaderText = "Valor";
+
 
         }
         
@@ -81,16 +80,31 @@ namespace ConsultiBETA
         {
             if(dgServicos.CurrentRow != null)
             {
-                if(txtQuantidade.Text != "")
+                decimal numero;
+                if (decimal.TryParse(txtQuantidade.Text, out numero))
                 {
-                    FormAddChamados.dgvItemsServicos.Rows.Add(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString(), dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
-                    this.Close();
+
+                    if (txtQuantidade.Text != "")
+                    {
+                        FormAddChamados.dgvItemsServicos.Rows.Add(dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[0].Value.ToString(), dgServicos.Rows[dgServicos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                 }else
                 {
-                    MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("O campo Quantidade contém caracteres inválidos!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-                
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgServicos.DataSource = controller.BuscarServico(txtDigiteAqui.Text);
+            dgServicos.DataMember = "servico";
+
         }
     }
 }

@@ -9,9 +9,9 @@ namespace ConsultiBETA.Model
     class Servico
     {
         private int _id_servico;
-        private String nome;
-        private String descricao;
-        private float valor;
+        private string nome;
+        private string descricao;
+        private decimal valor;
 
         public Servico() 
         { 
@@ -56,7 +56,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public float Valor
+        public decimal Valor
         {
             get
             {

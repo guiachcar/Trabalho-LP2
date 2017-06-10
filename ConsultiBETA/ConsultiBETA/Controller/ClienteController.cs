@@ -28,7 +28,7 @@ namespace ConsultiBETA.Controller
 
             if (confirm.ToString().ToUpper() == "YES")
             {
-                string sqlQuery = "DELETE FROM cliente WHERE _id_cliente=" + cliente.Id ;
+                string sqlQuery = "DELETE FROM cliente WHERE pessoa_id=" + cliente.Id ;
                 ExecutarSql(sqlQuery);
                 controllerPessoa.ExcluirPessoa(cliente);
             }
@@ -51,6 +51,7 @@ namespace ConsultiBETA.Controller
             cliente.Bairro = clienteRow.Field<string>("bairro");
             cliente.Cidade = clienteRow.Field<string>("cidade");
             cliente.Uf = clienteRow.Field<string>("uf");
+            cliente.Cep = clienteRow.Field<string>("cep");
             cliente.Telefone = clienteRow.Field<string>("telefone");
             cliente.Cpf = clienteRow.Field<string>("cpf");
             return cliente;

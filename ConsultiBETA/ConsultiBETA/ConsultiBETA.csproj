@@ -51,6 +51,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -59,6 +63,7 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
@@ -72,6 +77,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -112,12 +119,6 @@
     </Compile>
     <Compile Include="FormAddProduto.Designer.cs">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAddVendas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddVendas.Designer.cs">
-      <DependentUpon>FormAddVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChamados.cs">
       <SubType>Form</SubType>
@@ -173,12 +174,6 @@
     <Compile Include="FormFuncionarios.Designer.cs">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPessoa01.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPessoa01.Designer.cs">
-      <DependentUpon>FormPessoa01.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,11 +192,23 @@
     <Compile Include="FormSobre.Designer.cs">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormViewHistorico.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormViewHistorico.Designer.cs">
       <DependentUpon>FormViewHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewVenda.Designer.cs">
+      <DependentUpon>FormViewVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_splash.cs">
       <SubType>Form</SubType>
@@ -229,6 +236,12 @@
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="repImprimirChamado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>repImprimirChamado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FormAddChamados.resx">
       <DependentUpon>FormAddChamados.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddProduto.resx">
       <DependentUpon>FormAddProduto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAddVendas.resx">
-      <DependentUpon>FormAddVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChamados.resx">
       <DependentUpon>FormChamados.cs</DependentUpon>
@@ -268,9 +278,6 @@
     <EmbeddedResource Include="FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPessoa01.resx">
-      <DependentUpon>FormPessoa01.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormProdutos.resx">
       <DependentUpon>FormProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,8 +287,14 @@
     <EmbeddedResource Include="FormSobre.resx">
       <DependentUpon>FormSobre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormViewHistorico.resx">
       <DependentUpon>FormViewHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewVenda.resx">
+      <DependentUpon>FormViewVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_splash.resx">
       <DependentUpon>frm_splash.cs</DependentUpon>
@@ -299,6 +312,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="repImprimirChamado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>repImprimirChamado.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -412,6 +429,21 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\historico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atualizarmenor.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

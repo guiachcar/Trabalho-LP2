@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbSobre = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbSobre = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,15 +45,6 @@
             this.panel1.Size = new System.Drawing.Size(549, 387);
             this.panel1.TabIndex = 0;
             // 
-            // lbSobre
-            // 
-            this.lbSobre.AutoSize = true;
-            this.lbSobre.Location = new System.Drawing.Point(217, 327);
-            this.lbSobre.Name = "lbSobre";
-            this.lbSobre.Size = new System.Drawing.Size(115, 39);
-            this.lbSobre.TabIndex = 1;
-            this.lbSobre.Text = "Sistema ConsulTI \r\nVersão 1.0\r\nCriado em 25/04/2017\r\n";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ConsultiBETA.Properties.Resources.logo;
@@ -64,6 +55,15 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // lbSobre
+            // 
+            this.lbSobre.AutoSize = true;
+            this.lbSobre.Location = new System.Drawing.Point(217, 327);
+            this.lbSobre.Name = "lbSobre";
+            this.lbSobre.Size = new System.Drawing.Size(115, 39);
+            this.lbSobre.TabIndex = 1;
+            this.lbSobre.Text = "Sistema ConsulTI \r\nVersão 1.0\r\nCriado em 25/04/2017\r\n";
+            // 
             // FormSobre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -71,6 +71,7 @@
             this.ClientSize = new System.Drawing.Size(549, 387);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "FormSobre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sobre";

@@ -17,7 +17,7 @@ namespace ConsultiBETA.Controller
         public void Cadastrar(Produto produto)
         {
 
-            string sqlQuery = "INSERT INTO produto (nome,tipo,descricao,valor_venda,valor_compra) VALUES ('" + produto.Nome + "','"+produto.Tipo+"','" + produto.Descricao + "'," + produto.Valor_venda + ","+produto.Valor_compra+")";
+            string sqlQuery = "INSERT INTO produto (nome,tipo,descricao,valor_venda,valor_compra) VALUES ('" + produto.Nome + "','"+produto.Tipo+"','" + produto.Descricao + "',REPLACE('" + produto.Valor_venda.ToString() + "',',','.'),REPLACE('" + produto.Valor_compra.ToString() + "',',','.'))";
             int idCadastrado = ExecutarSql(sqlQuery);
             estoque.Id = idCadastrado;
             estoque.Quantidade = 0;
@@ -38,7 +38,7 @@ namespace ConsultiBETA.Controller
         }
         public void Editar(Produto produto)
         {
-            string sqlQuery = "UPDATE produto SET nome='" + produto.Nome + "',tipo='"+ produto.Tipo +"', descricao='" + produto.Descricao + "',valor_venda=" + produto.Valor_venda + ",valor_compra="+produto.Valor_compra+" WHERE _id_produto=" + produto.Id;
+            string sqlQuery = "UPDATE produto SET nome='" + produto.Nome + "',tipo='"+ produto.Tipo +"', descricao='" + produto.Descricao + "',valor_venda= REPLACE('" + produto.Valor_venda.ToString() + "',',','.') , valor_compra=REPLACE('" + produto.Valor_compra.ToString() + "',',','.') WHERE _id_produto=" + produto.Id;
             ExecutarSql(sqlQuery);
         }
 
@@ -52,8 +52,8 @@ namespace ConsultiBETA.Controller
             produto.Nome = produtoRow.Field<string>("nome");
             produto.Tipo = produtoRow.Field<string>("tipo");
             produto.Descricao = produtoRow.Field<string>("descricao");
-            produto.Valor_venda = produtoRow.Field<float>("valor_venda");
-            produto.Valor_compra = produtoRow.Field<float>("valor_compra");
+            produto.Valor_venda = produtoRow.Field<decimal>("valor_venda");
+            produto.Valor_compra = produtoRow.Field<decimal>("valor_compra");
             return produto;
         }
 
@@ -63,10 +63,16 @@ namespace ConsultiBETA.Controller
             string sqlQuery = "SELECT * FROM produto";
             return ExecutarSqlRetGrid(sqlQuery, table);
         }
+        public DataSet ListarComEstoque()
+        {
+            string table = "produto";
+            string sqlQuery = "SELECT * FROM produto pr INNER JOIN estoque es ON pr._id_produto=es.produto_id WHERE quantidade>0";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+        }
         public DataSet BuscarProduto(string consulta)
         {
             string table = "produto";
-            string sqlQuery = "SELECT * FROM produto WHERE nome LIKE '%" + consulta + "%' OR tipo LIKE '%" + consulta + "%' OR descricao LIKE '%"+consulta+"'";
+            string sqlQuery = "SELECT * FROM produto WHERE nome LIKE '%" + consulta + "%' OR tipo LIKE '%" + consulta + "%' OR descricao LIKE '%"+consulta+"%'";
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }

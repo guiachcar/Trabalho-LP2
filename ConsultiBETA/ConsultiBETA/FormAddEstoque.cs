@@ -35,17 +35,26 @@ namespace ConsultiBETA
         }
         private void btnSalver_Click(object sender, EventArgs e)
         {
-            Estoque estoque = new Estoque();
-            estoque.Id = int.Parse(lbId.Text);
-            estoque.Quantidade = int.Parse(txtQuantidade.Text);
-            controller.Editar(estoque);
-            MessageBox.Show("Quantidade alterada com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            this.Close();
-            FormEstoque es = Application.OpenForms["FormEstoque"] as FormEstoque;
-
-            if (es != null)
+            decimal numero;
+            if (decimal.TryParse(txtQuantidade.Text, out numero))
             {
-                es.Exibir();
+
+                Estoque estoque = new Estoque();
+                estoque.Id = int.Parse(lbId.Text);
+                estoque.Quantidade = int.Parse(txtQuantidade.Text);
+                controller.Editar(estoque);
+                MessageBox.Show("Quantidade alterada com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                this.Close();
+                FormEstoque es = Application.OpenForms["FormEstoque"] as FormEstoque;
+
+                if (es != null)
+                {
+                    es.Exibir();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Quantidade contem caracteres invalidos!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 

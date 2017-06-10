@@ -10,19 +10,30 @@ namespace ConsultiBETA.Model
     {
         private int _id_item_venda_produto;
         private Produto produto;
-        private int venda_id;
+        private Venda venda;
         private int quantidade;
 
-        public int Venda_id
+        public ItemVendaProduto()
+        {
+        }
+        public ItemVendaProduto(int _id_item_venda_produto, Produto produto, Venda venda, int quantidade)
+        {
+            this._id_item_venda_produto = _id_item_venda_produto;
+            this.produto = produto;
+            this.venda = venda;
+            this.quantidade = quantidade;
+        }
+
+        public Venda Venda
         {
             get
             {
-                return venda_id;
+                return venda;
             }
 
             set
             {
-                venda_id = value;
+                venda = value;
             }
         }
 

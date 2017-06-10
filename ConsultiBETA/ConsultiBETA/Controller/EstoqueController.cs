@@ -55,7 +55,7 @@ namespace ConsultiBETA.Controller
         public DataSet BuscarEstoque(string consulta)
         {
             string table = "estoque";
-            string sqlQuery = "SELECT * FROM estoque e RIGHT JOIN produto p ON p._id_produto=e.produto_id WHERE nome LIKE '%" + consulta + "%' OR tipo LIKE '%" + consulta + "%' OR descricao LIKE '%" + consulta + "'";
+            string sqlQuery = "SELECT * FROM estoque e RIGHT JOIN produto p ON p._id_produto=e.produto_id WHERE nome LIKE '%" + consulta + "%' OR tipo LIKE '%" + consulta + "%' OR descricao LIKE '%" + consulta + "%'";
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }

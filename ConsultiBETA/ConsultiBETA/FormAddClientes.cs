@@ -41,64 +41,95 @@ namespace ConsultiBETA
             cbEstado.SelectedItem = cliente.Uf;
             txtCEP.SelectedText = cliente.Cep;
             txtTelefone.SelectedText = cliente.Telefone;
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    break;
+                case "Administrativo":
+                    break;
+                case "Estoquista":
+                    btnSalver.Visible = false;
+                    break;
+                case "Gerencia":
+                    break;
+                case "Técnico":
+                    btnSalver.Visible = false;
+                    break;
+            }
 
+        }
+        protected bool ValidarCampos()
+        {
+            if (txtCPF.TextLength != 11 || txtNome.Text == string.Empty || txtRua.Text == string.Empty || txtNro.Text == string.Empty
+                || txtBairro.Text == string.Empty || txtCidade.Text == string.Empty || txtCEP.TextLength != 9 )
+            {
+
+                MessageBox.Show("Favor preencher os campos corretamente!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 
         private void btnSalver_Click(object sender, EventArgs e)
         {
 
-            Cliente cliente = new Cliente();
-
-            if (lbID.Text == "Cliente ID")
+            if (ValidarCampos())
             {
-                
-                cliente.Nome = txtNome.Text;
-                cliente.Cpf = txtCPF.Text;
-                cliente.Telefone = txtTelefone.Text;
-                cliente.Endereco = txtRua.Text;
-                cliente.Nro = txtNro.Text;
-                cliente.Cep = txtCEP.Text;
-                cliente.Bairro = txtBairro.Text;
-                cliente.Cidade = txtCidade.Text;
-                cliente.Uf = cbEstado.Text;
+                Cliente cliente = new Cliente();
 
-                clientes.Cadastrar(cliente);
-                MessageBox.Show("Cliente cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
-                FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;
-
-                if (c != null)
+                if (lbID.Text == "Cliente ID")
                 {
-                    c.Exibir();
+
+                    cliente.Nome = txtNome.Text;
+                    cliente.Cpf = txtCPF.Text;
+                    cliente.Telefone = txtTelefone.Text;
+                    cliente.Endereco = txtRua.Text;
+                    cliente.Nro = txtNro.Text;
+                    cliente.Cep = txtCEP.Text;
+                    cliente.Bairro = txtBairro.Text;
+                    cliente.Cidade = txtCidade.Text;
+                    cliente.Uf = cbEstado.Text;
+
+                    clientes.Cadastrar(cliente);
+                    MessageBox.Show("Cliente cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                    FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;
+
+                    if (c != null)
+                    {
+                        c.Exibir();
+                    }
+                }
+                else
+                {
+
+                    int id = int.Parse(lbID.Text);
+                    cliente.Id = id;
+                    cliente.Cpf = txtCPF.Text;
+                    cliente.Nome = txtNome.Text;
+                    cliente.Endereco = txtRua.Text;
+                    cliente.Nro = txtNro.Text;
+                    cliente.Bairro = txtBairro.Text;
+                    cliente.Cidade = txtCidade.Text;
+                    cliente.Uf = cbEstado.Text;
+                    cliente.Cep = txtCEP.Text;
+                    cliente.Telefone = txtTelefone.Text;
+                    clientes.Editar(cliente);
+                    MessageBox.Show("Cliente Alterado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                    this.Close();
+                    FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;
+
+                    if (c != null)
+                    {
+                        c.Exibir();
+                    }
                 }
             }
-            else{
-
-                int id = int.Parse(lbID.Text);
-                cliente.Id = id;
-                cliente.Cpf = txtCPF.Text;
-                cliente.Nome = txtNome.Text;
-                cliente.Endereco = txtRua.Text;
-                cliente.Nro = txtNro.Text;
-                cliente.Bairro = txtBairro.Text;
-                cliente.Cidade = txtCidade.Text;
-                cliente.Uf = cbEstado.Text;
-                cliente.Cep = txtCEP.Text;
-                cliente.Telefone = txtTelefone.Text;
-                clientes.Editar(cliente);
-                MessageBox.Show("Cliente Alterado com sucesso", "Consulti", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-                this.Close();
-                FormClientes c = Application.OpenForms["FormClientes"] as FormClientes;
-
-                if (c != null)
-                {
-                    c.Exibir();
-                }
-            }
-            
-
-
+                  
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

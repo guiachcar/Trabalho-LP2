@@ -24,7 +24,8 @@ namespace ConsultiBETA.Controller
                 acao.Id = x.Field<int>("_id_acao");
                 acao.Descricao = x.Field<string>("descricao");
                 acao.Funcionario = controllerFuncionario.getFunc(x.Field<int>("funcionario_id"));
-                acao.Data_acao = DateTime.Parse(x.Field<string>("data_acao"));
+                acao.Data_acao = x.Field<DateTime>("data_acao");
+                acoes.Add(acao);
             }
             return acoes;
         }

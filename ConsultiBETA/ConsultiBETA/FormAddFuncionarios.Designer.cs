@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.lbDesSenha = new System.Windows.Forms.Label();
             this.lbSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.cbCargo = new System.Windows.Forms.ComboBox();
             this.lbID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtSalario = new System.Windows.Forms.TextBox();
             this.lbSalario = new System.Windows.Forms.Label();
             this.lbCargo = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.gbEndereco = new System.Windows.Forms.GroupBox();
+            this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lbEstado = new System.Windows.Forms.Label();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.lbCEP = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.lbBairro = new System.Windows.Forms.Label();
             this.lbNumero = new System.Windows.Forms.Label();
             this.lbRua = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
@@ -64,20 +64,20 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtSalario);
+            this.panel1.Controls.Add(this.txtTelefone);
+            this.panel1.Controls.Add(this.txtCPF);
             this.panel1.Controls.Add(this.lbDesSenha);
             this.panel1.Controls.Add(this.lbSenha);
             this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.cbCargo);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.txtSalario);
             this.panel1.Controls.Add(this.lbSalario);
             this.panel1.Controls.Add(this.lbCargo);
             this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lbTelefone);
             this.panel1.Controls.Add(this.gbEndereco);
-            this.panel1.Controls.Add(this.txtCPF);
             this.panel1.Controls.Add(this.lbCPF);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.lbNome);
@@ -86,6 +86,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 351);
             this.panel1.TabIndex = 0;
+            // 
+            // txtSalario
+            // 
+            this.txtSalario.Location = new System.Drawing.Point(411, 147);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(154, 20);
+            this.txtSalario.TabIndex = 6;
+            this.txtSalario.TextChanged += new System.EventHandler(this.txtSalario_TextChanged);
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(84, 105);
+            this.txtTelefone.Mask = "(99) 00000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(261, 20);
+            this.txtTelefone.TabIndex = 3;
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Location = new System.Drawing.Point(412, 62);
+            this.txtCPF.Mask = "00000000000";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(153, 20);
+            this.txtCPF.TabIndex = 2;
             // 
             // lbDesSenha
             // 
@@ -147,13 +171,6 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtSalario
-            // 
-            this.txtSalario.Location = new System.Drawing.Point(412, 149);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(153, 20);
-            this.txtSalario.TabIndex = 6;
-            // 
             // lbSalario
             // 
             this.lbSalario.AutoSize = true;
@@ -182,13 +199,6 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(84, 103);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(261, 20);
-            this.txtTelefone.TabIndex = 3;
-            // 
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
@@ -200,9 +210,9 @@
             // 
             // gbEndereco
             // 
+            this.gbEndereco.Controls.Add(this.txtCEP);
             this.gbEndereco.Controls.Add(this.cbEstado);
             this.gbEndereco.Controls.Add(this.lbEstado);
-            this.gbEndereco.Controls.Add(this.txtCEP);
             this.gbEndereco.Controls.Add(this.lbCEP);
             this.gbEndereco.Controls.Add(this.txtCidade);
             this.gbEndereco.Controls.Add(this.txtBairro);
@@ -218,6 +228,14 @@
             this.gbEndereco.TabIndex = 7;
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Endereço";
+            // 
+            // txtCEP
+            // 
+            this.txtCEP.Location = new System.Drawing.Point(508, 20);
+            this.txtCEP.Mask = "00000-999";
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(155, 20);
+            this.txtCEP.TabIndex = 9;
             // 
             // cbEstado
             // 
@@ -251,13 +269,6 @@
             this.lbEstado.Size = new System.Drawing.Size(40, 13);
             this.lbEstado.TabIndex = 7;
             this.lbEstado.Text = "Estado";
-            // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(508, 21);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(155, 20);
-            this.txtCEP.TabIndex = 9;
             // 
             // lbCEP
             // 
@@ -332,13 +343,6 @@
             this.lbRua.TabIndex = 0;
             this.lbRua.Text = "Rua";
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(412, 59);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(153, 20);
-            this.txtCPF.TabIndex = 2;
-            // 
             // lbCPF
             // 
             this.lbCPF.AutoSize = true;
@@ -370,6 +374,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 351);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormAddFuncionarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adiconar/Alterar Funcionarios";
@@ -385,12 +391,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.GroupBox gbEndereco;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lbEstado;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label lbCEP;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
@@ -400,11 +404,9 @@
         private System.Windows.Forms.Label lbBairro;
         private System.Windows.Forms.Label lbNumero;
         private System.Windows.Forms.Label lbRua;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label lbSalario;
         private System.Windows.Forms.Label lbCargo;
         private System.Windows.Forms.Button btnCancelar;
@@ -413,5 +415,9 @@
         private System.Windows.Forms.Label lbDesSenha;
         private System.Windows.Forms.Label lbSenha;
         private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
+        private System.Windows.Forms.TextBox txtSalario;
+        private System.Windows.Forms.MaskedTextBox txtCEP;
     }
 }

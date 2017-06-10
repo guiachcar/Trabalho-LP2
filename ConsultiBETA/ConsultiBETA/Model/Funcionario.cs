@@ -9,7 +9,7 @@ namespace ConsultiBETA.Model
     class Funcionario: Pessoa
     {
         private string cargo;
-        private float salario;
+        private decimal salario;
         private string senha;
 
         public Funcionario() 
@@ -28,7 +28,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public float Salario
+        public decimal Salario
         {
             get
             {

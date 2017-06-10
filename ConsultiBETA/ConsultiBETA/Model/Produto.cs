@@ -9,11 +9,11 @@ namespace ConsultiBETA.Model
     class Produto
     {
         private int _id_produto;
-        private String nome;
-        private String tipo;
-        private String descricao;
-        private float valor_venda;
-        private float valor_compra;
+        private string nome;
+        private string tipo;
+        private string descricao;
+        private decimal valor_venda;
+        private decimal valor_compra;
         
 
         public Produto()
@@ -73,7 +73,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public float Valor_venda
+        public decimal Valor_venda
         {
             get
             {
@@ -86,7 +86,7 @@ namespace ConsultiBETA.Model
             }
         }
 
-        public float Valor_compra
+        public decimal Valor_compra
         {
             get
             {

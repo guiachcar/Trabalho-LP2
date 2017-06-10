@@ -46,49 +46,77 @@ namespace ConsultiBETA
             txtValor.Text = produto.Valor_venda.ToString();
             txtValorCompra.Text = produto.Valor_compra.ToString();
         }
-
-        private void btnSalver_Click(object sender, EventArgs e)
+        protected bool ValidarCampos()
         {
-
-            Produto produto = new Produto();
-
-            if (lbID.Text == "Produto ID")
+            decimal numero;
+            if (txtNome.Text == string.Empty || txtTipo.Text == string.Empty || txtDescricao.Text == string.Empty)
             {
-                produto.Nome = txtNome.Text;
-                produto.Tipo = txtTipo.Text;
-                produto.Descricao = txtDescricao.Text;
-                produto.Valor_venda = float.Parse(txtValor.Text);
-                produto.Valor_compra = float.Parse(txtValorCompra.Text);
 
-                produtos.Cadastrar(produto);
-                MessageBox.Show("Produto cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
-                FormProdutos p = Application.OpenForms["FormProdutos"] as FormProdutos;
-
-                if (p != null)
-                {
-                    p.Exibir();
-                }
+                MessageBox.Show("Favor preencher os campos corretamente!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
             }
             else
             {
-                int id = int.Parse(lbID.Text);
-                produto.Id = id;
-                produto.Nome = txtNome.Text;
-                produto.Tipo = txtTipo.Text;
-                produto.Descricao = txtDescricao.Text;
-                produto.Valor_venda = float.Parse(txtValor.Text);
-                produto.Valor_compra = float.Parse(txtValorCompra.Text);
-                produtos.Editar(produto);
-                MessageBox.Show("Produto alterado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                this.Close();
-                FormProdutos p = Application.OpenForms["FormProdutos"] as FormProdutos;
-
-                if (p != null)
+                if (decimal.TryParse(txtValor.Text, out numero) || decimal.TryParse(txtValorCompra.Text, out numero))
                 {
-                    p.Exibir();
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("O campo Valor contem caracteres invalidos!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return false;
                 }
             }
+        }
+        private void btnSalver_Click(object sender, EventArgs e)
+        {
+
+            if (ValidarCampos())
+            {
+                string valor_compra = txtValorCompra.Text.Replace(".", "");
+                string valor_venda = txtValor.Text.Replace(".", "");
+
+                Produto produto = new Produto();
+
+                if (lbID.Text == "Produto ID")
+                {
+                    produto.Nome = txtNome.Text;
+                    produto.Tipo = txtTipo.Text;
+                    produto.Descricao = txtDescricao.Text;
+                    produto.Valor_venda = decimal.Parse(valor_venda);
+                    produto.Valor_compra = decimal.Parse(valor_compra);
+
+                    produtos.Cadastrar(produto);
+                    MessageBox.Show("Produto cadastrado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                    FormProdutos p = Application.OpenForms["FormProdutos"] as FormProdutos;
+
+                    if (p != null)
+                    {
+                        p.Exibir();
+                    }
+                }
+                else
+                {
+                    int id = int.Parse(lbID.Text);
+                    produto.Id = id;
+                    produto.Nome = txtNome.Text;
+                    produto.Tipo = txtTipo.Text;
+                    produto.Descricao = txtDescricao.Text;
+                    produto.Valor_venda = decimal.Parse(valor_venda);
+                    produto.Valor_compra = decimal.Parse(valor_compra);
+                    produtos.Editar(produto);
+                    MessageBox.Show("Produto alterado com sucesso!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    this.Close();
+                    FormProdutos p = Application.OpenForms["FormProdutos"] as FormProdutos;
+
+                    if (p != null)
+                    {
+                        p.Exibir();
+                    }
+                }
+            }
+         
 
 
         }
@@ -96,6 +124,16 @@ namespace ConsultiBETA
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            FormAddFuncionarios.Moeda(ref txtValor);
+        }
+
+        private void txtValorCompra_TextChanged(object sender, EventArgs e)
+        {
+            FormAddFuncionarios.Moeda(ref txtValorCompra);
         }
     }
 }

@@ -72,7 +72,7 @@
             this.txtValorCompra.Name = "txtValorCompra";
             this.txtValorCompra.Size = new System.Drawing.Size(100, 20);
             this.txtValorCompra.TabIndex = 5;
-            this.txtValorCompra.Text = "0,00";
+            this.txtValorCompra.TextChanged += new System.EventHandler(this.txtValorCompra_TextChanged);
             // 
             // txtTipo
             // 
@@ -121,7 +121,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 4;
-            this.txtValor.Text = "0,00";
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lbValorVenda
             // 
@@ -184,6 +184,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 239);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormAddProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar/Alterar Produto";

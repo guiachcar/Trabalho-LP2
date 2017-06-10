@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalver = new System.Windows.Forms.Button();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.gbEndereco = new System.Windows.Forms.GroupBox();
+            this.txtCEP = new System.Windows.Forms.MaskedTextBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.lbEstado = new System.Windows.Forms.Label();
-            this.txtCEP = new System.Windows.Forms.TextBox();
             this.lbCEP = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.lbBairro = new System.Windows.Forms.Label();
             this.lbNumero = new System.Windows.Forms.Label();
             this.lbRua = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.TextBox();
             this.lbCPF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
@@ -58,14 +58,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtTelefone);
+            this.panel1.Controls.Add(this.txtCPF);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnSalver);
-            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.lbTelefone);
             this.panel1.Controls.Add(this.gbEndereco);
-            this.panel1.Controls.Add(this.txtCPF);
             this.panel1.Controls.Add(this.lbCPF);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.lbNome);
@@ -74,6 +74,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(768, 280);
             this.panel1.TabIndex = 0;
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(77, 89);
+            this.txtTelefone.Mask = "(99) 00000-0000";
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(265, 20);
+            this.txtTelefone.TabIndex = 3;
+            // 
+            // txtCPF
+            // 
+            this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCPF.Location = new System.Drawing.Point(415, 46);
+            this.txtCPF.Mask = "00000000000";
+            this.txtCPF.Name = "txtCPF";
+            this.txtCPF.Size = new System.Drawing.Size(263, 20);
+            this.txtCPF.TabIndex = 2;
             // 
             // label1
             // 
@@ -97,6 +114,8 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Location = new System.Drawing.Point(358, 247);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(203, 23);
@@ -107,6 +126,8 @@
             // 
             // btnSalver
             // 
+            this.btnSalver.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalver.Location = new System.Drawing.Point(160, 247);
             this.btnSalver.Name = "btnSalver";
             this.btnSalver.Size = new System.Drawing.Size(188, 23);
@@ -114,13 +135,6 @@
             this.btnSalver.Text = "Salvar";
             this.btnSalver.UseVisualStyleBackColor = true;
             this.btnSalver.Click += new System.EventHandler(this.btnSalver_Click);
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(77, 89);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(265, 20);
-            this.txtTelefone.TabIndex = 3;
             // 
             // lbTelefone
             // 
@@ -133,9 +147,11 @@
             // 
             // gbEndereco
             // 
+            this.gbEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbEndereco.Controls.Add(this.txtCEP);
             this.gbEndereco.Controls.Add(this.cbEstado);
             this.gbEndereco.Controls.Add(this.lbEstado);
-            this.gbEndereco.Controls.Add(this.txtCEP);
             this.gbEndereco.Controls.Add(this.lbCEP);
             this.gbEndereco.Controls.Add(this.txtCidade);
             this.gbEndereco.Controls.Add(this.txtBairro);
@@ -152,8 +168,22 @@
             this.gbEndereco.TabStop = false;
             this.gbEndereco.Text = "Endereço";
             // 
+            // txtCEP
+            // 
+            this.txtCEP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCEP.Location = new System.Drawing.Point(481, 21);
+            this.txtCEP.Mask = "00000-999";
+            this.txtCEP.Name = "txtCEP";
+            this.txtCEP.Size = new System.Drawing.Size(182, 20);
+            this.txtCEP.TabIndex = 6;
+            // 
             // cbEstado
             // 
+            this.cbEstado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
@@ -185,13 +215,6 @@
             this.lbEstado.TabIndex = 7;
             this.lbEstado.Text = "Estado";
             // 
-            // txtCEP
-            // 
-            this.txtCEP.Location = new System.Drawing.Point(508, 25);
-            this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(155, 20);
-            this.txtCEP.TabIndex = 6;
-            // 
             // lbCEP
             // 
             this.lbCEP.AutoSize = true;
@@ -203,6 +226,9 @@
             // 
             // txtCidade
             // 
+            this.txtCidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCidade.Location = new System.Drawing.Point(343, 56);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(210, 20);
@@ -210,6 +236,9 @@
             // 
             // txtBairro
             // 
+            this.txtBairro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBairro.Location = new System.Drawing.Point(62, 56);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(218, 20);
@@ -217,6 +246,9 @@
             // 
             // txtNro
             // 
+            this.txtNro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNro.Location = new System.Drawing.Point(343, 21);
             this.txtNro.Name = "txtNro";
             this.txtNro.Size = new System.Drawing.Size(98, 20);
@@ -224,6 +256,9 @@
             // 
             // txtRua
             // 
+            this.txtRua.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRua.Location = new System.Drawing.Point(62, 21);
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(218, 20);
@@ -265,15 +300,9 @@
             this.lbRua.TabIndex = 0;
             this.lbRua.Text = "Rua";
             // 
-            // txtCPF
-            // 
-            this.txtCPF.Location = new System.Drawing.Point(430, 48);
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(153, 20);
-            this.txtCPF.TabIndex = 2;
-            // 
             // lbCPF
             // 
+            this.lbCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCPF.AutoSize = true;
             this.lbCPF.Location = new System.Drawing.Point(380, 48);
             this.lbCPF.Name = "lbCPF";
@@ -303,6 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 280);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormAddClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar/Alterar Clientes";
@@ -317,12 +348,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label lbTelefone;
         private System.Windows.Forms.GroupBox gbEndereco;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label lbEstado;
-        private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.Label lbCEP;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtBairro;
@@ -332,7 +361,6 @@
         private System.Windows.Forms.Label lbBairro;
         private System.Windows.Forms.Label lbNumero;
         private System.Windows.Forms.Label lbRua;
-        private System.Windows.Forms.TextBox txtCPF;
         private System.Windows.Forms.Label lbCPF;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lbNome;
@@ -340,5 +368,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.MaskedTextBox txtCEP;
+        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox txtCPF;
     }
 }

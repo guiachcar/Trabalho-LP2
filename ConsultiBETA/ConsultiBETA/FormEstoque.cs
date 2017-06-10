@@ -19,13 +19,21 @@ namespace ConsultiBETA
         {
             InitializeComponent();
             Exibir();
-            if (dgProdutos.RowCount == 0 || FormLogin.nivelAcesso == "Atendente" || FormLogin.nivelAcesso == "Tecnico")
+            if (dgProdutos.RowCount == 0 || FormLogin.nivelAcesso == "Atendente" || FormLogin.nivelAcesso == "Técnico" || FormLogin.nivelAcesso == "Administrativo")
             {
                 btnEditar.Visible = false;
+                btnNovoProduto.Visible = false;
             }
             dgProdutos.Columns[0].Visible = false;
             dgProdutos.Columns[1].Visible = false;
+            dgProdutos.Columns[2].HeaderText = "Quantidade";
             dgProdutos.Columns[3].Visible = false;
+            dgProdutos.Columns[4].HeaderText = "Nome";
+            dgProdutos.Columns[5].HeaderText = "Tipo";
+            dgProdutos.Columns[6].HeaderText = "Descrição";
+            dgProdutos.Columns[7].HeaderText ="Valor";
+            dgProdutos.Columns[8].Visible = false;
+
         }
         
         public void Exibir()
@@ -52,8 +60,14 @@ namespace ConsultiBETA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //dgProdutos.DataSource = controller.BuscarProduto(txtDigiteAqui.Text);
-            //dgProdutos.DataMember = "produto";
+            dgProdutos.DataSource = controller.BuscarEstoque(txtDigiteAqui.Text);
+            dgProdutos.DataMember = "estoque";
+        }
+
+        private void btnNovoProduto_Click(object sender, EventArgs e)
+        {
+            FormAddProdutos form = new FormAddProdutos();
+            form.ShowDialog();
         }
     }
 }

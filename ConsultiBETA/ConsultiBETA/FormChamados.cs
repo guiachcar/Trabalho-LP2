@@ -27,9 +27,9 @@ namespace ConsultiBETA
         {
             InitializeComponent();
             dtpAbertura.Format = DateTimePickerFormat.Custom;
-            dtpAbertura.CustomFormat = "dd/MM/yyyy";
+            dtpAbertura.CustomFormat = "dd/MM/yyyy HH:mm";
             dtpAberturaFinal.Format = DateTimePickerFormat.Custom;
-            dtpAberturaFinal.CustomFormat = "dd/MM/yyyy";
+            dtpAberturaFinal.CustomFormat = "dd/MM/yyyy HH:mm";
 
             cbTecnico.ValueMember = "pessoa_id";
             cbTecnico.DisplayMember = "nome";
@@ -39,6 +39,23 @@ namespace ConsultiBETA
             cbStatus.DisplayMember = "status_chamado";
             cbStatus.DataSource = controllerStatus.Listar().Tables[0];
 
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    break;
+                case "Administrativo":
+                    break;
+                case "Estoquista":
+                    btnAbrirChamado.Visible = false;
+                    btnFercharChamdo.Text = "Visualizar";
+                    break;
+                case "Gerencia":
+                    break;
+                case "Técnico":
+                    btnAbrirChamado.Visible = false;
+                    btnFercharChamdo.Text = "Visualizar";
+                    break;
+            }
             Exibir();
 
 
@@ -86,6 +103,12 @@ namespace ConsultiBETA
             FormAddChamados form = new FormAddChamados(dgChamados);
             form.ShowDialog();
         }
-    
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            dgChamados.DataSource = controller.BuscarChamado(dtpAbertura.Value, dtpAberturaFinal.Value, cbTecnico.SelectedValue.ToString(),cbStatus.SelectedValue.ToString(), txtDigiteAqui.Text);
+            dgChamados.DataMember = "chamado";
+        }
     }
 }

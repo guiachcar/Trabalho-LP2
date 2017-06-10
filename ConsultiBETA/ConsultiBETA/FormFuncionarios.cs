@@ -22,11 +22,9 @@ namespace ConsultiBETA
             {
                 case "Atendente":
                     btnNovo.Visible = false;
-                    btnExcluir.Visible = false;
                     btnEditar.Text = "Visualizar";
                     break;
                 case "Administrativo":
-                    btnExcluir.Visible = false;
                     break;
 
             }

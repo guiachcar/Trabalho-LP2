@@ -23,12 +23,26 @@ namespace ConsultiBETA
             txtQuantidade.Visible = false;
             lbQuantidade.Visible = false;
             Exibir();
+            switch (FormLogin.nivelAcesso)
+            {
+                case "Atendente":
+                    btnNovo.Visible = false;
+                    btnEditar.Text = "Visualizar";
+                    break;
+                case "Administrativo":
+                    break;
+                case "Estoquista":
+                    break;
+                case "Gerencia":
+                    break;
+                case "Técnico":
+                    break;
+            }
         }
         public FormProdutos(int produto_id)
         {
             InitializeComponent();
             Exibir();
-            btnExcluir.Visible = false;
             btnNovo.Visible = false;
             btnSelecionar.Visible = false;
             txtQuantidade.Visible = false;
@@ -39,8 +53,7 @@ namespace ConsultiBETA
         public FormProdutos(DataGridView dgItemProduto)
         {
             InitializeComponent();
-            Exibir();
-            btnExcluir.Visible = false;
+            ExibirComEstoque();
             btnNovo.Visible = false;
             btnEditar.Visible = false;
         }
@@ -55,6 +68,20 @@ namespace ConsultiBETA
             dgProdutos.Columns[3].HeaderText = "Descrição";
             dgProdutos.Columns[4].HeaderText = "Valor";
             dgProdutos.Columns[5].Visible = false;
+        }
+        public void ExibirComEstoque()
+        {
+            dgProdutos.DataSource = controller.ListarComEstoque();
+            dgProdutos.DataMember = "produto";
+            dgProdutos.Columns[0].HeaderText = "Id";
+            dgProdutos.Columns[1].HeaderText = "Produto";
+            dgProdutos.Columns[2].HeaderText = "Tipo";
+            dgProdutos.Columns[3].HeaderText = "Descrição";
+            dgProdutos.Columns[4].HeaderText = "Valor";
+            dgProdutos.Columns[5].Visible = false;
+            dgProdutos.Columns[6].Visible = false;
+            dgProdutos.Columns[7].Visible = false;
+            dgProdutos.Columns[8].HeaderText = "Quantidade";
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -92,20 +119,35 @@ namespace ConsultiBETA
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            if(dgProdutos.CurrentRow != null)
+            if (dgProdutos.CurrentRow != null)
             {
-                if (txtQuantidade.Text != "")
+                decimal numero;
+                if (decimal.TryParse(txtQuantidade.Text, out numero))
                 {
-                    FormAddChamados.dgvItemsProdutos.Rows.Add(dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[0].Value.ToString(), dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
-                    this.Close();
+
+                    if (txtQuantidade.Text != "")
+                    {
+                        if(int.Parse(txtQuantidade.Text) <= int.Parse(dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[8].Value.ToString()))
+                        {
+                            FormAddChamados.dgvItemsProdutos.Rows.Add(dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[0].Value.ToString(), dgProdutos.Rows[dgProdutos.CurrentRow.Index].Cells[1].Value.ToString(), txtQuantidade.Text);
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("O campo Quantidade não pode ser maior que a quantidade em estoque!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("O campo Quantidade é obrigatório!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("O campo Quantidade contém caracteres inválidos!", "Consulti", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
-
             }
-
         }
     }
 }

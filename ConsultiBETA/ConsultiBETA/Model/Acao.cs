@@ -12,7 +12,16 @@ namespace ConsultiBETA.Model
         private string descricao;
         private DateTime data_acao;
 
-        
+        public Acao()
+        {
+
+        }
+        public Acao(int _id_acao, string descricao, DateTime data_acao)
+        {
+            this._id_acao = _id_acao;
+            this.descricao = descricao;
+            this.data_acao = data_acao;
+        }
 
         public string Descricao
         {

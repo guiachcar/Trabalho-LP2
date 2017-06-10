@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbQuantidade = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.txtDigiteAqui = new System.Windows.Forms.TextBox();
-            this.cbFiltrar = new System.Windows.Forms.ComboBox();
-            this.lbConsulta = new System.Windows.Forms.Label();
-            this.lbPor = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgServicos = new System.Windows.Forms.DataGridView();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.lbQuantidade = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,7 +51,6 @@
             this.panel1.Controls.Add(this.txtQuantidade);
             this.panel1.Controls.Add(this.btnSelecionar);
             this.panel1.Controls.Add(this.gbFiltrar);
-            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.btnNovo);
             this.panel1.Controls.Add(this.groupBox2);
@@ -64,6 +59,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(661, 480);
             this.panel1.TabIndex = 1;
+            // 
+            // lbQuantidade
+            // 
+            this.lbQuantidade.AutoSize = true;
+            this.lbQuantidade.Location = new System.Drawing.Point(175, 451);
+            this.lbQuantidade.Name = "lbQuantidade";
+            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbQuantidade.TabIndex = 18;
+            this.lbQuantidade.Text = "Quantidade";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(260, 447);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(117, 20);
+            this.txtQuantidade.TabIndex = 17;
             // 
             // btnSelecionar
             // 
@@ -80,9 +91,6 @@
             // gbFiltrar
             // 
             this.gbFiltrar.Controls.Add(this.txtDigiteAqui);
-            this.gbFiltrar.Controls.Add(this.cbFiltrar);
-            this.gbFiltrar.Controls.Add(this.lbConsulta);
-            this.gbFiltrar.Controls.Add(this.lbPor);
             this.gbFiltrar.Controls.Add(this.btnBuscar);
             this.gbFiltrar.Location = new System.Drawing.Point(9, 12);
             this.gbFiltrar.Name = "gbFiltrar";
@@ -93,39 +101,10 @@
             // 
             // txtDigiteAqui
             // 
-            this.txtDigiteAqui.Location = new System.Drawing.Point(282, 23);
+            this.txtDigiteAqui.Location = new System.Drawing.Point(81, 23);
             this.txtDigiteAqui.Name = "txtDigiteAqui";
-            this.txtDigiteAqui.Size = new System.Drawing.Size(201, 20);
+            this.txtDigiteAqui.Size = new System.Drawing.Size(402, 20);
             this.txtDigiteAqui.TabIndex = 14;
-            // 
-            // cbFiltrar
-            // 
-            this.cbFiltrar.FormattingEnabled = true;
-            this.cbFiltrar.Items.AddRange(new object[] {
-            "ID",
-            "Nome"});
-            this.cbFiltrar.Location = new System.Drawing.Point(69, 22);
-            this.cbFiltrar.Name = "cbFiltrar";
-            this.cbFiltrar.Size = new System.Drawing.Size(121, 21);
-            this.cbFiltrar.TabIndex = 13;
-            // 
-            // lbConsulta
-            // 
-            this.lbConsulta.AutoSize = true;
-            this.lbConsulta.Location = new System.Drawing.Point(208, 29);
-            this.lbConsulta.Name = "lbConsulta";
-            this.lbConsulta.Size = new System.Drawing.Size(58, 13);
-            this.lbConsulta.TabIndex = 12;
-            this.lbConsulta.Text = "Digite Aqui";
-            // 
-            // lbPor
-            // 
-            this.lbPor.AutoSize = true;
-            this.lbPor.Location = new System.Drawing.Point(15, 30);
-            this.lbPor.Name = "lbPor";
-            this.lbPor.Size = new System.Drawing.Size(23, 13);
-            this.lbPor.TabIndex = 12;
-            this.lbPor.Text = "Por";
             // 
             // btnBuscar
             // 
@@ -135,18 +114,7 @@
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.Location = new System.Drawing.Point(260, 446);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(117, 23);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEditar
             // 
@@ -192,28 +160,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgServicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServicos.Location = new System.Drawing.Point(3, 16);
+            this.dgServicos.Location = new System.Drawing.Point(3, 13);
             this.dgServicos.Name = "dgServicos";
             this.dgServicos.ReadOnly = true;
             this.dgServicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgServicos.Size = new System.Drawing.Size(641, 326);
             this.dgServicos.TabIndex = 0;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(260, 448);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(117, 20);
-            this.txtQuantidade.TabIndex = 17;
-            // 
-            // lbQuantidade
-            // 
-            this.lbQuantidade.AutoSize = true;
-            this.lbQuantidade.Location = new System.Drawing.Point(175, 451);
-            this.lbQuantidade.Name = "lbQuantidade";
-            this.lbQuantidade.Size = new System.Drawing.Size(62, 13);
-            this.lbQuantidade.TabIndex = 18;
-            this.lbQuantidade.Text = "Quantidade";
             // 
             // FormServicos
             // 
@@ -221,6 +173,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 480);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormServicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Serviços";
@@ -239,11 +193,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbFiltrar;
         private System.Windows.Forms.TextBox txtDigiteAqui;
-        private System.Windows.Forms.ComboBox cbFiltrar;
-        private System.Windows.Forms.Label lbConsulta;
-        private System.Windows.Forms.Label lbPor;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.GroupBox groupBox2;
