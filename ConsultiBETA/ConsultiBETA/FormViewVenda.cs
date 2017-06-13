@@ -37,7 +37,7 @@ namespace ConsultiBETA
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            FormViewRepVenda form = new FormViewRepVenda(int.Parse(lbId.Text));
+            FormVendaReport form = new FormVendaReport(int.Parse(lbId.Text));
             form.ShowDialog();
         }
 

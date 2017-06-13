@@ -66,12 +66,13 @@
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.ConnectorNET.Data.6.8.3.2\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.8.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -104,6 +105,20 @@
     <Compile Include="Controller\ServicoController.cs" />
     <Compile Include="Controller\StatusController.cs" />
     <Compile Include="Controller\VendaController.cs" />
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAddChamados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,17 +215,17 @@
     <Compile Include="FormVenda.Designer.cs">
       <DependentUpon>FormVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVendaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVendaReport.Designer.cs">
+      <DependentUpon>FormVendaReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormViewHistorico.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormViewHistorico.Designer.cs">
       <DependentUpon>FormViewHistorico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormViewRepVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormViewRepVenda.Designer.cs">
-      <DependentUpon>FormViewRepVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="FormViewVenda.cs">
       <SubType>Form</SubType>
@@ -244,6 +259,10 @@
     <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddChamados.resx">
       <DependentUpon>FormAddChamados.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,11 +311,11 @@
     <EmbeddedResource Include="FormVenda.resx">
       <DependentUpon>FormVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVendaReport.resx">
+      <DependentUpon>FormVendaReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormViewHistorico.resx">
       <DependentUpon>FormViewHistorico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormViewRepVenda.resx">
-      <DependentUpon>FormViewRepVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewVenda.resx">
       <DependentUpon>FormViewVenda.cs</DependentUpon>
@@ -317,7 +336,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RepVenda.rdlc" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CachedrepImprimirChamado.datasource" />
     <None Include="Properties\DataSources\ConsultiBETA.Controller.AcaoController.datasource" />

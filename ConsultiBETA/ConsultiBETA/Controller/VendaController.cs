@@ -28,6 +28,14 @@ namespace ConsultiBETA.Controller
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }
+        public DataSet ListItemVendas(int id)
+        {
+            string table = "venda";
+            string sqlQuery = "SELECT * FROM item_venda_produto WHERE venda_id=" + id + ";";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+
+        }
+        
         public void Finalizar(int id,DateTime data_pagamento)
         {
             ExecutarSql("UPDATE venda SET status_venda=4, data_pagamento ='"+data_pagamento.ToString("yyyy-MM-dd")+"' WHERE _id_venda=" + id);
