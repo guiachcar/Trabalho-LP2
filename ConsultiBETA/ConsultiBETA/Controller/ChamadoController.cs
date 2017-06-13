@@ -59,7 +59,7 @@ namespace ConsultiBETA.Controller
             }
             ExecutarSql("UPDATE venda SET valor_total=REPLACE('" + ValorTotal.ToString() + "',',','.') WHERE _id_venda=" + idCadastrado);
             ExecutarSql("INSERT INTO acao (descricao,chamado_id,funcionario_id) VALUES ('" + chamado.Acao[chamado.Acao.Count-1].Descricao + "'," + chamado.Id + "," + chamado.Funcionario.Id + ")");
-            ExecutarSql("UPDATE chamado SET funcionario_id=" + chamado.Funcionario.Id + ",venda_id = "+idCadastrado+", status = " + chamado.Status1.Id_status + ", data_agendamento= '" + chamado.Data_agendamento.ToString("yyyy-MM-dd HH:mm:ss") + ", data_fechamento= NOW() ' WHERE _id_chamado=" + chamado.Id);
+            ExecutarSql("UPDATE chamado SET funcionario_id=" + chamado.Funcionario.Id + ",venda_id = "+idCadastrado+", status = " + chamado.Status1.Id_status + ", data_agendamento= '" + chamado.Data_agendamento.ToString("yyyy-MM-dd HH:mm:ss") + "', data_fechamento=NOW()  WHERE _id_chamado=" + chamado.Id);
 
         }
 
@@ -113,7 +113,7 @@ namespace ConsultiBETA.Controller
         public DataSet BuscarChamado(DateTime dataabertura,DateTime dataaberturafinal, string tecnico,string status,string consulta)
         {
             string table = "chamado";
-            string sqlQuery = "SELECT * FROM chamado ch INNER JOIN pessoa pe ON ch.cliente_id=pe._id_pessoa INNER JOIN status st ON st._id_status=ch.status WHERE ch.funcionario_id=" + tecnico + " AND ch.descricao LIKE '%" + consulta + "%', ch.status=" + status + " AND data_abertura BETWEEN '"+dataabertura.ToString("yyyy-MM-dd HH:mm:ss") + "' AND '"+dataaberturafinal.ToString("yyyy-MM-dd HH:mm:ss") + "' ";
+            string sqlQuery = "SELECT * FROM chamado ch INNER JOIN pessoa pe ON ch.cliente_id=pe._id_pessoa INNER JOIN status st ON st._id_status=ch.status WHERE ch.funcionario_id=" + tecnico + " AND ch.descricao LIKE '%" + consulta + "%' AND ch.status=" + status + " AND data_abertura BETWEEN '"+dataabertura.ToString("yyyy-MM-dd") + "' AND '"+dataaberturafinal.ToString("yyyy-MM-dd HH:mm:ss") + "' ;";
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }

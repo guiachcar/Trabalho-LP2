@@ -21,6 +21,13 @@ namespace ConsultiBETA.Controller
             return ExecutarSqlRetGrid(sqlQuery, table);
 
         }
+        public DataSet ListarVenda(int venda)
+        {
+            string table = "venda";
+            string sqlQuery = "SELECT * FROM venda ve INNER JOIN chamado ch ON ve._id_venda = ch.venda_id INNER JOIN pessoa pe ON ch.cliente_id=pe._id_pessoa INNER JOIN status st ON st._id_status=ch.status WHERE _id_venda="+venda+";";
+            return ExecutarSqlRetGrid(sqlQuery, table);
+
+        }
         public void Finalizar(int id,DateTime data_pagamento)
         {
             ExecutarSql("UPDATE venda SET status_venda=4, data_pagamento ='"+data_pagamento.ToString("yyyy-MM-dd")+"' WHERE _id_venda=" + id);
