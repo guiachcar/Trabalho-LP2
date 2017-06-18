@@ -53,7 +53,7 @@ namespace ConsultiBETA.Controller
                 foreach (ItemVendaServico y in chamado.Servicos)
                 {
                     ExecutarSql("INSERT INTO item_venda_servico (venda_id,servico_id,quantidade) VALUES (" + idCadastrado + "," + y.Servico.Id + "," + y.Quantidade + ")");
-                    ValorTotal = ValorTotal + y.Servico.Valor;
+                    ValorTotal = ValorTotal + (y.Servico.Valor * y.Quantidade);
                 }
 
             }
